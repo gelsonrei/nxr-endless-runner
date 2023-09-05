@@ -1,0 +1,1083 @@
+fileFormatVersion: 2
+guid: 0b684a8968a8bd144abeb7c5addbf753
+ModelImporter:
+  serializedVersion: 22200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wip_SmithRig21_M_Smith
+    second: {fileID: 2100000, guid: 6760e920366444f4da69ef9c522d65f4, type: 2}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: "\nClip 'idle' has import animation warnings that might
+      lower retargeting quality:\nNote: Activate translation DOF on avatar to improve
+      retargeting quality.\n\t'Wip_SmithRig21:R_elbow_jnt' has translation animation
+      that will be discarded.\n\t'Wip_SmithRig21:R_hand_jnt' has translation animation
+      that will be discarded.\n\t'Wip_SmithRig21:R_index_02_jnt' has translation
+      animation that will be discarded.\n\t'Wip_SmithRig21:R_pink_02_jnt' has translation
+      animation that will be discarded.\n\t'Wip_SmithRig21:R_thumb_01_jnt' has translation
+      animation that will be discarded.\n"
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human:
+    - boneName: Wip_SmithRig21:root_jnt
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Wip_SmithRig21:L_leg_jnt
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Wip_SmithRig21:R_leg_jnt
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Wip_SmithRig21:L_knee_jnt
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Wip_SmithRig21:R_knee_jnt
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Wip_SmithRig21:L_ankle_jnt
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Wip_SmithRig21:R_ankle_jnt
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Wip_SmithRig21:spine00_jnt
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Wip_SmithRig21:spine01_jnt
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Wip_SmithRig21:neek_jnt
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Wip_SmithRig21:head_jnt
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Wip_SmithRig21:L_shoulder_jnt
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Wip_SmithRig21:R_shoulder_jnt
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Wip_SmithRig21:L_arm_jnt
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Wip_SmithRig21:R_arm_jnt
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Wip_SmithRig21:L_elbow_jnt
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Wip_SmithRig21:R_elbow_jnt
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Wip_SmithRig21:L_hand_jnt
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Wip_SmithRig21:R_hand_jnt
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Wip_SmithRig21:l_ear01_jnt
+      humanName: LeftEye
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Wip_SmithRig21:R_ear021jnt
+      humanName: RightEye
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Wip_SmithRig21:L_thumb_01_jnt
+      humanName: Left Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Wip_SmithRig21:L_thumb_02_jnt
+      humanName: Left Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Wip_SmithRig21:L_thumb_03_jnt
+      humanName: Left Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Wip_SmithRig21:L_index_02_jnt
+      humanName: Left Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Wip_SmithRig21:L_index_03_jnt
+      humanName: Left Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Wip_SmithRig21:L_ring_02_jnt
+      humanName: Left Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Wip_SmithRig21:L_ring_03_jnt
+      humanName: Left Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Wip_SmithRig21:L_pink_02_jnt
+      humanName: Left Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Wip_SmithRig21:L_pink_03_jnt
+      humanName: Left Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Wip_SmithRig21:R_thumb_01_jnt
+      humanName: Right Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Wip_SmithRig21:R_thumb_02_jnt
+      humanName: Right Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Wip_SmithRig21:R_thumb_03_jnt
+      humanName: Right Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Wip_SmithRig21:R_index_02_jnt
+      humanName: Right Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Wip_SmithRig21:R_index_03_jnt
+      humanName: Right Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Wip_SmithRig21:R_ring_02_jnt
+      humanName: Right Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Wip_SmithRig21:R_ring_03_jnt
+      humanName: Right Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Wip_SmithRig21:R_pink_02_jnt
+      humanName: Right Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Wip_SmithRig21:R_pink_03_jnt
+      humanName: Right Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Wip_SmithRig21:spine02_jnt
+      humanName: UpperChest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: idle(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: left
+      parentName: idle(Clone)
+      position: {x: 10.000999, y: 0.025630554, z: 0.005365458}
+      rotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: back
+      parentName: idle(Clone)
+      position: {x: 0.002344084, y: 0.038614187, z: -10.000999}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:transform2
+      parentName: idle(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:transform3
+      parentName: idle(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:transform4
+      parentName: idle(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:transform5
+      parentName: idle(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:transform7
+      parentName: idle(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:transform8
+      parentName: idle(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:transform6
+      parentName: idle(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:transform1
+      parentName: idle(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:Smith_grp
+      parentName: idle(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:S_Smith
+      parentName: Wip_SmithRig21:Smith_grp
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:L_legIK_ctrl
+      parentName: Wip_SmithRig21:Smith_grp
+      position: {x: -0.0030519718, y: 0.005404119, z: -0.0001551529}
+      rotation: {x: 0, y: 0, z: 0.0058594365, w: 0.99998283}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:L_tipUP_IK_grp
+      parentName: Wip_SmithRig21:L_legIK_ctrl
+      position: {x: -0.00032574145, y: -0.003924971, z: 0.011327569}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:ikHandle_toeIK_L
+      parentName: Wip_SmithRig21:L_tipUP_IK_grp
+      position: {x: -0, y: 0.00072855025, z: -0.005566508}
+      rotation: {x: -1.3437893e-15, y: 1.3450159e-15, z: 0.7071068, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:L_toeRotationIK_grp
+      parentName: Wip_SmithRig21:L_tipUP_IK_grp
+      position: {x: -0, y: 0.00072855025, z: -0.005566508}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:ikHandle_tipIK_L
+      parentName: Wip_SmithRig21:L_toeRotationIK_grp
+      position: {x: -0, y: -0.00072855025, z: 0.005566508}
+      rotation: {x: 0.31587788, y: 0.07594783, z: 0.04905124, w: 0.94448245}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:L_ankleUP_IK_grp
+      parentName: Wip_SmithRig21:L_tipUP_IK_grp
+      position: {x: -0, y: 0.00072855025, z: -0.005566508}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:ikHandle_legIK_L
+      parentName: Wip_SmithRig21:L_ankleUP_IK_grp
+      position: {x: 0.00032574145, y: 0.0031964206, z: -0.005761062}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:L_knee_grp
+      parentName: Wip_SmithRig21:Smith_grp
+      position: {x: -0.0030519718, y: 0.005404119, z: -0.0001551529}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:L_knee_ctrl
+      parentName: Wip_SmithRig21:L_knee_grp
+      position: {x: -0.0009523326, y: 0.008297735, z: 0.013985723}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:R_legIK_ctrl
+      parentName: Wip_SmithRig21:Smith_grp
+      position: {x: 0.0067050913, y: 0.00540412, z: -0.00077840296}
+      rotation: {x: -0.00025916932, y: 0.052392114, z: 0.004939199, w: 0.9986144}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:R_tipUP_IK_ctrl
+      parentName: Wip_SmithRig21:R_legIK_ctrl
+      position: {x: 0.00032574026, y: -0.00392497, z: 0.011327603}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:ikHandle_toeIK_R
+      parentName: Wip_SmithRig21:R_tipUP_IK_ctrl
+      position: {x: -0, y: 0.00072854996, z: -0.0055665397}
+      rotation: {x: -0.6026309, y: 0.6062149, z: -0.36613452, w: -0.36781108}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:R_toeRotationIK_ctrl
+      parentName: Wip_SmithRig21:R_tipUP_IK_ctrl
+      position: {x: -0, y: 0.00072854996, z: -0.0055665397}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:ikHandle_tipIK_R
+      parentName: Wip_SmithRig21:R_toeRotationIK_ctrl
+      position: {x: -0, y: -0.00072854996, z: 0.0055665397}
+      rotation: {x: 0.55347645, y: -0.52100825, z: 0.47806945, w: 0.4400725}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:R_ankleUP_IK_ctrl
+      parentName: Wip_SmithRig21:R_tipUP_IK_ctrl
+      position: {x: -0, y: 0.00072854996, z: -0.0055665397}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:ikHandle_legIK_R
+      parentName: Wip_SmithRig21:R_ankleUP_IK_ctrl
+      position: {x: -0.00032574026, y: 0.00319642, z: -0.005761063}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:R_legIK_ctrl1
+      parentName: Wip_SmithRig21:Smith_grp
+      position: {x: 0.0067050913, y: 0.00540412, z: -0.00077840296}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:R_knee_ctrl
+      parentName: Wip_SmithRig21:R_legIK_ctrl1
+      position: {x: 0.0013464473, y: 0.008421987, z: 0.014288929}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:master_ctrl
+      parentName: Wip_SmithRig21:Smith_grp
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:root_ctrl
+      parentName: Wip_SmithRig21:master_ctrl
+      position: {x: 0.0021041178, y: 0.018099269, z: 0.0013321824}
+      rotation: {x: -0.000035621917, y: -0.010051077, z: 0.0035417941, w: 0.99994326}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:spinner_00_ctrl
+      parentName: Wip_SmithRig21:root_ctrl
+      position: {x: 0.00007117289, y: 0.00005588794, z: -0.0018025482}
+      rotation: {x: -0.009082036, y: 0, z: -0, w: 0.99995875}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:spinner_01_ctrl
+      parentName: Wip_SmithRig21:spinner_00_ctrl
+      position: {x: -0, y: 0.004733206, z: 0.0017499565}
+      rotation: {x: -0.011693882, y: -0.011842071, z: -0.004325773, w: 0.9998522}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:spinner_02_ctrl
+      parentName: Wip_SmithRig21:spinner_01_ctrl
+      position: {x: -0.000052227144, y: 0.004116373, z: 0.00026770154}
+      rotation: {x: -0.0056315507, y: -0.021530395, z: 0.001802399, w: 0.99975073}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:neek_ctrl
+      parentName: Wip_SmithRig21:spinner_02_ctrl
+      position: {x: -0, y: 0.002787814, z: -0.0003526902}
+      rotation: {x: 0.06697216, y: -0, z: -0, w: 0.9977549}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:head_ctrl
+      parentName: Wip_SmithRig21:neek_ctrl
+      position: {x: 0.000092455084, y: 0.0035220527, z: 0}
+      rotation: {x: 0.008048661, y: 0.07849206, z: -0.016626209, w: 0.9967436}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:L_ear_00_ctrl
+      parentName: Wip_SmithRig21:head_ctrl
+      position: {x: -0.008775274, y: 0.021471562, z: -0.0044753402}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:L_ear_01_ctrl
+      parentName: Wip_SmithRig21:L_ear_00_ctrl
+      position: {x: -0.0020081906, y: 0.004184642, z: 0.0019830053}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:R_ear_00_ctrl
+      parentName: Wip_SmithRig21:head_ctrl
+      position: {x: 0.009008495, y: 0.021800065, z: -0.004392627}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:R_ear_01_ctrl
+      parentName: Wip_SmithRig21:R_ear_00_ctrl
+      position: {x: 0.0020246296, y: 0.0043340204, z: 0.0019703575}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:L_shoulder_ctrl
+      parentName: Wip_SmithRig21:spinner_02_ctrl
+      position: {x: -0.0034365316, y: 0.0015328145, z: -0.0011059718}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:R_shoulder_ctrl
+      parentName: Wip_SmithRig21:spinner_02_ctrl
+      position: {x: 0.0033877953, y: 0.0015328026, z: -0.0011059719}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:R_arm_ctrl
+      parentName: Wip_SmithRig21:spinner_02_ctrl
+      position: {x: 0.005140624, y: 0.00088520284, z: -0.0013194899}
+      rotation: {x: 0.0355933, y: 0.05674841, z: -0.5822848, w: 0.8102204}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:R_elbow_ctrl
+      parentName: Wip_SmithRig21:R_arm_ctrl
+      position: {x: 0.0054782294, y: -0.00009089946, z: -0.00091000757}
+      rotation: {x: 0.0005604248, y: -0.11364356, z: -0.0009898545, w: 0.993521}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:R_hand_ctrl
+      parentName: Wip_SmithRig21:R_elbow_ctrl
+      position: {x: 0.0051858006, y: -0.00008490086, z: 0.0007437152}
+      rotation: {x: 0.10840621, y: -0.11574755, z: -0.15686767, w: 0.97480416}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:R_thumb_01_ctrl
+      parentName: Wip_SmithRig21:R_hand_ctrl
+      position: {x: 0.0022037264, y: 0.000019550622, z: 0.0024185716}
+      rotation: {x: 0.009019452, y: 0.12543705, z: 0.0011404286, w: 0.99205995}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:R_thumb_02_ctrl
+      parentName: Wip_SmithRig21:R_thumb_01_ctrl
+      position: {x: 0.0016998005, y: -0.0007007003, z: 0.00120488}
+      rotation: {x: 0, y: 0.07547195, z: -0, w: 0.997148}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:R_thumb_03_ctrl
+      parentName: Wip_SmithRig21:R_thumb_02_ctrl
+      position: {x: 0.0016662001, y: -0.00013260126, z: 0.00056897}
+      rotation: {x: 0, y: -0.27802244, z: -0, w: 0.9605746}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:R_index_02_ctrl
+      parentName: Wip_SmithRig21:R_hand_ctrl
+      position: {x: 0.0056604473, y: 0.0011931815, z: 0.0016786301}
+      rotation: {x: 0, y: -0, z: -0.07212554, w: 0.9973956}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:R_index_03_ctrl
+      parentName: Wip_SmithRig21:R_index_02_ctrl
+      position: {x: 0.0022242116, y: 0, z: 0.0002804879}
+      rotation: {x: 0, y: -0, z: -0.09535783, w: 0.9954431}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:R_ring_02_ctrl
+      parentName: Wip_SmithRig21:R_hand_ctrl
+      position: {x: 0.005702832, y: 0.0012291002, z: 0.000033768232}
+      rotation: {x: 0, y: -0, z: -0.047013745, w: 0.9988942}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:R_ring_03_ctrl
+      parentName: Wip_SmithRig21:R_ring_02_ctrl
+      position: {x: 0.0025468683, y: 0, z: -0.000004245937}
+      rotation: {x: 0, y: -0, z: -0.057878096, w: 0.9983237}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:R_pink_02_ctrl
+      parentName: Wip_SmithRig21:R_hand_ctrl
+      position: {x: 0.0050321757, y: 0.00091906666, z: -0.0018457845}
+      rotation: {x: 0.006624983, y: 0.0005301488, z: -0.079765916, w: 0.9967915}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:R_pink_03_ctrl
+      parentName: Wip_SmithRig21:R_pink_02_ctrl
+      position: {x: 0.0025783086, y: 0, z: -0.00023054182}
+      rotation: {x: 0, y: -0, z: -0.06310392, w: 0.99800694}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:L_arm_ctrl
+      parentName: Wip_SmithRig21:spinner_02_ctrl
+      position: {x: -0.005140628, y: 0.0008851838, z: -0.001319491}
+      rotation: {x: 0.005875024, y: -0.06389184, z: 0.5847891, w: 0.80864394}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:L_elbow_ctrl
+      parentName: Wip_SmithRig21:L_arm_ctrl
+      position: {x: -0.0054782503, y: -0.00009092093, z: -0.00093110633}
+      rotation: {x: 0, y: 0.09688423, z: -0, w: 0.9952957}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:L_hand_ctrl
+      parentName: Wip_SmithRig21:L_elbow_ctrl
+      position: {x: -0.0051866244, y: -0.00008481741, z: 0.0007977949}
+      rotation: {x: -0.04776428, y: 0.0008982871, z: 0.2108175, w: 0.9763574}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:L_thumb_01_ctrl
+      parentName: Wip_SmithRig21:L_hand_ctrl
+      position: {x: -0.0022396576, y: -0.0009978318, z: 0.0025067036}
+      rotation: {x: 0.0077870386, y: -0.12895693, z: -0.05976988, w: 0.98981667}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:L_thumb_02_ctrl
+      parentName: Wip_SmithRig21:L_thumb_01_ctrl
+      position: {x: -0.0016997361, y: -0.0007007599, z: 0.0011972439}
+      rotation: {x: 0, y: -0.09414835, z: -0, w: 0.9955582}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:L_thumb_03_ctrl
+      parentName: Wip_SmithRig21:L_thumb_02_ctrl
+      position: {x: -0.0016662669, y: -0.00013257742, z: 0.00055449735}
+      rotation: {x: 0, y: 0.2535484, z: -0, w: 0.9673227}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:L_index_02_ctrl
+      parentName: Wip_SmithRig21:L_hand_ctrl
+      position: {x: -0.005472835, y: 0.0007538101, z: 0.0017123563}
+      rotation: {x: -0.0042765904, y: -0.046259765, z: 0.091955364, w: 0.99467885}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:L_index_03_ctrl
+      parentName: Wip_SmithRig21:L_index_02_ctrl
+      position: {x: -0.002318812, y: -0.0000068414997, z: 0.0004454686}
+      rotation: {x: 0, y: 0, z: 0.17543463, w: 0.9844911}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:L_ring_02_ctrl
+      parentName: Wip_SmithRig21:L_hand_ctrl
+      position: {x: -0.005713573, y: 0.001321747, z: 0.00014733852}
+      rotation: {x: -0.0010569415, y: -0.008545479, z: 0.12274441, w: 0.99240094}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:L_ring_03_ctrl
+      parentName: Wip_SmithRig21:L_ring_02_ctrl
+      position: {x: -0.0025481507, y: -0.0000068414997, z: -0.000007814819}
+      rotation: {x: 0, y: 0, z: 0.07518913, w: 0.9971693}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:L_pink_02_ctrl
+      parentName: Wip_SmithRig21:L_hand_ctrl
+      position: {x: -0.005442254, y: 0.00075028726, z: -0.0017074423}
+      rotation: {x: 0.015699916, y: 0.07596194, z: 0.050008792, w: 0.9957321}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:L_pink_03_ctrl
+      parentName: Wip_SmithRig21:L_pink_02_ctrl
+      position: {x: -0.0022377013, y: 0, z: -0.00022100026}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:root_jnt
+      parentName: Wip_SmithRig21:Smith_grp
+      position: {x: -0.000000002561137, y: 0.010737663, z: 0.0013341272}
+      rotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:spine00_jnt
+      parentName: Wip_SmithRig21:root_jnt
+      position: {x: -0.0036656118, y: 1.3877787e-18, z: -0.0018025482}
+      rotation: {x: -7.2759565e-10, y: -7.2759576e-10, z: -0, w: 1}
+      scale: {x: 0.9999999, y: 0.9999999, z: 1}
+    - name: Wip_SmithRig21:spine01_jnt
+      parentName: Wip_SmithRig21:spine00_jnt
+      position: {x: -0.004732593, y: 0.0000006149648, z: 0.0017238903}
+      rotation: {x: -0.000000002182788, y: 0.0000000050931703, z: 5.2939555e-18, w: 1}
+      scale: {x: 1, y: 1.0000001, z: 0.99999994}
+    - name: Wip_SmithRig21:spine02_jnt
+      parentName: Wip_SmithRig21:spine01_jnt
+      position: {x: -0.0041163736, y: -0.000052227148, z: 0.00029378233}
+      rotation: {x: 0.0000000029103835, y: -0.0000000072759576, z: -8.470332e-18,
+        w: 1}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1}
+    - name: Wip_SmithRig21:neek_jnt
+      parentName: Wip_SmithRig21:spine02_jnt
+      position: {x: -0.0027878128, y: -2.7755575e-19, z: -0.00035269037}
+      rotation: {x: -0.000000005896645, y: 7.637935e-11, z: -0.013121814, w: 0.99991393}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1}
+    - name: Wip_SmithRig21:head_jnt
+      parentName: Wip_SmithRig21:neek_jnt
+      position: {x: -0.0035232662, y: -3.2071e-11, z: -1.2514292e-11}
+      rotation: {x: 0.0000000059178946, y: -0.004881905, z: 0.0000000241856, w: 0.99998814}
+      scale: {x: 1.0000004, y: 1.0000004, z: 1}
+    - name: Wip_SmithRig21:head_JEnd
+      parentName: Wip_SmithRig21:head_jnt
+      position: {x: -0.02658308, y: -0.00081358186, z: -0.0024024195}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:L_ear00_jnt
+      parentName: Wip_SmithRig21:head_jnt
+      position: {x: -0.021276578, y: -0.009335694, z: -0.0042678057}
+      rotation: {x: 0.013064088, y: 0.05959809, z: 0.21372047, w: 0.97498775}
+      scale: {x: 1.0000001, y: 1.0000002, z: 1.0000001}
+    - name: Wip_SmithRig21:l_ear01_jnt
+      parentName: Wip_SmithRig21:L_ear00_jnt
+      position: {x: -0.0048157135, y: -0.000113247406, z: 0.0015074676}
+      rotation: {x: 9.3132235e-10, y: -0, z: 0.000000020663714, w: 1}
+      scale: {x: 0.99999994, y: 0.99999994, z: 0.9999999}
+    - name: Wip_SmithRig21:L_ear_JEnd
+      parentName: Wip_SmithRig21:l_ear01_jnt
+      position: {x: -0.0033555948, y: -0.00020660173, z: 0.0015319997}
+      rotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:R_ear00_jnt
+      parentName: Wip_SmithRig21:head_jnt
+      position: {x: -0.022070792, y: 0.008433331, z: -0.0041773343}
+      rotation: {x: -0.012744768, y: 0.059667185, z: -0.20849623, w: 0.97611827}
+      scale: {x: 1.0000004, y: 1.0000004, z: 1.0000001}
+    - name: Wip_SmithRig21:R_ear021jnt
+      parentName: Wip_SmithRig21:R_ear00_jnt
+      position: {x: -0.004959735, y: -0.00012722398, z: 0.0014662964}
+      rotation: {x: -0, y: -0, z: -0.000000006461049, w: 1}
+      scale: {x: 1.0000001, y: 1.0000002, z: 0.9999999}
+    - name: Wip_SmithRig21:R_ear_JEnd
+      parentName: Wip_SmithRig21:R_ear021jnt
+      position: {x: -0.0027126905, y: -0.00013123827, z: 0.0016215056}
+      rotation: {x: -0.031014618, y: -0.031014618, z: 0.7064263, w: 0.7064263}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:L_shoulder_jnt
+      parentName: Wip_SmithRig21:spine02_jnt
+      position: {x: -0.0015328135, y: -0.0034365316, z: -0.0011059718}
+      rotation: {x: -0.005542103, y: 0.0056198724, z: 0.6949801, w: 0.7189856}
+      scale: {x: 1, y: 1, z: 1.0000001}
+    - name: Wip_SmithRig21:L_arm_jnt
+      parentName: Wip_SmithRig21:L_shoulder_jnt
+      position: {x: -0.0017129558, y: -0.000623821, z: -0.00021351934}
+      rotation: {x: -0.0013870018, y: 0.037310034, z: 0.0075775194, w: 0.99927413}
+      scale: {x: 1, y: 1.0000002, z: 1}
+    - name: Wip_SmithRig21:L_elbow_jnt
+      parentName: Wip_SmithRig21:L_arm_jnt
+      position: {x: -0.005478985, y: -0.00001457621, z: -0.0009311064}
+      rotation: {x: -0.00014469991, y: 0.123645246, z: 0.005878368, w: 0.9923091}
+      scale: {x: 1, y: 1.0000001, z: 1.0000001}
+    - name: Wip_SmithRig21:L_hand_jnt
+      parentName: Wip_SmithRig21:L_elbow_jnt
+      position: {x: -0.005068984, y: -0.000010549408, z: -0.001368494}
+      rotation: {x: 0.00000003169209, y: 0.08807484, z: 0.000000006866248, w: 0.99611396}
+      scale: {x: 1.0000005, y: 1.0000002, z: 1}
+    - name: Wip_SmithRig21:L_hand01_jnt
+      parentName: Wip_SmithRig21:L_hand_jnt
+      position: {x: -0.001676907, y: -0.000066881534, z: -0.0011602272}
+      rotation: {x: -0.000000013185879, y: 0.028217316, z: -0.0000000049169233, w: 0.99960184}
+      scale: {x: 1.0000001, y: 1.0000004, z: 1.0000001}
+    - name: Wip_SmithRig21:L_index_02_jnt
+      parentName: Wip_SmithRig21:L_hand01_jnt
+      position: {x: -0.0037603618, y: 0.0008970388, z: -0.0007159423}
+      rotation: {x: 0.001575047, y: -0.33862376, z: -0.0023875511, w: 0.9409175}
+      scale: {x: 1.0000004, y: 1.0000004, z: 1.0000005}
+    - name: Wip_SmithRig21:L_index_03_jnt
+      parentName: Wip_SmithRig21:L_index_02_jnt
+      position: {x: -0.0023188647, y: -0.0000065394433, z: 0.00044546855}
+      rotation: {x: 0.00001229811, y: 0.04750208, z: 0.00076141534, w: 0.9988709}
+      scale: {x: 1.0000004, y: 1.0000005, z: 1.0000001}
+    - name: Wip_SmithRig21:L_index_JEnd
+      parentName: Wip_SmithRig21:L_index_03_jnt
+      position: {x: -0.002067893, y: 0, z: 0.000033468805}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:L_ring_02_jnt
+      parentName: Wip_SmithRig21:L_hand01_jnt
+      position: {x: -0.0029952133, y: 0.0014683282, z: -0.0021009443}
+      rotation: {x: 0.0022326072, y: -0.32043412, z: -0.006599997, w: 0.9472452}
+      scale: {x: 1.0000005, y: 1.0000005, z: 1.0000004}
+    - name: Wip_SmithRig21:L_ring_03_jnt
+      parentName: Wip_SmithRig21:L_ring_02_jnt
+      position: {x: -0.0025481612, y: -0.0000067104506, z: -0.000007814809}
+      rotation: {x: 0.000000017229459, y: -0, z: 9.3132213e-10, w: 1}
+      scale: {x: 1.0000004, y: 1.0000002, z: 1.0000001}
+    - name: Wip_SmithRig21:L_ring_JEnd
+      parentName: Wip_SmithRig21:L_ring_03_jnt
+      position: {x: -0.0023691123, y: 8.881784e-18, z: 0.00016734403}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:L_pink_02_jnt
+      parentName: Wip_SmithRig21:L_hand01_jnt
+      position: {x: -0.0016515661, y: 0.00089346647, z: -0.003430254}
+      rotation: {x: 0.0022326238, y: -0.32043415, z: -0.006599991, w: 0.9472452}
+      scale: {x: 1.0000004, y: 1.0000002, z: 1.0000002}
+    - name: Wip_SmithRig21:L_pink_03_jnt
+      parentName: Wip_SmithRig21:L_pink_02_jnt
+      position: {x: -0.0022377009, y: -2.4424906e-17, z: -0.0002139612}
+      rotation: {x: 0.0011483937, y: -0.05615053, z: -0.012011166, w: 0.9983494}
+      scale: {x: 1.0000001, y: 1.0000002, z: 1.0000001}
+    - name: Wip_SmithRig21:L_pink_JEnd
+      parentName: Wip_SmithRig21:L_pink_03_jnt
+      position: {x: -0.0017936043, y: -0.00007247911, z: 0.00016734403}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:L_thumb_01_jnt
+      parentName: Wip_SmithRig21:L_hand01_jnt
+      position: {x: -0.0016931561, y: -0.00089975086, z: 0.0018631923}
+      rotation: {x: -0.03177346, y: -0.2808073, z: -0.0741667, w: 0.9563666}
+      scale: {x: 1.0000002, y: 1.0000004, z: 1.0000005}
+    - name: Wip_SmithRig21:L_thumb_02_jnt
+      parentName: Wip_SmithRig21:L_thumb_01_jnt
+      position: {x: -0.0017011827, y: -0.0007007593, z: 0.0012049056}
+      rotation: {x: 0.025573984, y: 0.11155466, z: 0.10098651, w: 0.98828304}
+      scale: {x: 1.0000001, y: 1.0000002, z: 1}
+    - name: Wip_SmithRig21:L_thumb_03_jnt
+      parentName: Wip_SmithRig21:L_thumb_02_jnt
+      position: {x: -0.0016555366, y: -0.00013257608, z: 0.00056569895}
+      rotation: {x: 0.0000774599, y: 0.08545065, z: 0.020252783, w: 0.99613655}
+      scale: {x: 1.0000001, y: 1.0000002, z: 1}
+    - name: Wip_SmithRig21:L_thumb_JEnd
+      parentName: Wip_SmithRig21:L_thumb_03_jnt
+      position: {x: -0.0019674867, y: -0.00003787888, z: 0.00016734403}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:R_shoulder_jnt
+      parentName: Wip_SmithRig21:spine02_jnt
+      position: {x: -0.0015328032, y: 0.003436534, z: -0.0011059719}
+      rotation: {x: 0.79107666, y: 0.6116982, z: 0.0041850195, w: 0.0023589341}
+      scale: {x: 1.0000002, y: 1.000001, z: 1.0000011}
+    - name: Wip_SmithRig21:R_arm_jnt
+      parentName: Wip_SmithRig21:R_shoulder_jnt
+      position: {x: 0.0018219352, y: 0.000108455155, z: 0.00019413605}
+      rotation: {x: -0.003863989, y: -0.04607524, z: -0.13606577, w: 0.98962027}
+      scale: {x: 1.0000006, y: 1.0000001, z: 1.0000008}
+    - name: Wip_SmithRig21:R_elbow_jnt
+      parentName: Wip_SmithRig21:R_arm_jnt
+      position: {x: 0.005561638, y: 0.0000133843, z: -0.0000737817}
+      rotation: {x: 0.00069362327, y: 0.084376104, z: 0.0046453397, w: 0.9964229}
+      scale: {x: 1.0000004, y: 1.0000001, z: 1.0000002}
+    - name: Wip_SmithRig21:R_hand_jnt
+      parentName: Wip_SmithRig21:R_elbow_jnt
+      position: {x: 0.0052369046, y: 0.000026994592, z: 0.000016135564}
+      rotation: {x: -0.0020241705, y: -0.07872776, z: -0.00112642, w: 0.9968935}
+      scale: {x: 1.0000006, y: 1.0000005, z: 1.0000008}
+    - name: Wip_SmithRig21:R_hand01_jnt
+      parentName: Wip_SmithRig21:R_hand_jnt
+      position: {x: 0.002038837, y: 0.00007152157, z: 0.000022091755}
+      rotation: {x: -0.000283776, y: 0.003123759, z: -0.00020430681, w: 0.99999505}
+      scale: {x: 1.0000005, y: 1.0000006, z: 1.000001}
+    - name: Wip_SmithRig21:R_index_02_jnt
+      parentName: Wip_SmithRig21:R_hand01_jnt
+      position: {x: 0.0035228413, y: -0.0013290785, z: -0.0014667815}
+      rotation: {x: 0.005028836, y: 0.064273745, z: -0.00067812635, w: 0.99791944}
+      scale: {x: 1.0000004, y: 1.0000001, z: 1.0000007}
+    - name: Wip_SmithRig21:R_index_03_jnt
+      parentName: Wip_SmithRig21:R_index_02_jnt
+      position: {x: 0.002363448, y: -1.862028e-10, z: -0.000034612483}
+      rotation: {x: -0, y: -0.04116046, z: -0.0000003728418, w: 0.9991526}
+      scale: {x: 1.0000004, y: 1.0000002, z: 1.0000002}
+    - name: Wip_SmithRig21:R_index_JEnd
+      parentName: Wip_SmithRig21:R_index_03_jnt
+      position: {x: 0.0020678206, y: 4.440892e-18, z: -0.000038057256}
+      rotation: {x: -7.703724e-34, y: 0.0011091785, z: 2.0296438e-15, w: 0.9999994}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:R_ring_02_jnt
+      parentName: Wip_SmithRig21:R_hand01_jnt
+      position: {x: 0.0036461656, y: -0.0013652506, z: 0.0000100560155}
+      rotation: {x: 0.0042091324, y: -0.0037247417, z: -0.00555226, w: 0.9999689}
+      scale: {x: 1.0000005, y: 1.0000002, z: 1.0000005}
+    - name: Wip_SmithRig21:R_ring_03_jnt
+      parentName: Wip_SmithRig21:R_ring_02_jnt
+      position: {x: 0.0025507, y: -3.952672e-11, z: 0.00000777}
+      rotation: {x: 0.000000022351736, y: 0.042761933, z: -0.000000002633896, w: 0.99908537}
+      scale: {x: 1.0000002, y: 1.0000001, z: 1.0000006}
+    - name: Wip_SmithRig21:R_ring_JEnd
+      parentName: Wip_SmithRig21:R_ring_03_jnt
+      position: {x: 0.0023747343, y: 8.881784e-18, z: 0.0000357009}
+      rotation: {x: 1.2337236e-32, y: -0.04276186, z: 1.6495775e-15, w: 0.9990853}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:R_pink_02_jnt
+      parentName: Wip_SmithRig21:R_hand01_jnt
+      position: {x: 0.0033054175, y: -0.0010131884, z: 0.0019109481}
+      rotation: {x: 0.0039370027, y: -0.05185798, z: -0.0057484354, w: 0.9986302}
+      scale: {x: 1.0000004, y: 1.0000001, z: 1.0000002}
+    - name: Wip_SmithRig21:R_pink_03_jnt
+      parentName: Wip_SmithRig21:R_pink_02_jnt
+      position: {x: 0.0022479044, y: 1.7824231e-12, z: -0.0000022233544}
+      rotation: {x: 0.0011719698, y: 0.042044785, z: -0.0120117115, w: 0.9990429}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1.0000007}
+    - name: Wip_SmithRig21:R_pink_JEnd
+      parentName: Wip_SmithRig21:R_pink_03_jnt
+      position: {x: 0.0018013434, y: 0.0000725, z: 0.000012868526}
+      rotation: {x: 0.000000014882475, y: -0.050065476, z: 0.0000000018010851, w: 0.998746}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:R_thumb_01_jnt
+      parentName: Wip_SmithRig21:R_hand01_jnt
+      position: {x: 0.00018243564, y: -0.000096588294, z: -0.0023867115}
+      rotation: {x: -0.05467116, y: 0.32506666, z: 0.09580303, w: 0.93923616}
+      scale: {x: 1, y: 0.99999994, z: 1.0000006}
+    - name: Wip_SmithRig21:R_thumb_02_jnt
+      parentName: Wip_SmithRig21:R_thumb_01_jnt
+      position: {x: 0.0021972572, y: 0.000060861086, z: -0.000019820502}
+      rotation: {x: 0.053419497, y: -0.008359041, z: -0.047983803, w: 0.99738365}
+      scale: {x: 1.0000005, y: 1.0000005, z: 1.0000001}
+    - name: Wip_SmithRig21:R_thumb_03_jnt
+      parentName: Wip_SmithRig21:R_thumb_02_jnt
+      position: {x: 0.0017604291, y: 0.0001326, z: 0.00002896034}
+      rotation: {x: -0.0045496044, y: -0.028255848, z: 0.019552361, w: 0.9993991}
+      scale: {x: 1.0000006, y: 1.0000006, z: 1.0000005}
+    - name: Wip_SmithRig21:R_thumb_JEnd
+      parentName: Wip_SmithRig21:R_thumb_03_jnt
+      position: {x: 0.0019735137, y: 0.000037899998, z: 0.0000655887}
+      rotation: {x: 9.646454e-35, y: -0.059000786, z: -1.5921973e-17, w: 0.99825794}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:hip_jnt
+      parentName: Wip_SmithRig21:root_jnt
+      position: {x: -0, y: 0, z: -9.936552e-23}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:L_leg_jnt
+      parentName: Wip_SmithRig21:hip_jnt
+      position: {x: -0.001506078, y: -0.0042858124, z: 0.00011667696}
+      rotation: {x: -0.0000011958182, y: 0.07408396, z: 0.99723333, w: -0.006120025}
+      scale: {x: 0.9999998, y: 0.9999997, z: 1}
+    - name: Wip_SmithRig21:L_knee_jnt
+      parentName: Wip_SmithRig21:L_leg_jnt
+      position: {x: -0.005319226, y: -0.000004382677, z: 0.0010524289}
+      rotation: {x: 0.00000000742778, y: -0.0000000037252899, z: 0.0000000010466364,
+        w: 1}
+      scale: {x: 1.0000001, y: 1.0000001, z: 0.9999999}
+    - name: Wip_SmithRig21:L_ankle_jnt
+      parentName: Wip_SmithRig21:L_knee_jnt
+      position: {x: -0.005515938, y: 0.000004207625, z: -0.0019475084}
+      rotation: {x: -0.07408397, y: -0.0000011920711, z: -0.0061200256, w: 0.9972332}
+      scale: {x: 1.0000002, y: 1.0000004, z: 1}
+    - name: Wip_SmithRig21:L_foot_jnt
+      parentName: Wip_SmithRig21:L_ankle_jnt
+      position: {x: -0.0031964208, y: 0.00032574165, z: 0.005761062}
+      rotation: {x: 0.27706268, y: -0.1696562, z: -0.6331655, w: 0.70253444}
+      scale: {x: 0.9999998, y: 0.9999998, z: 0.9999999}
+    - name: Wip_SmithRig21:L_foot_JEnd
+      parentName: Wip_SmithRig21:L_foot_jnt
+      position: {x: -0.0007285503, y: 0.002783254, z: 0.0048207375}
+      rotation: {x: 1.3530843e-16, y: 9.145462e-15, z: -6.8799133e-15, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wip_SmithRig21:R_leg_jnt
+      parentName: Wip_SmithRig21:hip_jnt
+      position: {x: -0.0015060945, y: 0.004285817, z: 0.000116676994}
+      rotation: {x: 0.99592483, y: 0.00022199747, z: 0.09017807, w: 0.0012723653}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000004}
+    - name: Wip_SmithRig21:R_knee_jnt
+      parentName: Wip_SmithRig21:R_leg_jnt
+      position: {x: 0.005421727, y: 0.00000439, z: -0.000079873156}
+      rotation: {x: -0.000000025029294, y: 0.25266197, z: -0.000000010986696, w: -0.9675547}
+      scale: {x: 1.0000002, y: 1.0000001, z: 1.0000005}
+    - name: Wip_SmithRig21:R_ankle_jnt
+      parentName: Wip_SmithRig21:R_knee_jnt
+      position: {x: 0.0058494424, y: -0.00000421, z: 0.00005349815}
+      rotation: {x: 0.00040279742, y: 0.65242404, z: 0.0032714114, w: 0.7578469}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1.0000001}
+    - name: Wip_SmithRig21:R_foot_jnt
+      parentName: Wip_SmithRig21:R_ankle_jnt
+      position: {x: 0.0065849386, y: -0.00034699496, z: 0.00017671473}
+      rotation: {x: -0.03742721, y: -0.16059844, z: 0.0068364204, w: -0.9862863}
+      scale: {x: 0.9999997, y: 1, z: 1}
+    - name: Wip_SmithRig21:R_foot_JEnd
+      parentName: Wip_SmithRig21:R_foot_jnt
+      position: {x: 0.005612049, y: -0.0000104917235, z: -0.00014815792}
+      rotation: {x: -0.013910808, y: -0.009817938, z: 0.021124553, w: 0.9996319}
+      scale: {x: 1, y: 1, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 3
+  humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 0
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

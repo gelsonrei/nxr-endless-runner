@@ -1,0 +1,440 @@
+using System.Collections;
+using System.Collections.Generic;
+
+using UnityEngine;
+using UnityEngine.InputSystem;
+
+public class PlayerControl : MonoBehaviour
+{
+    private Animator m_animator;
+    private AudioSource m_audioSource;
+    private Rigidbody m_rigidbody;
+    private Transform m_transform;
+    private PlayerInput m_player_input;
+
+    [HideInInspector]
+    public BoxCollider m_box_colider;
+
+    [HideInInspector]
+    public bool isMagnetic = false;
+
+    [Header("Player Options")]
+    public int lifes = 3;
+    public float velocity = 3.5f;
+    public float leftOffset = -1.0f;
+    public float rigthOffset = 1.0f;
+
+    [Header("Touch Options")]
+    public float minSwipeDistance = 50f; // Minimum distance to consider it a swipe
+    private Vector2 touchStartPosition;
+    private bool isSwiping = false;
+
+    [Header("Audio")]
+    public AudioClip[] jumpAudioClips;
+    public AudioClip[] slideAudioClips;
+    public AudioClip[] moveAudioClips;
+    public AudioClip[] idleAudioClips;
+
+    [Header("VFX")]
+    public GameObject FootStepEfx;
+    public GameObject JumpEfx;
+    public GameObject HitEfx;
+    public GameObject SlideLeft;
+    public GameObject SlideRight;
+    public GameObject LeavesEfx;
+
+    private float next_x_position = 0f;
+    private float timer = 0f;
+
+    /*
+    * Game
+    */
+    private void Awake()
+    {
+        m_animator = GetComponent<Animator>();
+        m_audioSource = GetComponent<AudioSource>();
+        m_rigidbody = GetComponent<Rigidbody>();
+        m_transform = GetComponent<Transform>();
+        m_player_input = GetComponent<PlayerInput>();
+        m_box_colider = GetComponent<BoxCollider>();
+    }
+
+    private void Start()
+    {
+        m_transform.position = new Vector3(next_x_position, m_transform.position.y, m_transform.position.z);
+
+        disableMagnetic();
+    }
+
+
+    private void Update()
+    {
+        GameManager.Instance.distance = (int) m_transform.position.z;
+
+        timer += Time.deltaTime;
+
+        if (timer >= GameManager.Instance.tickInterval && m_animator.GetBool("isRunning"))
+        {
+            velocity += 0.5f;
+            timer = 0f;
+        }
+
+        /*
+        * Swipe Control
+        */
+        if (Touchscreen.current.primaryTouch.press.isPressed)
+        {
+            Vector2 currentTouchPosition = Touchscreen.current.primaryTouch.position.ReadValue();
+
+            if (!isSwiping)
+            {
+                touchStartPosition = currentTouchPosition;
+                isSwiping = true;
+            }
+        }
+
+        if (Touchscreen.current.primaryTouch.press.wasReleasedThisFrame)
+        {
+            Vector2 currentTouchPosition = Touchscreen.current.primaryTouch.position.ReadValue();
+            isSwiping = false;
+
+            float swipeDistance = Vector2.Distance(touchStartPosition, currentTouchPosition);
+
+            if (swipeDistance >= minSwipeDistance)
+            {
+                Vector2 swipeDirection = currentTouchPosition - touchStartPosition;
+                swipeDirection.Normalize();
+
+                if (Mathf.Abs(swipeDirection.x) > Mathf.Abs(swipeDirection.y))
+                {
+                    if (swipeDirection.x > 0)
+                    {
+                        OnRigth();
+                    }
+                    else
+                    {
+                        OnLeft();
+                    }
+                }
+                else
+                {
+                    if (swipeDirection.y > 0)
+                    {
+                        OnJump();
+                    }
+                    else
+                    {
+                        OnSlide();
+                    }
+                }
+            }
+        }
+    }
+
+    /*
+    * Game Logic
+    */
+
+    public void enableMagnetic(float time)
+    {
+        m_box_colider.enabled = true;
+        isMagnetic = true;
+
+        GameCanvasManager gmc = GameManager.Instance.playerCanvas.GetComponent<GameCanvasManager>();
+        gmc.ShowPowerUp();
+
+        PulseShaderControl psc = transform.GetComponentInChildren<PulseShaderControl>();
+        psc.enableShader();
+
+        StartCoroutine(updateMagnetic(time));
+    }
+
+    private IEnumerator updateMagnetic(float time)
+    {
+        GameCanvasManager gmc = GameManager.Instance.playerCanvas.GetComponent<GameCanvasManager>();
+        int index = 0;
+
+        for (float i = 0; i < time; i++)
+        {
+            if(i >= (time / gmc.powerUpSprites.Length))
+            {
+                gmc.AnimatePowerUp(index);
+                index = (index + 1) % gmc.powerUpSprites.Length;
+            }
+
+            yield return new WaitForSeconds(1);
+        }
+
+        disableMagnetic(); 
+    }
+
+    public void disableMagnetic()
+    {
+        m_box_colider.enabled = false;
+        isMagnetic = false;
+
+        GameCanvasManager gmc = GameManager.Instance.playerCanvas.GetComponent<GameCanvasManager>();
+        gmc.HidePowerUp();
+
+        PulseShaderControl psc = transform.GetComponentInChildren<PulseShaderControl>();
+        psc.disableShader();
+    }
+
+    public void takeHit()
+    {        
+        OnToggleOn("isColide");
+        
+        lifes--;
+
+        GameCanvasManager gmc = GameManager.Instance.playerCanvas.GetComponent<GameCanvasManager>();
+        gmc.UpdateLifes(lifes);
+
+        if (lifes == 0)
+        {
+            OnToggleOn("isLose");
+        }
+    }
+
+    public void ShowLoseUI()
+    {
+        GameCanvasManager gmc = GameManager.Instance.playerCanvas.GetComponent<GameCanvasManager>();
+        
+        gmc.ShowLoseUI();
+    }
+
+    /*
+    * Efx
+    */
+
+    public void PlayFootStepEfx()
+    {
+        FootStepEfx.GetComponent<ParticleSystem>().Play();
+    }
+
+    public void PlayJumpEfx()
+    {
+        JumpEfx.GetComponent<ParticleSystem>().Play();
+    }
+
+    public void PlayHitEfx()
+    {
+        HitEfx.GetComponent<ParticleSystem>().Play();
+        HitEfx.GetComponentInChildren<ParticleSystem>().Play();
+    }
+    
+    public void PlaySlideLeftEfx()
+    {
+        SlideLeft.GetComponent<ParticleSystem>().Play();
+    }
+    
+    public void PlaySlideRightEfx()
+    {
+        SlideRight.GetComponent<ParticleSystem>().Play();
+    }
+    
+    public void PlayLeavesfx()
+    {
+        LeavesEfx.GetComponent<ParticleSystem>().Play();
+        LeavesEfx.GetComponentInChildren<ParticleSystem>().Play();
+    }
+    
+    public void StopLeavesfx()
+    {
+        LeavesEfx.GetComponent<ParticleSystem>().Stop();
+        LeavesEfx.GetComponentInChildren<ParticleSystem>().Play();
+    }
+
+    /*
+    * Audio
+    */
+
+    private void PlaySound (AudioClip audioClip, float pitch = 1)
+    {
+        m_audioSource.clip = audioClip;
+        m_audioSource.pitch = pitch;
+
+        if ( m_audioSource.clip )
+        {
+            m_audioSource.Play();
+        }
+    }
+
+    /*
+    * Controls
+    */
+
+    private void OnEnable()
+    {
+        //Debug.Log("OnEnable");
+    }
+
+    private void OnDisable()
+    {
+        //Debug.Log("OnDisable");
+    }
+
+    private void OnLeft()
+    {
+        if ( m_animator.GetBool("isRunning") && !m_animator.GetBool("isJumping") && !m_animator.GetBool("isSliding") )
+        {
+            if (moveAudioClips.Length > 0)
+            {
+                PlaySound(moveAudioClips[Random.Range(0, moveAudioClips.Length-1)], velocity/4);
+            }
+
+            if ( transform.position.x == rigthOffset )
+            {
+                m_rigidbody.constraints = RigidbodyConstraints.None | RigidbodyConstraints.FreezeRotation;
+                
+                OnToggleOn("isLeft");
+
+                next_x_position = 0;
+            }
+
+            else if ( transform.position.x == 0 )
+            {
+                m_rigidbody.constraints = RigidbodyConstraints.None | RigidbodyConstraints.FreezeRotation;
+
+                OnToggleOn("isLeft");
+
+                next_x_position = leftOffset;
+            }
+        }
+    }
+
+    private void OnRigth()
+    {
+        if ( m_animator.GetBool("isRunning") && !m_animator.GetBool("isJumping") && !m_animator.GetBool("isSliding") )
+        {
+            if (moveAudioClips.Length > 0)
+            {
+                PlaySound(moveAudioClips[Random.Range(0, moveAudioClips.Length-1)], velocity/4);
+            }
+
+            if ( transform.position.x == leftOffset )
+            {
+                m_rigidbody.constraints = RigidbodyConstraints.None | RigidbodyConstraints.FreezeRotation;
+
+                OnToggleOn("isRigth");
+
+                next_x_position = 0;
+            }
+
+            else if ( transform.position.x == 0 )
+            {
+                m_rigidbody.constraints = RigidbodyConstraints.None | RigidbodyConstraints.FreezeRotation;
+
+                OnToggleOn("isRigth");
+
+                next_x_position = rigthOffset;
+            }
+        }
+    }
+
+    private void OnJump()
+    {
+        if ( m_animator.GetBool("isRunning") && !m_animator.GetBool("isJumping") && !m_animator.GetBool("isSliding") && !m_animator.GetBool("isLeft") && !m_animator.GetBool("isRigth") )
+        {
+            if (jumpAudioClips.Length > 0)
+            {
+                PlaySound(jumpAudioClips[Random.Range(0, jumpAudioClips.Length-1)]);
+            }
+
+            OnToggleOn("isJumping");
+        }
+    }
+
+    private void OnSlide()
+    {
+        if ( m_animator.GetBool("isRunning") && !m_animator.GetBool("isJumping") && !m_animator.GetBool("isSliding") && !m_animator.GetBool("isLeft") && !m_animator.GetBool("isRigth") )
+        {
+            if (slideAudioClips.Length > 0)
+            {
+                PlaySound(slideAudioClips[Random.Range(0, slideAudioClips.Length-1)]);
+            }
+
+            OnToggleOn("isSliding");
+        }
+    }
+
+    public void OnStart()
+    {
+        if (! m_animator.GetBool("isRunning"))
+        {
+            if (idleAudioClips.Length > 0)
+            {
+                PlaySound(idleAudioClips[Random.Range(0, idleAudioClips.Length-1)]);
+            }
+
+            OnToggleOn("isRunning");
+        }
+
+    }
+
+    /*
+    * Animations
+    */
+
+    public void ChangeCenterCapsuleCollider(float y)
+    {
+        transform.GetComponent<CapsuleCollider>().center = new Vector3(0,y, 0);
+    }
+    public void ChangeRadiusCapsuleCollider(float radius)
+    {
+        transform.GetComponent<CapsuleCollider>().radius = radius;
+    }
+    public void ChangeHeigthCapsuleCollider(float heigth)
+    {
+        transform.GetComponent<CapsuleCollider>().height = heigth;
+    }
+
+    private void OnAnimatorMove()
+    {
+        if ( m_animator.GetBool("isJumping") )
+        {
+            m_rigidbody.MovePosition(m_rigidbody.position + new Vector3(0,1.5f,velocity + 1.0f) * m_animator.deltaPosition.magnitude);
+        }
+
+        else if ( m_animator.GetBool("isRigth") )
+        {
+            if (m_rigidbody.position.x <= next_x_position)
+            {
+                m_rigidbody.MovePosition(m_rigidbody.position + new Vector3(velocity,0,velocity) * m_animator.deltaPosition.magnitude);
+            }
+            else
+            {
+                OnToggleOff("isRigth");
+            }
+        }
+
+        else if ( m_animator.GetBool("isLeft") )
+        {
+            if (m_rigidbody.position.x >= next_x_position)
+            {
+                m_rigidbody.MovePosition(m_rigidbody.position + new Vector3(-velocity,0,velocity) * m_animator.deltaPosition.magnitude);
+            }
+            else
+            {
+                OnToggleOff("isLeft");
+            }
+        }
+
+        else if ( m_animator.GetBool("isRunning") )
+        {
+            m_rigidbody.MovePosition(m_rigidbody.position + new Vector3(0,0,velocity) * m_animator.deltaPosition.magnitude);
+        }
+    }
+
+    public void OnToggleOff(string parameter)
+    {
+        m_animator.SetBool(parameter, false);
+
+        m_transform.position = new Vector3(next_x_position, m_transform.position.y, m_transform.position.z);
+        m_rigidbody.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezeRotation;
+    }
+
+    public void OnToggleOn(string parameter)
+    {
+        m_animator.SetBool(parameter, true);
+    }
+}

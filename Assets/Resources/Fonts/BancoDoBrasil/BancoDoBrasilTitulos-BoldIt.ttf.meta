@@ -1,0 +1,29 @@
+fileFormatVersion: 2
+guid: bbc2b19abd24c984bb7764aaafb645db
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - BancoDoBrasil Titulos
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 21f9722b10fbe7144b7f3d765a65604b, type: 3}
+  - {fileID: 12800000, guid: 6597d2f12feda0f4da90307f6f23e862, type: 3}
+  - {fileID: 12800000, guid: 478dabb0921be1749ac7d7d4b51c549b, type: 3}
+  - {fileID: 12800000, guid: 16f4a3a0bcb617c4191e9d710d96e71b, type: 3}
+  - {fileID: 12800000, guid: 08b6b39550b839c4aa82d0adfd6fd0da, type: 3}
+  - {fileID: 12800000, guid: 18cf18acabd7c4946b9c32c1099ea13e, type: 3}
+  - {fileID: 12800000, guid: e0ca1b2a91a9e014c95f78f5ac727bd1, type: 3}
+  - {fileID: 12800000, guid: e1eb69c42e64e404f81d923f98408a72, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
