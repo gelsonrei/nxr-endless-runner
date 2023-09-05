@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class MenuCanvasManager : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class MenuCanvasManager : MonoBehaviour
 
     private AudioSource audioSource;
     private UnityEvent transitionEvent;
+    private GraphicRaycaster graphicRaycaster;
 
     private void Awake()
     {
@@ -30,6 +32,7 @@ public class MenuCanvasManager : MonoBehaviour
         }
 
         audioSource = GetComponent<AudioSource>();
+        graphicRaycaster = GetComponentInParent<GraphicRaycaster>();
 
         transitionEvent = transitionScreen.GetComponent<SceneTransitionShaderControl>().OnTransitionDone;
     }
@@ -47,11 +50,13 @@ public class MenuCanvasManager : MonoBehaviour
 
     public void ChangeScreen(GameObject screen, int delay = 0, Action callback = null)
     {
+        graphicRaycaster.enabled = false;
+        
         if (delay > 0)
         {
             StartCoroutine(Delay(delay));
         }
-
+        
         transitionScreen.GetComponent<SceneTransitionShaderControl>().MakeTransition(1);
         transitionEvent.AddListener(delegate {
             transitionEvent.RemoveAllListeners();
@@ -63,12 +68,14 @@ public class MenuCanvasManager : MonoBehaviour
                     screens[i].SetActive(false);
                 }
             }
-            
+
             screen.SetActive(true);
 
             transitionScreen.GetComponent<SceneTransitionShaderControl>().MakeTransition(1);
             transitionEvent.AddListener(delegate {
                 transitionEvent.RemoveAllListeners();  
+
+                graphicRaycaster.enabled = true;
 
                 if (callback != null)
                 {
