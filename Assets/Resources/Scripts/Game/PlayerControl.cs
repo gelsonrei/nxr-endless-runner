@@ -82,55 +82,59 @@ public class PlayerControl : MonoBehaviour
         /*
         * Swipe Control
         */
-        if (Touchscreen.current.primaryTouch.press.isPressed)
+        if (Touchscreen.current != null)
         {
-            Vector2 currentTouchPosition = Touchscreen.current.primaryTouch.position.ReadValue();
-
-            if (!isSwiping)
+            if (Touchscreen.current.primaryTouch.press.isPressed)
             {
-                touchStartPosition = currentTouchPosition;
-                isSwiping = true;
-            }
-        }
+                Vector2 currentTouchPosition = Touchscreen.current.primaryTouch.position.ReadValue();
 
-        if (Touchscreen.current.primaryTouch.press.wasReleasedThisFrame)
-        {
-            Vector2 currentTouchPosition = Touchscreen.current.primaryTouch.position.ReadValue();
-            isSwiping = false;
-
-            float swipeDistance = Vector2.Distance(touchStartPosition, currentTouchPosition);
-
-            if (swipeDistance >= minSwipeDistance)
-            {
-                Vector2 swipeDirection = currentTouchPosition - touchStartPosition;
-                swipeDirection.Normalize();
-
-                if (Mathf.Abs(swipeDirection.x) > Mathf.Abs(swipeDirection.y))
+                if (!isSwiping)
                 {
-                    if (swipeDirection.x > 0)
-                    {
-                        OnRigth();
-                    }
-                    else
-                    {
-                        OnLeft();
-                    }
+                    touchStartPosition = currentTouchPosition;
+                    isSwiping = true;
                 }
-                else
+            }
+
+            if (Touchscreen.current.primaryTouch.press.wasReleasedThisFrame)
+            {
+                Vector2 currentTouchPosition = Touchscreen.current.primaryTouch.position.ReadValue();
+                isSwiping = false;
+
+                float swipeDistance = Vector2.Distance(touchStartPosition, currentTouchPosition);
+
+                if (swipeDistance >= minSwipeDistance)
                 {
-                    if (swipeDirection.y > 0)
+                    Vector2 swipeDirection = currentTouchPosition - touchStartPosition;
+                    swipeDirection.Normalize();
+
+                    if (Mathf.Abs(swipeDirection.x) > Mathf.Abs(swipeDirection.y))
                     {
-                        OnJump();
+                        if (swipeDirection.x > 0)
+                        {
+                            OnRigth();
+                        }
+                        else
+                        {
+                            OnLeft();
+                        }
                     }
                     else
                     {
-                        OnSlide();
+                        if (swipeDirection.y > 0)
+                        {
+                            OnJump();
+                        }
+                        else
+                        {
+                            OnSlide();
+                        }
                     }
                 }
             }
         }
     }
-
+  
+  
     /*
     * Game Logic
     */
