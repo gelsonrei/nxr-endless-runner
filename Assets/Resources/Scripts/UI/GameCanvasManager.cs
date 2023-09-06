@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -5,6 +6,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+
+using EndlessRunner;
 
 public class GameCanvasManager : MonoBehaviour
 {
@@ -27,6 +30,9 @@ public class GameCanvasManager : MonoBehaviour
     public GameObject loseUI;
     public GameObject countDownUI;
     public GameObject loaderScreen;
+
+    private float currentDistance;
+    private float currentPoints;
 
     private void Awake()
     {
@@ -70,6 +76,7 @@ public class GameCanvasManager : MonoBehaviour
         {
             if(pointsLabel)
             {
+                currentPoints = points; 
                 pointsLabel.text = points.ToString();
             }
         }
@@ -79,6 +86,7 @@ public class GameCanvasManager : MonoBehaviour
         {
             if(distanceLabel)
             {
+                currentDistance = distance;
                 distanceLabel.text = distance.ToString() + " M";
             }
         }
@@ -229,23 +237,39 @@ public class GameCanvasManager : MonoBehaviour
         //Lose UI
         public void ShowLoseUI()
         {
-            ShowOverlay();
-            DisablePauseButton();
+            if (!loseUI.active)
+            {
+                ShowOverlay();
+                DisablePauseButton();
 
-            loseUI.SetActive(true);
+                loseUI.SetActive(true);
 
-            Button[] buttons = loseUI.GetComponentsInChildren<Button>();
+                //save DB
+                if ( currentDistance > DataBase.SelectData("maxDistance") )
+                {
+                    DataBase.InsertData("maxDistance", currentDistance);
+                }
 
-            buttons[0].onClick.AddListener(
-            () => {
-                Scene scene = SceneManager.GetActiveScene();
-                LoadScene(scene.name);
-            });
+                float maxPoints = DataBase.SelectData("maxPoints");
+                DataBase.InsertData("maxPoints", maxPoints + currentPoints);
+                // ---- //
 
-            buttons[1].onClick.AddListener(
-            () => {
-                LoadScene("Menu");
-            });
+                Button[] buttons = loseUI.GetComponentsInChildren<Button>();
+                Text[] texts = loseUI.GetComponentsInChildren<Text>();
+
+                texts[0].text = currentDistance + "M, Parabéns!";
+
+                buttons[0].onClick.AddListener(
+                () => {
+                    Scene scene = SceneManager.GetActiveScene();
+                    LoadScene(scene.name);
+                });
+
+                buttons[1].onClick.AddListener(
+                () => {
+                    LoadScene("Menu");
+                });
+            }
         }
 
         public void HideLoseUI()

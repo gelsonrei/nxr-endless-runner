@@ -15,6 +15,7 @@ public class PlayerSelectionUIControler : MonoBehaviour
     public Text title;
     public Text description;
     public GameObject target;
+    public GameObject lockScreen;
 
     private AudioSource[] m_audioSource;
     private Button[] buttons;
@@ -29,7 +30,7 @@ public class PlayerSelectionUIControler : MonoBehaviour
 
     void Start()
     {
-        
+        lockScreen.SetActive(false);
     }
 
     void Update()
@@ -111,8 +112,8 @@ public class PlayerSelectionUIControler : MonoBehaviour
         {
             GameObject.Destroy(child.gameObject);
         }
-        GameObject m_player = Instantiate(players[currentIndex], transform.position, Quaternion.identity, target.transform);
-        m_player.transform.localScale = new Vector3(12000, 12000, 12000);
+        GameObject m_player = Instantiate(players[currentIndex], target.transform.position, Quaternion.identity, target.transform);
+        m_player.transform.localScale = new Vector3(15000, 15000, 15000);
         m_player.transform.Rotate(0,180,0);
 
         ChangeLayerMaskRecursively(m_player.transform, LayerMask.NameToLayer("UI"));
@@ -126,10 +127,12 @@ public class PlayerSelectionUIControler : MonoBehaviour
         if(index != 0)
         {
             buttons[3].enabled = false;
+            lockScreen.SetActive(true);
         }
         else
         {
             buttons[3].enabled = true;
+            lockScreen.SetActive(false);
         }
     }
 

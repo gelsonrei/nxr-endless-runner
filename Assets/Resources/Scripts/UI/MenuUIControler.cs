@@ -36,8 +36,16 @@ public class MenuUIControler : MonoBehaviour
             //MenuCanvasManager.Instance.LoadScene("Game");
         });
 
-        //config
+        //ranking
         buttons[1].onClick.AddListener(
+        () => {
+            m_audioSource.Play();
+
+            MenuCanvasManager.Instance.ChangeScreen(MenuCanvasManager.Instance.screens[5]);
+        });
+        
+        //config
+        buttons[2].onClick.AddListener(
         () => {
             m_audioSource.Play();
 
@@ -45,7 +53,7 @@ public class MenuUIControler : MonoBehaviour
         });
 
         //credits
-        buttons[2].onClick.AddListener(
+        buttons[3].onClick.AddListener(
         () => {
             m_audioSource.Play();
 
@@ -58,11 +66,14 @@ public class MenuUIControler : MonoBehaviour
         //play
         buttons[0].onClick.RemoveAllListeners();
 
-        //config
+        //ranking
         buttons[1].onClick.RemoveAllListeners();
+        
+        //config
+        buttons[2].onClick.RemoveAllListeners();
 
         //credits
-        buttons[2].onClick.RemoveAllListeners();
+        buttons[3].onClick.RemoveAllListeners();
     }
 
 }

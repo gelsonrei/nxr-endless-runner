@@ -5,6 +5,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Audio;
 
+using EndlessRunner;
+
 public class SettingsUIControler : MonoBehaviour
 {
     [SerializeField]
@@ -22,7 +24,7 @@ public class SettingsUIControler : MonoBehaviour
 
     void Start()
     {
-        
+
     }
 
     void Update()
