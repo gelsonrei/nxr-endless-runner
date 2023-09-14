@@ -403,7 +403,7 @@ public class PlayerControl : MonoBehaviour
         {
             if (m_rigidbody.position.x <= next_x_position)
             {
-                m_rigidbody.MovePosition(m_rigidbody.position + new Vector3(velocity,0,velocity) * m_animator.deltaPosition.magnitude);
+                m_rigidbody.MovePosition(m_rigidbody.position + new Vector3(velocity + 1.0f, 0 ,velocity + 1.0f) * m_animator.deltaPosition.magnitude);
             }
             else
             {
@@ -415,7 +415,7 @@ public class PlayerControl : MonoBehaviour
         {
             if (m_rigidbody.position.x >= next_x_position)
             {
-                m_rigidbody.MovePosition(m_rigidbody.position + new Vector3(-velocity,0,velocity) * m_animator.deltaPosition.magnitude);
+                m_rigidbody.MovePosition(m_rigidbody.position + new Vector3(-velocity - 1.0f, 0 , velocity - 1.0f) * m_animator.deltaPosition.magnitude);
             }
             else
             {
