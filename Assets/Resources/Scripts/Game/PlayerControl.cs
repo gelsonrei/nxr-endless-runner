@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+using EndlessRunner;
+
 public class PlayerControl : MonoBehaviour
 {
     private Animator m_animator;
@@ -18,6 +20,9 @@ public class PlayerControl : MonoBehaviour
     [HideInInspector]
     public bool isMagnetic = false;
 
+    [Header("Characters")]
+    public GameObject[] characters;
+    
     [Header("Player Options")]
     public int lifes = 3;
     public float velocity = 3.5f;
@@ -62,7 +67,10 @@ public class PlayerControl : MonoBehaviour
     private void Start()
     {
         m_transform.position = new Vector3(next_x_position, m_transform.position.y, m_transform.position.z);
-
+        
+        GameObject myCharacter = Instantiate (characters[(int) DataBase.SelectData("playerCharacter")], transform.position , Quaternion.identity, transform);
+        m_animator.avatar = myCharacter.GetComponent<Animator>().avatar;
+     
         disableMagnetic();
     }
 

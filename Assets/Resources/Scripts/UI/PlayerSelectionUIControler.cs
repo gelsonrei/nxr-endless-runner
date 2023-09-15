@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+using EndlessRunner;
+
 public class PlayerSelectionUIControler : MonoBehaviour
 {
     public GameObject[] players;
@@ -83,6 +85,8 @@ public class PlayerSelectionUIControler : MonoBehaviour
         //play
         buttons[3].onClick.AddListener(
         () => {
+            DataBase.InsertData("playerCharacter", currentIndex);
+
             MenuCanvasManager.Instance.LoadScene("Game");
         });
     }
@@ -134,6 +138,9 @@ public class PlayerSelectionUIControler : MonoBehaviour
             buttons[3].enabled = true;
             lockScreen.SetActive(false);
         }
+
+        //buttons[3].enabled = true;
+        //lockScreen.SetActive(false);
     }
 
     private void ChangeLayerMaskRecursively(Transform parent, LayerMask newLayerMask)
