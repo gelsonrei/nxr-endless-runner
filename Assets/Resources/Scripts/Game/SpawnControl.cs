@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-
 using UnityEngine;
 
 public class SpawnControl : MonoBehaviour
@@ -20,6 +19,7 @@ public class SpawnControl : MonoBehaviour
     public float obstacleSpawnProbability = 0.6f; // 60% chance to spawn an obstacle
     
     private List<int> spawnOrder;
+    private int lastObstacleLane = -1;
 
     void Start()
     {
@@ -102,19 +102,26 @@ public class SpawnControl : MonoBehaviour
             }
 
             spawnOrder.Add(nextObject);
-
             previousObject = nextObject;
             objectsToSpawn--;
         }
     }
-
 
     void ExecuteSpawn()
     {
         int z_offset = 0;
         foreach (int spawnObject in spawnOrder)
         {
-            Transform obj = spawnPoints[Random.Range(0, spawnPoints.Length)].transform;
+            int selectedSpawnPointIndex = Random.Range(0, spawnPoints.Length);
+            if (spawnObject == 2)
+            {
+                do
+                {
+                    selectedSpawnPointIndex = Random.Range(0, spawnPoints.Length);
+                } while (selectedSpawnPointIndex == lastObstacleLane); // Ensure the obstacle is not in the same lane as the last one
+                lastObstacleLane = selectedSpawnPointIndex; // Save the lane where the obstacle was spawned
+            }
+            Transform obj = spawnPoints[selectedSpawnPointIndex].transform;
             Vector3 newLocation;
             Quaternion newRotation;
 
@@ -162,7 +169,7 @@ public class SpawnControl : MonoBehaviour
     {
         if (obstacles.Length > 0)
         {
-            GameObject m_obstacle = Instantiate(obstacles[Random.Range(0, obstacles.Length - 1)], n_position, n_rotation, parent);
+            GameObject m_obstacle = Instantiate(obstacles[Random.Range(0, obstacles.Length)], n_position, n_rotation, parent);
         }
     }
 
