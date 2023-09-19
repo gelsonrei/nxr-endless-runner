@@ -24,23 +24,23 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _SurfaceDistortion:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
+        m_Texture: {fileID: 2800000, guid: 2698dcdde358c5e49b1334d3279769d6, type: 3}
+        m_Scale: {x: 0.01, y: 0.01}
         m_Offset: {x: 0, y: 0}
     - _SurfaceNoise:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: c6705c5c9cd7c3a4ea11c1fed509e11e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _DepthMaxDistance: 1
+    - _DepthMaxDistance: 0.001
     - _FoamMaxDistance: 0.4
     - _FoamMinDistance: 0.04
-    - _SurfaceDistortionAmount: 0.27
-    - _SurfaceNoiseCutoff: 0.777
+    - _SurfaceDistortionAmount: 1
+    - _SurfaceNoiseCutoff: 1
     m_Colors:
     - _DepthGradientDeep: {r: 0.08599999, g: 0.40699998, b: 1, a: 0.749}
     - _DepthGradientShallow: {r: 0.32499996, g: 0.807, b: 0.971, a: 0.725}
     - _FoamColor: {r: 1, g: 1, b: 1, a: 1}
-    - _SurfaceNoiseScroll: {r: 0.03, g: 0.03, b: 0, a: 0}
+    - _SurfaceNoiseScroll: {r: -0.1, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
