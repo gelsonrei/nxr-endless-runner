@@ -8,58 +8,47 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 4f54a48a1da9eed41a3f7440de2d29e7,
-        type: 3}
+    - target: {fileID: -8679921383154817045, guid: 4f54a48a1da9eed41a3f7440de2d29e7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 4f54a48a1da9eed41a3f7440de2d29e7,
-        type: 3}
+    - target: {fileID: -8679921383154817045, guid: 4f54a48a1da9eed41a3f7440de2d29e7, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 4f54a48a1da9eed41a3f7440de2d29e7,
-        type: 3}
+    - target: {fileID: -8679921383154817045, guid: 4f54a48a1da9eed41a3f7440de2d29e7, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 4f54a48a1da9eed41a3f7440de2d29e7,
-        type: 3}
+    - target: {fileID: -8679921383154817045, guid: 4f54a48a1da9eed41a3f7440de2d29e7, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 4f54a48a1da9eed41a3f7440de2d29e7,
-        type: 3}
+    - target: {fileID: -8679921383154817045, guid: 4f54a48a1da9eed41a3f7440de2d29e7, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 4f54a48a1da9eed41a3f7440de2d29e7,
-        type: 3}
+    - target: {fileID: -8679921383154817045, guid: 4f54a48a1da9eed41a3f7440de2d29e7, type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 4f54a48a1da9eed41a3f7440de2d29e7,
-        type: 3}
+    - target: {fileID: -8679921383154817045, guid: 4f54a48a1da9eed41a3f7440de2d29e7, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 4f54a48a1da9eed41a3f7440de2d29e7,
-        type: 3}
+    - target: {fileID: -8679921383154817045, guid: 4f54a48a1da9eed41a3f7440de2d29e7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 4f54a48a1da9eed41a3f7440de2d29e7,
-        type: 3}
+    - target: {fileID: -8679921383154817045, guid: 4f54a48a1da9eed41a3f7440de2d29e7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 4f54a48a1da9eed41a3f7440de2d29e7,
-        type: 3}
+    - target: {fileID: -8679921383154817045, guid: 4f54a48a1da9eed41a3f7440de2d29e7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 4f54a48a1da9eed41a3f7440de2d29e7,
-        type: 3}
+    - target: {fileID: 919132149155446097, guid: 4f54a48a1da9eed41a3f7440de2d29e7, type: 3}
       propertyPath: m_Name
       value: LittleJ
       objectReference: {fileID: 0}
@@ -67,15 +56,13 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4f54a48a1da9eed41a3f7440de2d29e7,
-        type: 3}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4f54a48a1da9eed41a3f7440de2d29e7, type: 3}
       insertIndex: -1
       addedObject: {fileID: -1056663354055693492}
   m_SourcePrefab: {fileID: 100100000, guid: 4f54a48a1da9eed41a3f7440de2d29e7, type: 3}
 --- !u!1 &142204516533044944 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 4f54a48a1da9eed41a3f7440de2d29e7,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 4f54a48a1da9eed41a3f7440de2d29e7, type: 3}
   m_PrefabInstance: {fileID: 952616397452983169}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &-1056663354055693492
@@ -90,7 +77,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c63cb111cb168c24aa5d112340d84244, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myMaterials: []
+  myMaterials:
+  - {fileID: 2100000, guid: 4718b012498e7e64794a6994d9a9689d, type: 2}
   propertyName:
   - _GlowColor
   - _Frequency

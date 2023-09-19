@@ -41,6 +41,7 @@ public class RankingUIControler : MonoBehaviour
         if (DataBase.SelectData("maxDistance") > 0)
         {
             texts[1].text = DataBase.SelectData("maxDistance") + "M";
+            texts[2].text = DataBase.SelectData("maxPoints") + "";
         }
     }
 

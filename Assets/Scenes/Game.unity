@@ -2344,6 +2344,7 @@ GameObject:
   - component: {fileID: 1758781615}
   - component: {fileID: 1758781611}
   - component: {fileID: 1758781610}
+  - component: {fileID: 1758781619}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2385,12 +2386,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 00aa71af770bafb418e221038adef7d4, type: 3}
   idleAudioClips:
   - {fileID: 8300000, guid: cabeb565f5043b04fa20da57efcb2a9f, type: 3}
-  FootStepEfx: {fileID: 208616350}
-  JumpEfx: {fileID: 1877394160}
-  HitEfx: {fileID: 1200814246}
-  SlideLeft: {fileID: 368901700}
-  SlideRight: {fileID: 1221505490}
-  LeavesEfx: {fileID: 7576612003358459855}
 --- !u!114 &1758781611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2677,6 +2672,24 @@ CapsuleCollider:
   m_Height: 0.06
   m_Direction: 1
   m_Center: {x: 0, y: 0.028, z: 0}
+--- !u!114 &1758781619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1758781609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 050bf14e800d73c46b8524bd5ed9aba6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FootStepEfx: {fileID: 208616350}
+  JumpEfx: {fileID: 1877394160}
+  HitEfx: {fileID: 1200814246}
+  SlideLeft: {fileID: 368901700}
+  SlideRight: {fileID: 1221505490}
+  LeavesEfx: {fileID: 7576612003358459855}
 --- !u!1001 &1877394158
 PrefabInstance:
   m_ObjectHideFlags: 0

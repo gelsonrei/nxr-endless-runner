@@ -40,13 +40,6 @@ public class PlayerControl : MonoBehaviour
     public AudioClip[] moveAudioClips;
     public AudioClip[] idleAudioClips;
 
-    [Header("VFX")]
-    public GameObject FootStepEfx;
-    public GameObject JumpEfx;
-    public GameObject HitEfx;
-    public GameObject SlideLeft;
-    public GameObject SlideRight;
-    public GameObject LeavesEfx;
 
     private float next_x_position = 0f;
     private float timer = 0f;
@@ -212,48 +205,6 @@ public class PlayerControl : MonoBehaviour
         GameCanvasManager gmc = GameManager.Instance.playerCanvas.GetComponent<GameCanvasManager>();
         
         gmc.ShowLoseUI();
-    }
-
-    /*
-    * Efx
-    */
-
-    public void PlayFootStepEfx()
-    {
-        FootStepEfx.GetComponent<ParticleSystem>().Play();
-    }
-
-    public void PlayJumpEfx()
-    {
-        JumpEfx.GetComponent<ParticleSystem>().Play();
-    }
-
-    public void PlayHitEfx()
-    {
-        HitEfx.GetComponent<ParticleSystem>().Play();
-        HitEfx.GetComponentInChildren<ParticleSystem>().Play();
-    }
-    
-    public void PlaySlideLeftEfx()
-    {
-        SlideLeft.GetComponent<ParticleSystem>().Play();
-    }
-    
-    public void PlaySlideRightEfx()
-    {
-        SlideRight.GetComponent<ParticleSystem>().Play();
-    }
-    
-    public void PlayLeavesfx()
-    {
-        LeavesEfx.GetComponent<ParticleSystem>().Play();
-        LeavesEfx.GetComponentInChildren<ParticleSystem>().Play();
-    }
-    
-    public void StopLeavesfx()
-    {
-        LeavesEfx.GetComponent<ParticleSystem>().Stop();
-        LeavesEfx.GetComponentInChildren<ParticleSystem>().Play();
     }
 
     /*

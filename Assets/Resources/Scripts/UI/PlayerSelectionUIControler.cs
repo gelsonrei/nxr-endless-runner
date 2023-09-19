@@ -13,9 +13,11 @@ public class PlayerSelectionUIControler : MonoBehaviour
     public string[] playerDescriptions;
     public AudioClip[] playersAudioDescriptions;
     public Color[] playersColors;
+    public int[] playersCost;
     public Image background;
     public Text title;
     public Text description;
+    public Text points;
     public GameObject target;
     public GameObject lockScreen;
 
@@ -33,6 +35,8 @@ public class PlayerSelectionUIControler : MonoBehaviour
     void Start()
     {
         lockScreen.SetActive(false);
+
+        points.text = DataBase.SelectData("maxPoints") + "";
     }
 
     void Update()
@@ -116,6 +120,7 @@ public class PlayerSelectionUIControler : MonoBehaviour
         {
             GameObject.Destroy(child.gameObject);
         }
+
         GameObject m_player = Instantiate(players[currentIndex], target.transform.position, Quaternion.identity, target.transform);
         m_player.transform.localScale = new Vector3(15000, 15000, 15000);
         m_player.transform.Rotate(0,180,0);
@@ -128,19 +133,19 @@ public class PlayerSelectionUIControler : MonoBehaviour
         m_audioSource[1].clip = playersAudioDescriptions[currentIndex];
         m_audioSource[1].Play();
 
-        if(index != 0)
+        if(DataBase.SelectData("maxPoints") >= playersCost[index])
         {
-            buttons[3].enabled = false;
-            lockScreen.SetActive(true);
-        }
-        else
-        {
+            buttons[3].GetComponentInChildren<Text>().text = "Selecionar";
             buttons[3].enabled = true;
             lockScreen.SetActive(false);
         }
-
-        //buttons[3].enabled = true;
-        //lockScreen.SetActive(false);
+        else
+        {
+            buttons[3].GetComponentInChildren<Text>().text = "Bloqueado";
+            buttons[3].enabled = false;
+            lockScreen.SetActive(true);
+            lockScreen.GetComponentInChildren<Text>().text = "" + playersCost[index];
+        }
     }
 
     private void ChangeLayerMaskRecursively(Transform parent, LayerMask newLayerMask)

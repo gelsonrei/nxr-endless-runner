@@ -12,16 +12,20 @@ public class PulseShaderControl : MonoBehaviour
     [SerializeField]
     private string[] propertyName = { "_GlowColor", "_Frequency", "_MinPulseVal", "_MaxPulseVal" };
 
-    private Color c;
+    [SerializeField]
+    private Color c = new Color32(212,197,133,0);
 
     void Awake()
     {
-       myMaterials = GetComponentInChildren<SkinnedMeshRenderer>().materials;    
+       //myMaterials = GetComponentInChildren<SkinnedMeshRenderer>().materials;    
     }
 
     void Start()
     {
-        c = myMaterials[0].GetColor(propertyName[0]); 
+        //c = myMaterials[0].GetColor(propertyName[0]);
+       // Debug.Log(c);
+       
+       myMaterials[0].SetColor(propertyName[0], c);
     }
 
     void Update()
