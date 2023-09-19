@@ -14,7 +14,7 @@
 		Cull off
 		Lighting On
 
-		ZWrite Off
+		ZWrite On
 		Blend SrcAlpha OneMinusSrcAlpha
 		ColorMask RGB
 
