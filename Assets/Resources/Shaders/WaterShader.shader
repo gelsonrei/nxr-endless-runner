@@ -1,6 +1,6 @@
 Shader "Unlit/WaterShader"
 {
-     Properties
+    Properties
     {
 		// What color the water will sample when the surface below is shallow.
 		_DepthGradientShallow("Depth Gradient Shallow", Color) = (0.325, 0.807, 0.971, 0.725)
@@ -35,6 +35,7 @@ Shader "Unlit/WaterShader"
 		_FoamMaxDistance("Foam Maximum Distance", Float) = 0.4
 		_FoamMinDistance("Foam Minimum Distance", Float) = 0.04		
     }
+
     SubShader
     {
 		Tags
@@ -42,133 +43,150 @@ Shader "Unlit/WaterShader"
 			"Queue" = "Transparent"
 		}
 
+		LOD 100
+		Cull off
+		Lighting On
+
         Pass
         {
-			// Transparent "normal" blending.
-Blend SrcAlpha
-OneMinusSrcAlpha
-			ZWrite
-Off
+			Tags {"LightMode"="ForwardBase"}
+
+			Blend SrcAlpha OneMinusSrcAlpha
+			ZWrite Off
+			Cull off
 
             CGPROGRAM
-#define SMOOTHSTEP_AA 0.01
+			#define SMOOTHSTEP_AA 0.01
 
             #pragma vertex vert
             #pragma fragment frag
+			#pragma multi_compile_shadowcaster
+			#pragma multi_compile_shadowreceiver
+			#pragma multi_compile_fog
 
-#include "UnityCG.cginc"
+			#include "UnityCG.cginc"
 
-			// Blends two colors using the same algorithm that our shader is using
-			// to blend with the screen. This is usually called "normal blending",
-			// and is similar to how software like Photoshop blends two layers.
-float4 alphaBlend(float4 top, float4 bottom)
-{
-    float3 color = (top.rgb * top.a) + (bottom.rgb * (1 - top.a));
-    float alpha = top.a + bottom.a * (1 - top.a);
+			float4 alphaBlend(float4 top, float4 bottom)
+			{
+				float3 color = (top.rgb * top.a) + (bottom.rgb * (1 - top.a));
+				float alpha = top.a + bottom.a * (1 - top.a);
 
-    return float4(color, alpha);
-}
+				return float4(color, alpha);
+			}
 
-struct appdata
-{
-    float4 vertex : POSITION;
-    float4 uv : TEXCOORD0;
-    float3 normal : NORMAL;
-};
+			struct appdata
+			{
+				float4 vertex : POSITION;
+				float4 uv : TEXCOORD0;
+				float3 normal : NORMAL;
+				float4 tangent : TANGENT;
+			};
 
-struct v2f
-{
-    float4 vertex : SV_POSITION;
-    float2 noiseUV : TEXCOORD0;
-    float2 distortUV : TEXCOORD1;
-    float4 screenPosition : TEXCOORD2;
-    float3 viewNormal : NORMAL;
-};
+			struct v2f
+			{
+				float2 noiseUV : TEXCOORD0;
+				float2 distortUV : TEXCOORD1;
+				UNITY_FOG_COORDS(5)
+				float4 vertex : SV_POSITION;
+				float4 screenPosition : TEXCOORD2;
+				float3 viewNormal : NORMAL;
+			};
 
-sampler2D _SurfaceNoise;
-float4 _SurfaceNoise_ST;
+			sampler2D _SurfaceNoise;
+			float4 _SurfaceNoise_ST;
+			float _CurveStrength;
 
-sampler2D _SurfaceDistortion;
-float4 _SurfaceDistortion_ST;
+			sampler2D _SurfaceDistortion;
+			float4 _SurfaceDistortion_ST;
 
-v2f vert(appdata v)
-{
-    v2f o;
+			v2f vert(appdata v)
+			{
+				v2f o;
 
-    o.vertex = UnityObjectToClipPos(v.vertex);
-    o.screenPosition = ComputeScreenPos(o.vertex);
-    o.distortUV = TRANSFORM_TEX(v.uv, _SurfaceDistortion);
-    o.noiseUV = TRANSFORM_TEX(v.uv, _SurfaceNoise);
-    o.viewNormal = COMPUTE_VIEW_NORMAL;
+				float _Horizon = 100.0f;
+				float _FadeDist = 50.0f;
 
-    return o;
-}
+				o.vertex = UnityObjectToClipPos(v.vertex);
+				
+				float dist = UNITY_Z_0_FAR_FROM_CLIPSPACE(o.vertex.z);
+				o.vertex.y -= _CurveStrength * dist * dist * _ProjectionParams.x;
 
-float4 _DepthGradientShallow;
-float4 _DepthGradientDeep;
-float4 _FoamColor;
+				o.screenPosition = ComputeScreenPos(o.vertex);
+				o.distortUV = TRANSFORM_TEX(v.uv, _SurfaceDistortion);
+				o.noiseUV = TRANSFORM_TEX(v.uv, _SurfaceNoise);
+				o.viewNormal = COMPUTE_VIEW_NORMAL;
 
-float _DepthMaxDistance;
-float _FoamMaxDistance;
-float _FoamMinDistance;
-float _SurfaceNoiseCutoff;
-float _SurfaceDistortionAmount;
+				return o;
+			}
 
-float2 _SurfaceNoiseScroll;
+			float4 _DepthGradientShallow;
+			float4 _DepthGradientDeep;
+			float4 _FoamColor;
 
-sampler2D _CameraDepthTexture;
-sampler2D _CameraNormalsTexture;
+			float _DepthMaxDistance;
+			float _FoamMaxDistance;
+			float _FoamMinDistance;
+			float _SurfaceNoiseCutoff;
+			float _SurfaceDistortionAmount;
 
-float4 frag(v2f i) : SV_Target
-{
+			float2 _SurfaceNoiseScroll;
+
+			sampler2D _CameraDepthTexture;
+			sampler2D _CameraNormalsTexture;
+
+			float4 frag(v2f i) : SV_Target
+			{
 				// Retrieve the current depth value of the surface behind the
 				// pixel we are currently rendering.
-    float existingDepth01 = tex2Dproj(_CameraDepthTexture, UNITY_PROJ_COORD(i.screenPosition)).r;
+				float existingDepth01 = tex2Dproj(_CameraDepthTexture, UNITY_PROJ_COORD(i.screenPosition)).r;
 				// Convert the depth from non-linear 0...1 range to linear
 				// depth, in Unity units.
-    float existingDepthLinear = LinearEyeDepth(existingDepth01);
+				float existingDepthLinear = LinearEyeDepth(existingDepth01);
 
 				// Difference, in Unity units, between the water's surface and the object behind it.
-    float depthDifference = existingDepthLinear - i.screenPosition.w;
+				float depthDifference = existingDepthLinear - i.screenPosition.w;
 
 				// Calculate the color of the water based on the depth using our two gradient colors.
-    float waterDepthDifference01 = saturate(depthDifference / _DepthMaxDistance);
-    float4 waterColor = lerp(_DepthGradientShallow, _DepthGradientDeep, waterDepthDifference01);
-				
+				float waterDepthDifference01 = saturate(depthDifference / _DepthMaxDistance);
+				float4 waterColor = lerp(_DepthGradientShallow, _DepthGradientDeep, waterDepthDifference01);
+							
 				// Retrieve the view-space normal of the surface behind the
 				// pixel we are currently rendering.
-    float3 existingNormal = tex2Dproj(_CameraNormalsTexture, UNITY_PROJ_COORD(i.screenPosition));
-				
+				float3 existingNormal = tex2Dproj(_CameraNormalsTexture, UNITY_PROJ_COORD(i.screenPosition));
+							
 				// Modulate the amount of foam we display based on the difference
 				// between the normals of our water surface and the object behind it.
 				// Larger differences allow for extra foam to attempt to keep the overall
 				// amount consistent.
-    float3 normalDot = saturate(dot(existingNormal, i.viewNormal));
-    float foamDistance = lerp(_FoamMaxDistance, _FoamMinDistance, normalDot);
-    float foamDepthDifference01 = saturate(depthDifference / foamDistance);
+				float3 normalDot = saturate(dot(existingNormal, i.viewNormal));
+				float foamDistance = lerp(_FoamMaxDistance, _FoamMinDistance, normalDot);
+				float foamDepthDifference01 = saturate(depthDifference / foamDistance);
 
-    float surfaceNoiseCutoff = foamDepthDifference01 * _SurfaceNoiseCutoff;
+				float surfaceNoiseCutoff = foamDepthDifference01 * _SurfaceNoiseCutoff;
 
-    float2 distortSample = (tex2D(_SurfaceDistortion, i.distortUV).xy * 2 - 1) * _SurfaceDistortionAmount;
+				float2 distortSample = (tex2D(_SurfaceDistortion, i.distortUV).xy * 2 - 1) * _SurfaceDistortionAmount;
 
 				// Distort the noise UV based off the RG channels (using xy here) of the distortion texture.
 				// Also offset it by time, scaled by the scroll speed.
-    float2 noiseUV = float2((i.noiseUV.x + _Time.y * _SurfaceNoiseScroll.x) + distortSample.x,
-				(i.noiseUV.y + _Time.y * _SurfaceNoiseScroll.y) + distortSample.y);
-    float surfaceNoiseSample = tex2D(_SurfaceNoise, noiseUV).r;
+				float2 noiseUV = float2((i.noiseUV.x + _Time.y * _SurfaceNoiseScroll.x) + distortSample.x,
+							(i.noiseUV.y + _Time.y * _SurfaceNoiseScroll.y) + distortSample.y);
+				float surfaceNoiseSample = tex2D(_SurfaceNoise, noiseUV).r;
 
 				// Use smoothstep to ensure we get some anti-aliasing in the transition from foam to surface.
 				// Uncomment the line below to see how it looks without AA.
 				// float surfaceNoise = surfaceNoiseSample > surfaceNoiseCutoff ? 1 : 0;
-    float surfaceNoise = smoothstep(surfaceNoiseCutoff - SMOOTHSTEP_AA, surfaceNoiseCutoff + SMOOTHSTEP_AA, surfaceNoiseSample);
+				float surfaceNoise = smoothstep(surfaceNoiseCutoff - SMOOTHSTEP_AA, surfaceNoiseCutoff + SMOOTHSTEP_AA, surfaceNoiseSample);
 
-    float4 surfaceNoiseColor = _FoamColor;
-    surfaceNoiseColor.a *= surfaceNoise;
+				float4 surfaceNoiseColor = _FoamColor;
+				surfaceNoiseColor.a *= surfaceNoise;
 
 				// Use normal alpha blending to combine the foam with the surface.
-    return alphaBlend(surfaceNoiseColor, waterColor);
-}
+				return alphaBlend(surfaceNoiseColor, waterColor);
+			}
+
             ENDCG
         }
     }
+
+	FallBack "Diffuse"
 }
