@@ -19,7 +19,7 @@ Shader "Surface/PulseSurface"
     
         CGPROGRAM
 
-        #pragma surface surf Standard fullforwardshadows /*alpha:fade*/
+        #pragma surface surf Standard fullforwardshadows
         #pragma target 3.0
 
         sampler2D    _MainTex;

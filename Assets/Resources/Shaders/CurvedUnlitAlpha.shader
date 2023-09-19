@@ -11,6 +11,7 @@
 	{
 		Tags{ "RenderType" = "Transparent" "Queue" = "Transparent" }
 		LOD 100
+		Cull off
 		Lighting On
 
 		ZWrite Off

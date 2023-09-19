@@ -86,5 +86,6 @@ fixed4 frag(v2f i) : SV_Target
 
 	UNITY_APPLY_FOG(i.fogCoord, col);
 	
-	return col;
+	//return col;
+	return col + (col * 0.5);
 }
