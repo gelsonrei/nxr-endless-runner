@@ -52,6 +52,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: LittleJ
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 4f54a48a1da9eed41a3f7440de2d29e7, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 4f54a48a1da9eed41a3f7440de2d29e7, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 0001b388186b287499e3fe3f7e8bebbb, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -84,3 +92,4 @@ MonoBehaviour:
   - _Frequency
   - _MinPulseVal
   - _MaxPulseVal
+  c: {r: 0.83137256, g: 0.77254903, b: 0.52156866, a: 0}

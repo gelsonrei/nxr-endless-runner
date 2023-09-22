@@ -53,6 +53,14 @@ PrefabInstance:
       value: Smith
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 0b684a8968a8bd144abeb7c5addbf753, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 0b684a8968a8bd144abeb7c5addbf753, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: eb79649a639420d458769ab7dd2dd82c, type: 2}
+    - target: {fileID: 5866666021909216657, guid: 0b684a8968a8bd144abeb7c5addbf753, type: 3}
       propertyPath: m_CullingMode
       value: 0
       objectReference: {fileID: 0}
@@ -88,3 +96,4 @@ MonoBehaviour:
   - _Frequency
   - _MinPulseVal
   - _MaxPulseVal
+  c: {r: 0.83137256, g: 0.77254903, b: 0.52156866, a: 0}

@@ -52,6 +52,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Nauru
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 579021e35f516674e851ac3015af5fc8, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 579021e35f516674e851ac3015af5fc8, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: f5da22f2af7be1b4289284b0f8cda1d4, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -84,3 +92,4 @@ MonoBehaviour:
   - _Frequency
   - _MinPulseVal
   - _MaxPulseVal
+  c: {r: 0.83137256, g: 0.77254903, b: 0.52156866, a: 0}

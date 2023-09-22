@@ -52,6 +52,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Otto
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 4ccbc4145cba6a14195eb721214be078, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 4ccbc4145cba6a14195eb721214be078, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: dee74e0ff7b49324bbeb2a200592bee5, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -84,3 +92,4 @@ MonoBehaviour:
   - _Frequency
   - _MinPulseVal
   - _MaxPulseVal
+  c: {r: 0.83137256, g: 0.77254903, b: 0.52156866, a: 0}

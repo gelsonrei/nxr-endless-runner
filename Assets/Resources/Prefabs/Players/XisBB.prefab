@@ -52,6 +52,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: XisBB
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 9173ba3d9a90ad54b868ba2d9a13ef9a, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 9173ba3d9a90ad54b868ba2d9a13ef9a, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 8e628c7aeadd48a489b74c9becee9561, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -84,3 +92,4 @@ MonoBehaviour:
   - _Frequency
   - _MinPulseVal
   - _MaxPulseVal
+  c: {r: 0.83137256, g: 0.77254903, b: 0.52156866, a: 0}
