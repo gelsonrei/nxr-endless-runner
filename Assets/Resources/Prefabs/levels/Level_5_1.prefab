@@ -1522,15 +1522,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 26246cb5acf7aac4496766a6c9071c82, type: 3}
       propertyPath: m_LocalScale.x
-      value: 10.156
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 26246cb5acf7aac4496766a6c9071c82, type: 3}
       propertyPath: m_LocalScale.y
-      value: 10.032001
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 26246cb5acf7aac4496766a6c9071c82, type: 3}
       propertyPath: m_LocalScale.z
-      value: 10
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 26246cb5acf7aac4496766a6c9071c82, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1582,14 +1582,14 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 26246cb5acf7aac4496766a6c9071c82, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2222744430856848974}
+      addedObject: {fileID: 8168188266738028424}
   m_SourcePrefab: {fileID: 100100000, guid: 26246cb5acf7aac4496766a6c9071c82, type: 3}
 --- !u!1 &7104744414247454882 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 26246cb5acf7aac4496766a6c9071c82, type: 3}
   m_PrefabInstance: {fileID: 7951235670794843635}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &2222744430856848974
+--- !u!65 &8168188266738028424
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1608,8 +1608,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.92031807, y: 2.0000978, z: 0.07354745}
-  m_Center: {x: 0.011008, y: 0.003938499, z: -0.008372896}
+  m_Size: {x: 0.09203182, y: 0.20000981, z: 0.0073547456}
+  m_Center: {x: 0.0011007997, y: 0.00039385288, z: -0.0008372899}
 --- !u!4 &7625385587420779032 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 26246cb5acf7aac4496766a6c9071c82, type: 3}
