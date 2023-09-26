@@ -63,6 +63,11 @@ public class KeyboardManager : MonoBehaviour
         FullKeyboard.SetActive(true);
         AlphaNumericKeyboard.SetActive(false);
         NumericKeyboard.SetActive(false);
+
+        if ( ! transform.GetComponent<Animator>().GetBool("show") )
+        {
+            transform.GetComponent<Animator>().SetBool("show", true);
+        }
     }
 
     public void activeAlphaNUmericKeyboard()
@@ -70,6 +75,11 @@ public class KeyboardManager : MonoBehaviour
         AlphaNumericKeyboard.SetActive(true);
         FullKeyboard.SetActive(false);
         NumericKeyboard.SetActive(false);
+
+        if ( ! transform.GetComponent<Animator>().GetBool("show") )
+        {
+            transform.GetComponent<Animator>().SetBool("show", true);
+        }
     }
 
     public void activeNumericKeyboard()
@@ -77,5 +87,18 @@ public class KeyboardManager : MonoBehaviour
         NumericKeyboard.SetActive(true);
         FullKeyboard.SetActive(false);
         AlphaNumericKeyboard.SetActive(false);
+
+        if ( ! transform.GetComponent<Animator>().GetBool("show") )
+        {
+            transform.GetComponent<Animator>().SetBool("show", true);
+        }
+    }
+
+    public void desactiveKeyboard()
+    {
+        if ( transform.GetComponent<Animator>().GetBool("show") )
+        {
+            transform.GetComponent<Animator>().SetBool("show", false);
+        }
     }
 }

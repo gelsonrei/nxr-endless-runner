@@ -1,10 +1,9 @@
-using System.Text.RegularExpressions;
-
 using UnityEngine;
 using UnityEngine.UI;
 
-public class FieldsValidatorEmail : FieldsValidator
+public class FieldsValidatorData : FieldsValidator
 {
+
     public override void DeleteLetter()
     {
         string value = inputField.text;
@@ -22,17 +21,17 @@ public class FieldsValidatorEmail : FieldsValidator
 
         if (IsFieldValid(value))
         {
-            Debug.Log("Email válido!");
+            Debug.Log("Campo válido!");
         }
         else
         {
             if (value.Length > 0)
             {
-                textStatus.text = "Digite um Email Válido";
+                textStatus.text = "Digite até 4 caracteres";
                 inputField.GetComponent<Image>().color = new Color(1, 0, 0, 0.2f);
                 textStatus.gameObject.SetActive(true);
 
-                Debug.Log("Email inválido!");
+                Debug.Log("Campo inválido!");
             }
         }
 
@@ -41,15 +40,16 @@ public class FieldsValidatorEmail : FieldsValidator
 
     protected override void FormatField(string value)
     {
-        string formattedValue = value;
-        inputField.text = formattedValue;
+        inputField.text = value;
     }
 
     protected override bool IsFieldValid(string value)
     {
-        string pattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
+        fieldValid = false;
 
-        fieldValid =  Regex.IsMatch(value, pattern);
+        if (value.Length > 4)
+            fieldValid = true;
+
         return fieldValid;
     }
 }

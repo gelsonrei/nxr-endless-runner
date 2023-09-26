@@ -40,7 +40,7 @@ public class MenuCanvasManager : MonoBehaviour
     void Start()
     {
         ShowScreen(screens[0]);
-        ChangeScreen(screens[1], 2);
+        ChangeScreen(screens[1], 4);
     }
 
     void Update()

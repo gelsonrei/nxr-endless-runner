@@ -185,7 +185,7 @@ public class GameCanvasManager : MonoBehaviour
 
             buttons[1].onClick.AddListener(
             () => {
-                LoadScene("Menu");
+                LoadScene("MobileMenu");
             });
         }
 
@@ -267,7 +267,7 @@ public class GameCanvasManager : MonoBehaviour
 
                 buttons[1].onClick.AddListener(
                 () => {
-                    LoadScene("Menu");
+                    LoadScene("MobileMenu");
                 });
             }
         }

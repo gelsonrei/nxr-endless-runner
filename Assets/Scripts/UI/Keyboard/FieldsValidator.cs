@@ -6,11 +6,9 @@ using UnityEngine.UI;
 public abstract class FieldsValidator : MonoBehaviour
 {
     [SerializeField] protected InputField inputField;
-    [SerializeField] protected Button buttonAvancar;
     [SerializeField] protected Text textStatus;
 
     protected bool fieldValid = false;
-
     protected Color inputColor;
     protected Color validColor = new (0.57f, 0.924f, 0.62f, 0.39f);
     protected Color invalidColor = new(0.98f, 0.87f, 0.87f, 1.0f);
@@ -28,9 +26,7 @@ public abstract class FieldsValidator : MonoBehaviour
 
     protected abstract void ValidateField(string value);
 
-
     protected abstract void FormatField(string value);
-
 
     protected abstract bool IsFieldValid(string value);
 
@@ -39,14 +35,21 @@ public abstract class FieldsValidator : MonoBehaviour
         return IsFieldValid(inputField.text);
     }
 
-
     protected virtual void Start()
     {
         fieldValid = false;
-        inputField.onValueChanged.AddListener(ValidateField);
         textStatus.gameObject.SetActive(false);
         inputColor = inputField.GetComponent<Image>().color;
     }
 
+    private void OnEnable() 
+    {
+        inputField.onValueChanged.AddListener(ValidateField);
+    }
+
+    private void OnDisable() 
+    {
+        inputField.onValueChanged.RemoveAllListeners();
+    }
 
 }

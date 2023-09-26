@@ -8,7 +8,8 @@ public class InputFieldVirtualKeyboard : MonoBehaviour, IPointerClickHandler
     {
         Full,
         AlphaNumeric,
-        Numeric
+        Numeric,
+        None
     }
 
     public KeyboardType selectedKeyboardType;
@@ -31,8 +32,12 @@ public class InputFieldVirtualKeyboard : MonoBehaviour, IPointerClickHandler
                 KeyboardManager.Instance.activeNumericKeyboard();
                 break;
 
+            case KeyboardType.None:
+                KeyboardManager.Instance.desactiveKeyboard();
+                break;
+
             default:
-                KeyboardManager.Instance.activeFullKeyboard();
+                KeyboardManager.Instance.desactiveKeyboard();
                 break;
         }
     }
