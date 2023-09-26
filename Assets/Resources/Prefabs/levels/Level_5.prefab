@@ -72,7 +72,6 @@ MonoBehaviour:
   wallet: {fileID: 3261739196106123112, guid: 7a29439fe0e1fff4a9b18c35211cebbe, type: 3}
   obstacles:
   - {fileID: 5907526187552223942, guid: 4f70db9744030234ea5f8290a2d01c4d, type: 3}
-  - {fileID: 5907526187552223942, guid: a9d001d0f30c3da44afbb905ee89616d, type: 3}
   - {fileID: 5907526187552223942, guid: 15fa71acf9202be48862ee8ada84d8d0, type: 3}
   - {fileID: 5139767871723368184, guid: 9d0e35bcd2040d54ebe112936f1b01e8, type: 3}
   spawnCount: 10
