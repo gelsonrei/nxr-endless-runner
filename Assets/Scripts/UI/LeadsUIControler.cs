@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 using EndlessRunner;
 
-public class LeadsManager : MonoBehaviour
+public class LeadsUIControler : MonoBehaviour
 {
     public Slider slider;
     public Button nextButton;
@@ -142,8 +142,17 @@ public class LeadsManager : MonoBehaviour
                     nextButton.onClick.AddListener(delegate
                     {
                         Debug.Log("Submit Data");
+                        List<String> formData = new List<String>();
+                        for (int f = 0; f < forms.Length; f++)
+                        {
+                            foreach (InputField field in forms[f].GetComponentsInChildren<InputField>())
+                            {
+                                formData.Add(field.text);
+                            }
+                        }
 
-                        //use DataBase.
+                        TableManager.Init();
+                        LeadManager.CreateOrUpdate(formData[0],formData[1],formData[2],formData[4],formData[3], ActivationManager.GetLength());
 
                         DataBase.InsertData("playerCharacter", 0);
 

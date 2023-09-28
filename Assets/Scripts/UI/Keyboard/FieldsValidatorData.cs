@@ -47,7 +47,7 @@ public class FieldsValidatorData : FieldsValidator
     {
         fieldValid = false;
 
-        if (value.Length > 4)
+        if (value.Length >= 4)
             fieldValid = true;
 
         return fieldValid;
