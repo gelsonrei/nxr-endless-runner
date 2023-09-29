@@ -67,6 +67,7 @@ public class KeyboardManager : MonoBehaviour
         if ( ! transform.GetComponent<Animator>().GetBool("show") )
         {
             transform.GetComponent<Animator>().SetBool("show", true);
+            transform.GetComponent<AudioSource>().Play();
         }
     }
 
@@ -79,6 +80,7 @@ public class KeyboardManager : MonoBehaviour
         if ( ! transform.GetComponent<Animator>().GetBool("show") )
         {
             transform.GetComponent<Animator>().SetBool("show", true);
+            transform.GetComponent<AudioSource>().Play();
         }
     }
 
@@ -91,6 +93,7 @@ public class KeyboardManager : MonoBehaviour
         if ( ! transform.GetComponent<Animator>().GetBool("show") )
         {
             transform.GetComponent<Animator>().SetBool("show", true);
+            transform.GetComponent<AudioSource>().Play();
         }
     }
 
@@ -99,6 +102,7 @@ public class KeyboardManager : MonoBehaviour
         if ( transform.GetComponent<Animator>().GetBool("show") )
         {
             transform.GetComponent<Animator>().SetBool("show", false);
+            transform.GetComponent<AudioSource>().Play();
         }
     }
 }
