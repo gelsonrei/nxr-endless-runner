@@ -54,6 +54,20 @@ public class RankingManager : TableManager
         Print(ranking);
     }
 
+    public static List<Ranking> Select(int limit = 0)
+    {
+        string sql = "SELECT * FROM Ranking ";
+        sql += " ORDER BY maxDistance DESC ";
+        if (limit > 0)
+        {
+            sql += "  LIMIT " + limit;
+        }
+
+        List<Ranking> m_ranking = QueryList<Ranking>(sql);
+
+        return m_ranking;
+    }
+
     public static Ranking Get(int id)
     {
         string sql = "SELECT * FROM Ranking where id=" + id;
@@ -61,7 +75,7 @@ public class RankingManager : TableManager
         return GetOne(sql);
     }
 
-    private static Ranking GetOne(string sql)
+    public static Ranking GetOne(string sql)
     {
         var ranking = QueryList<Ranking>(sql);
         return ranking.Count > 0 ? ranking[0] : null;

@@ -9,6 +9,9 @@ public class TotemMenuUIControler : MonoBehaviour
     private AudioSource m_audioSource;
     private Button[] buttons;
 
+    public GameObject content;
+    public GameObject template;
+
     private void Awake()
     {
         m_audioSource = GetComponent<AudioSource>();
@@ -52,6 +55,39 @@ public class TotemMenuUIControler : MonoBehaviour
             MenuCanvasManager.Instance.ChangeScreen(MenuCanvasManager.Instance.screens[4]);
         });
 
+        //ranking
+        foreach (Transform child in content.transform)
+        {
+            if (child.name != "Header")
+            {
+                Destroy(child.gameObject);
+            }
+        }
+
+        //db
+        TableManager.Init();
+        List<Ranking> rancking = RankingManager.Select(5);
+
+        content.SetActive(false);
+        if (rancking.Count > 0)
+        {
+            StartCoroutine(HideAndShowGameObjectCoroutine());
+
+            int order = 0;
+            foreach (Ranking r in rancking)
+            {
+                order++;
+
+                Lead l = LeadManager.GetOne(r.Cpf);
+
+                GameObject go = GameObject.Instantiate(template, transform.position, Quaternion.identity, content.transform);
+
+                Text[] tx = go.GetComponentsInChildren<Text>();
+                tx[0].text = order + "";
+                tx[1].text = l.Name;
+                tx[2].text = r.MaxDistance + "";
+            }
+        }        
     }
 
     void OnDisable()
@@ -61,4 +97,19 @@ public class TotemMenuUIControler : MonoBehaviour
         buttons[2].onClick.RemoveAllListeners();
     }
 
+    private IEnumerator HideAndShowGameObjectCoroutine()
+    {
+        // Hide the game object after 50 seconds.
+        yield return new WaitForSeconds(10f);
+        content.SetActive(true);
+
+        // Wait 20 seconds.
+        yield return new WaitForSeconds(20f);
+
+        // Show the game object again.
+        content.SetActive(false);
+
+        // Start the coroutine again.
+        StartCoroutine(HideAndShowGameObjectCoroutine());
+    }
 }

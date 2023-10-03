@@ -252,6 +252,11 @@ public class GameCanvasManager : MonoBehaviour
 
                 float maxPoints = DataBase.SelectData("maxPoints");
                 DataBase.InsertData("maxPoints", maxPoints + currentPoints);
+
+                TableManager.Init();
+                RankingManager.Create( DataBase.SelectSData("playerSession"), (int) DataBase.SelectData("maxDistance"), (int) DataBase.SelectData("maxPoints") );
+
+
                 // ---- //
 
                 Button[] buttons = loseUI.GetComponentsInChildren<Button>();

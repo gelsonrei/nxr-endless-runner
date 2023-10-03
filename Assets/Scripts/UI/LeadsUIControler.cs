@@ -155,6 +155,7 @@ public class LeadsUIControler : MonoBehaviour
                         LeadManager.CreateOrUpdate(formData[0],formData[1],formData[2],formData[4],formData[3], ActivationManager.GetLength());
 
                         DataBase.InsertData("playerCharacter", 0);
+                        DataBase.InsertData("playerSession", formData[4]);
 
                         MenuCanvasManager.Instance.LoadScene("Game");
                     });

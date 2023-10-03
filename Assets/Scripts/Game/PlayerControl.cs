@@ -75,7 +75,7 @@ public class PlayerControl : MonoBehaviour
 
         timer += Time.deltaTime;
 
-        if (timer >= GameManager.Instance.tickInterval && m_animator.GetBool("isRunning"))
+        if (timer >= GameManager.Instance.tickInterval && m_animator.GetBool("isRunning") && velocity < 10.0f)
         {
             velocity += 0.5f;
             timer = 0f;
@@ -356,7 +356,7 @@ public class PlayerControl : MonoBehaviour
     {
         if ( m_animator.GetBool("isJumping") )
         {
-            m_rigidbody.MovePosition(m_rigidbody.position + new Vector3(0,1.5f,velocity + 1.0f) * m_animator.deltaPosition.magnitude);
+            m_rigidbody.MovePosition(m_rigidbody.position + new Vector3(0,1.5f,velocity + 0.5f) * m_animator.deltaPosition.magnitude);
         }
 
         else if ( m_animator.GetBool("isRigth") )
