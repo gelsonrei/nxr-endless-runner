@@ -23,14 +23,19 @@ public class KeyboardController : MonoBehaviour
     [SerializeField] GameObject actionCapitalLetters;
     [SerializeField] GameObject actionSmallLetters;
 
+    [SerializeField] GameObject emailChars;
+
     private bool isSmallLettersShown = true;
 
     public void ShowCapitalLetters() {
         isSmallLettersShown = false;
 
-        actionNumbers.SetActive(true);
-        actionSmallLetters.SetActive(false);
-        actionCapitalLetters.SetActive(false);
+        if (actionNumbers != null && actionSmallLetters != null && actionCapitalLetters != null)
+        {
+            actionNumbers.SetActive(true);
+            actionSmallLetters.SetActive(false);
+            actionCapitalLetters.SetActive(false);
+        }
 
         smallAlphaRow1.SetActive(false);
         smallAlphaRow2.SetActive(false);
@@ -40,19 +45,29 @@ public class KeyboardController : MonoBehaviour
         capitalAlphaRow2.SetActive(true);
         capitalAlphaRow3.SetActive(true);
 
-        numbers.SetActive(false);
-        splCharsNum1.SetActive(false);
-        splCharsNum2.SetActive(false);
-        splChars1.SetActive(false);
-        splChars2.SetActive(false);
+        if (numbers != null)
+        {
+            numbers.SetActive(false);
+        }
+
+        if (splCharsNum1 != null && splCharsNum2 != null && splChars1 != null && splChars2 != null)
+        {
+            splCharsNum1.SetActive(false);
+            splCharsNum2.SetActive(false);
+            splChars1.SetActive(false);
+            splChars2.SetActive(false);
+        }
     }
     
     public void ShowSmallLetters() {
         isSmallLettersShown = true;
 
-        actionNumbers.SetActive(true);
-        actionSmallLetters.SetActive(false);
-        actionCapitalLetters.SetActive(false);
+        if (actionNumbers != null && actionSmallLetters != null && actionCapitalLetters != null)
+        {
+            actionNumbers.SetActive(true);
+            actionSmallLetters.SetActive(false);
+            actionCapitalLetters.SetActive(false);
+        }
 
         capitalAlphaRow1.SetActive(false);
         capitalAlphaRow2.SetActive(false);
@@ -62,11 +77,19 @@ public class KeyboardController : MonoBehaviour
         smallAlphaRow2.SetActive(true);
         smallAlphaRow3.SetActive(true);
 
-        numbers.SetActive(false);
-        splCharsNum1.SetActive(false);
-        splCharsNum2.SetActive(false);
-        splChars1.SetActive(false);
-        splChars2.SetActive(false);
+        if (numbers != null)
+        {
+            numbers.SetActive(false);
+        }
+        
+
+        if (splCharsNum1 != null && splCharsNum2 != null && splChars1 != null && splChars2 != null)
+        {
+            splCharsNum1.SetActive(false);
+            splCharsNum2.SetActive(false);
+            splChars1.SetActive(false);
+            splChars2.SetActive(false);
+        }
     }
 
     public void ShowSpecialCharsNum() {
@@ -121,5 +144,13 @@ public class KeyboardController : MonoBehaviour
 
         splChars1.SetActive(true);
         splChars2.SetActive(true);
+    }
+
+    public void ShowEmailChars()
+    {
+        if (emailChars != null)
+        {
+            emailChars.active = !emailChars.active;
+        }
     }
 }
