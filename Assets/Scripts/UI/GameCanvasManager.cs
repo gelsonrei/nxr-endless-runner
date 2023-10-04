@@ -185,7 +185,8 @@ public class GameCanvasManager : MonoBehaviour
 
             buttons[1].onClick.AddListener(
             () => {
-                LoadScene("MobileMenu");
+                //LoadScene("MobileMenu");
+                LoadScene("TotemMenu");
             });
         }
 
@@ -200,8 +201,10 @@ public class GameCanvasManager : MonoBehaviour
 
             Button[] buttons = pauseUI.GetComponentsInChildren<Button>();
 
-            buttons[0].onClick.RemoveAllListeners();
-            buttons[1].onClick.RemoveAllListeners();
+            foreach (Button b in buttons)
+            {
+                b.onClick.RemoveAllListeners();
+            }
         }
 
         //StartUI
@@ -231,7 +234,10 @@ public class GameCanvasManager : MonoBehaviour
 
             Button[] buttons = startUI.GetComponentsInChildren<Button>();
 
-            buttons[0].onClick.RemoveAllListeners();
+            foreach (Button b in buttons)
+            {
+                b.onClick.RemoveAllListeners();
+            }
         }
 
         //Lose UI
@@ -254,7 +260,7 @@ public class GameCanvasManager : MonoBehaviour
                 DataBase.InsertData("maxPoints", maxPoints + currentPoints);
 
                 TableManager.Init();
-                RankingManager.Create( DataBase.SelectSData("playerSession"), (int) DataBase.SelectData("maxDistance"), (int) DataBase.SelectData("maxPoints") );
+                RankingManager.Create( DataBase.SelectSData("playerSession"), (int) currentDistance, (int) currentPoints );
 
 
                 // ---- //
@@ -262,17 +268,21 @@ public class GameCanvasManager : MonoBehaviour
                 Button[] buttons = loseUI.GetComponentsInChildren<Button>();
                 Text[] texts = loseUI.GetComponentsInChildren<Text>();
 
-                texts[0].text = currentDistance + "M, Parabéns!";
+                //Você alcançou  14500M!
+                texts[0].text = "Você alcançou " + currentDistance + "M";
 
+                /*
                 buttons[0].onClick.AddListener(
                 () => {
                     Scene scene = SceneManager.GetActiveScene();
                     LoadScene(scene.name);
                 });
-
-                buttons[1].onClick.AddListener(
+*/
+                //buttons[1].onClick.AddListener(
+                buttons[0].onClick.AddListener(
                 () => {
-                    LoadScene("MobileMenu");
+                    //LoadScene("MobileMenu");
+                    LoadScene("TotemMenu");
                 });
             }
         }
@@ -286,8 +296,10 @@ public class GameCanvasManager : MonoBehaviour
 
             Button[] buttons = loseUI.GetComponentsInChildren<Button>();
 
-            buttons[0].onClick.RemoveAllListeners();
-            buttons[1].onClick.RemoveAllListeners();
+            foreach (Button b in buttons)
+            {
+                b.onClick.RemoveAllListeners();
+            }
         }
 
         //COUNTDOWN
