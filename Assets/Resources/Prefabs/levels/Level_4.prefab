@@ -237,14 +237,13 @@ MonoBehaviour:
   obstacles:
   - {fileID: 3066246521644870065, guid: 8714b424d2cf1f141b51c7035f121f44, type: 3}
   - {fileID: 5907526187552223942, guid: 125d4c6fa25970b43a80add8bfbe8162, type: 3}
-  - {fileID: 5139767871723368184, guid: baaa2378fa09b694b9386192cc31ffa0, type: 3}
-  spawnCount: 10
+  spawnCount: 2
   minCoins: 1
   maxCoins: 5
   minPointsForCard: 50
   minDistance: 10
   cardSpawnProbability: 0.2
-  obstacleSpawnProbability: 0.6
+  obstacleSpawnProbability: 0.1
 --- !u!1 &2363223662082767068
 GameObject:
   m_ObjectHideFlags: 0
