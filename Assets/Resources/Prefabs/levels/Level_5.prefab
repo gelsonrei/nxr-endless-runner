@@ -71,7 +71,9 @@ MonoBehaviour:
   coin: {fileID: 1795534545452757617, guid: dd22038e9d5e2ea478951967780bfac4, type: 3}
   wallet: {fileID: 3261739196106123112, guid: 7a29439fe0e1fff4a9b18c35211cebbe, type: 3}
   obstacles:
-  - {fileID: 5907526187552223942, guid: 4f70db9744030234ea5f8290a2d01c4d, type: 3}
+  - {fileID: 5907526187552223942, guid: 55c5137dd251f6f4383b087ce98d3f4e, type: 3}
+  - {fileID: 5907526187552223942, guid: e85ef538256d5af45ae54867261d9436, type: 3}
+  - {fileID: 5907526187552223942, guid: 450f48fdd3c7cf349a26db7a2eda3bcb, type: 3}
   spawnCount: 2
   minCoins: 1
   maxCoins: 5
