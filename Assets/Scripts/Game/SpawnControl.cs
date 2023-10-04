@@ -145,9 +145,9 @@ public class SpawnControl : MonoBehaviour
                 case 2:
                     // obstacle
                     newLocation = obj.position + new Vector3(0, 0, -z_offset);
-                    newRotation = Quaternion.Euler(obj.rotation.x, obj.rotation.y, obj.rotation.z);
+                    //newRotation = Quaternion.Euler(obj.rotation.x, obj.rotation.y, obj.rotation.z);
 
-                    SpawnObstacle(newLocation, newRotation, obj);
+                    SpawnObstacle(newLocation, Quaternion.identity, obj);
 
                     z_offset++;
                     break;
@@ -178,6 +178,7 @@ public class SpawnControl : MonoBehaviour
         if (coin != null)
         {
             GameObject m_coin = Instantiate(coin, n_position, n_rotation, parent);
+            m_coin.GetComponent<ObjectMover>().autoInit = true;
         }
     }
 

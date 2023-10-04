@@ -304,10 +304,10 @@ MonoBehaviour:
   spawnCount: 10
   minCoins: 1
   maxCoins: 5
-  minPointsForCard: 50
+  minPointsForCard: 250
   minDistance: 10
   cardSpawnProbability: 0.2
-  obstacleSpawnProbability: 0.6
+  obstacleSpawnProbability: 0.8
 --- !u!1 &2587225940427839462
 GameObject:
   m_ObjectHideFlags: 0

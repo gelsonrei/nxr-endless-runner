@@ -25,7 +25,7 @@ public class PlayerControl : MonoBehaviour
     
     [Header("Player Options")]
     public int lifes = 3;
-    public float velocity = 3.5f;
+    public float velocity = 4.0f;
     public float leftOffset = -1.0f;
     public float rigthOffset = 1.0f;
 

@@ -9,6 +9,8 @@ public class TotemMenuUIControler : MonoBehaviour
     private AudioSource m_audioSource;
     private Button[] buttons;
 
+    public GameObject logo;
+    public GameObject title;
     public GameObject content;
     public GameObject template;
 
@@ -66,7 +68,7 @@ public class TotemMenuUIControler : MonoBehaviour
 
         //db
         TableManager.Init();
-        List<Ranking> rancking = RankingManager.Select(5);
+        List<Ranking> rancking = RankingManager.Select(10);
 
         content.SetActive(false);
         if (rancking.Count > 0)
@@ -102,12 +104,16 @@ public class TotemMenuUIControler : MonoBehaviour
         // Hide the game object after 50 seconds.
         yield return new WaitForSeconds(10f);
         content.SetActive(true);
+        logo.SetActive(false);
+        title.SetActive(true);
 
         // Wait 20 seconds.
         yield return new WaitForSeconds(20f);
 
         // Show the game object again.
         content.SetActive(false);
+        logo.SetActive(true);
+        title.SetActive(false);
 
         // Start the coroutine again.
         StartCoroutine(HideAndShowGameObjectCoroutine());
