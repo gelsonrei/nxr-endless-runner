@@ -284,8 +284,7 @@ MonoBehaviour:
   obstacles:
   - {fileID: 5139767871723368184, guid: fc4b05827b8fd3b4d843ec872fd386f4, type: 3}
   - {fileID: 5139767871723368184, guid: 464e63e6aa320d749a2720bf72eeebb1, type: 3}
-  - {fileID: 5139767871723368184, guid: 6faa2c9a7b4e86d4b830aefa54ca06fc, type: 3}
-  spawnCount: 10
+  spawnCount: 2
   minCoins: 1
   maxCoins: 4
   minPointsForCard: 350

@@ -408,7 +408,7 @@ MonoBehaviour:
   - {fileID: 5139767871723368184, guid: 7bfbcc132d36de44ebc6b3d00d569010, type: 3}
   - {fileID: 5139767871723368184, guid: 05f3b7fc6ff2fd04db9938644c22be2f, type: 3}
   - {fileID: 5139767871723368184, guid: baaa2378fa09b694b9386192cc31ffa0, type: 3}
-  spawnCount: 10
+  spawnCount: 2
   minCoins: 1
   maxCoins: 5
   minPointsForCard: 250
