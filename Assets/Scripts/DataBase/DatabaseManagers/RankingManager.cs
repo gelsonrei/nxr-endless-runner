@@ -21,6 +21,7 @@ public class RankingManager : TableManager
     {
         var ranking = new Ranking
         {
+            Id = Select().Count + 1,
             Cpf = cpf,
             MaxDistance = maxDistance,
             MaxPoints = maxPoints

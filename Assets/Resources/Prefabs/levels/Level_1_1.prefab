@@ -349,8 +349,8 @@ MonoBehaviour:
   - {fileID: 5907526187552223942, guid: 125d4c6fa25970b43a80add8bfbe8162, type: 3}
   spawnCount: 2
   minCoins: 1
-  maxCoins: 5
-  minPointsForCard: 50
+  maxCoins: 8
+  minPointsForCard: 200
   minDistance: 10
   cardSpawnProbability: 0.2
   obstacleSpawnProbability: 0.1

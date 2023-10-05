@@ -7,6 +7,8 @@ public class ObjectMover : MonoBehaviour
         X, Y, Z
     }
 
+    public bool autoInit = false;
+
     [Header("Rotation")]
     public bool doRotation = true;
     public Axis rotationAxis = Axis.Y;
@@ -19,7 +21,7 @@ public class ObjectMover : MonoBehaviour
 
     void Update()
     {
-        if (doRotation && Time.timeScale > 0)
+        if (doRotation && Time.timeScale > 0 && autoInit)
         {
             float rotationAmount = rotationSpeed * Time.deltaTime;
 
@@ -46,7 +48,7 @@ public class ObjectMover : MonoBehaviour
             transform.Rotate(axis, rotationAmount);
         }
 
-        if (doMotion && Time.timeScale > 0)
+        if (doMotion && Time.timeScale > 0 && autoInit)
         {
             Vector3 axis;
             switch (motionAxis)

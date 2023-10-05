@@ -224,15 +224,16 @@ MonoBehaviour:
   coin: {fileID: 1795534545452757617, guid: dd22038e9d5e2ea478951967780bfac4, type: 3}
   wallet: {fileID: 3261739196106123112, guid: 7a29439fe0e1fff4a9b18c35211cebbe, type: 3}
   obstacles:
-  - {fileID: 3066246521644870065, guid: 8714b424d2cf1f141b51c7035f121f44, type: 3}
+  - {fileID: 2322599779215005903, guid: d954d176583abcb46afbd5a3043472df, type: 3}
+  - {fileID: 5139767871723368184, guid: 7bfbcc132d36de44ebc6b3d00d569010, type: 3}
   - {fileID: 5907526187552223942, guid: 125d4c6fa25970b43a80add8bfbe8162, type: 3}
   spawnCount: 2
   minCoins: 1
   maxCoins: 5
-  minPointsForCard: 50
+  minPointsForCard: 100
   minDistance: 10
-  cardSpawnProbability: 0.2
-  obstacleSpawnProbability: 0.1
+  cardSpawnProbability: 0.1
+  obstacleSpawnProbability: 0.3
 --- !u!1 &4159585167216911081
 GameObject:
   m_ObjectHideFlags: 0
