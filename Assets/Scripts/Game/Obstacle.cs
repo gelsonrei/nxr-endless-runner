@@ -8,10 +8,14 @@ public class Obstacle : MonoBehaviour
     private AudioSource audioSource;
     private BoxCollider boxCollider;
 
+    private PlayerControl pm;
+
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
         boxCollider = GetComponent<BoxCollider>();
+
+    pm = GameManager.Instance.player.GetComponent<PlayerControl>();
     }
 
     void Start()
@@ -26,22 +30,27 @@ public class Obstacle : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        foreach (ContactPoint contact in collision.contacts)
+        if (!pm.GetComponent<Animator>().GetBool("isColide"))
         {
-
-            if (boxCollider.isTrigger == false)
+            foreach (ContactPoint contact in collision.contacts)
             {
-                PlaySound();
+                if (boxCollider.isTrigger == false)
+                {
+                    PlaySound();
 
-                PlayerControl pm = GameManager.Instance.player.GetComponent<PlayerControl>();
-                //pm.OnToggleOff("isRunning");
-                //pm.OnToggleOn("isColide");
-                pm.takeHit();
+                    //pm.OnToggleOff("isRunning");
+                    //pm.OnToggleOn("isColide");
+                    pm.takeHit();
 
-                //GameCanvasManager gmc = GameManager.Instance.playerCanvas.GetComponent<GameCanvasManager>();
-                //gmc.ShowLoseUI();
+                    //GameCanvasManager gmc = GameManager.Instance.playerCanvas.GetComponent<GameCanvasManager>();
+                    //gmc.ShowLoseUI();
+                }
+
+                boxCollider.isTrigger = true;
             }
-            
+        } 
+        else
+        {
             boxCollider.isTrigger = true;
         }
     }
