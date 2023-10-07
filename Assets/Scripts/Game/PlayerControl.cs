@@ -405,9 +405,16 @@ public class PlayerControl : MonoBehaviour
     {
         if ( m_animator.GetBool("isRunning") && !m_animator.GetBool("isJumping") && !m_animator.GetBool("isSliding") && !m_animator.GetBool("isLeft") && !m_animator.GetBool("isRigth") )
         {
-            if (jumpAudioClips.Length > 0)
+            if (isSpecial)
             {
-                PlaySound(jumpAudioClips[Random.Range(0, jumpAudioClips.Length-1)]);
+                PlaySound(item.GetComponent<Variables>().declarations.Get<AudioClip>("jumpSound"));
+            }
+            else
+            {
+                if (jumpAudioClips.Length > 0)
+                {
+                    PlaySound(jumpAudioClips[Random.Range(0, jumpAudioClips.Length - 1)]);
+                }
             }
 
             OnToggleOn("isJumping");
@@ -418,9 +425,16 @@ public class PlayerControl : MonoBehaviour
     {
         if ( m_animator.GetBool("isRunning") && !m_animator.GetBool("isJumping") && !m_animator.GetBool("isSliding") && !m_animator.GetBool("isLeft") && !m_animator.GetBool("isRigth") )
         {
-            if (slideAudioClips.Length > 0)
+            if (isSpecial)
             {
-                PlaySound(slideAudioClips[Random.Range(0, slideAudioClips.Length-1)]);
+                PlaySound(item.GetComponent<Variables>().declarations.Get<AudioClip>("slideSound"));
+            }
+            else
+            {
+                if (slideAudioClips.Length > 0)
+                {
+                    PlaySound(slideAudioClips[Random.Range(0, slideAudioClips.Length - 1)]);
+                }
             }
 
             OnToggleOn("isSliding");
