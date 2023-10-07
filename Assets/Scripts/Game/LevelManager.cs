@@ -8,6 +8,7 @@ public class LevelManager : MonoBehaviour
     private AudioSource m_audioSource;
 
     public GameObject[] levels;
+    [Tooltip("scale of level in Z")]
     public int scaleOffset = 20;
     public AudioClip[] soundTrackClips;
 
@@ -36,9 +37,13 @@ public class LevelManager : MonoBehaviour
     }
 
     private void Update()
-    {        
+    {
         if (GameManager.Instance.player.transform.position.z >= playerInitialZPosition + scaleOffset)
+        //int m_p = (int) transform.position.z * -1;
+        //if (m_p % 20 == 0 && m_p > 0) 
         {
+            //Debug.Log(m_p);
+
             playerInitialZPosition = GameManager.Instance.player.transform.position.z;
 
             if(levels.Length > 1)

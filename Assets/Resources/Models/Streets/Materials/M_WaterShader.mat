@@ -33,14 +33,14 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _DepthMaxDistance: 0.001
-    - _FoamMaxDistance: 0.4
-    - _FoamMinDistance: 0.04
-    - _SurfaceDistortionAmount: 1
-    - _SurfaceNoiseCutoff: 1
+    - _DepthMaxDistance: -100
+    - _FoamMaxDistance: 0.78
+    - _FoamMinDistance: -0.46
+    - _SurfaceDistortionAmount: 0.6
+    - _SurfaceNoiseCutoff: 0.05
     m_Colors:
     - _DepthGradientDeep: {r: 0.07961702, g: 0.04743683, b: 0.38431373, a: 0.57254905}
-    - _DepthGradientShallow: {r: 0.118948035, g: 0.75838083, b: 0.9339623, a: 0.7019608}
-    - _FoamColor: {r: 1, g: 1, b: 1, a: 0.65882355}
+    - _DepthGradientShallow: {r: 0.118948005, g: 0.75838083, b: 0.9339623, a: 0.80784315}
+    - _FoamColor: {r: 1, g: 1, b: 1, a: 0.7058824}
     - _SurfaceNoiseScroll: {r: -0.1, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []

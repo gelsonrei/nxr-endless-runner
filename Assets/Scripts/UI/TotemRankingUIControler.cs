@@ -71,7 +71,7 @@ public class TotemRankingUIControler : MonoBehaviour
             tx[1].text = l.Name;
             tx[2].text = r.MaxDistance + "";
 
-            content.GetComponent<RectTransform>().sizeDelta = new Vector2(content.GetComponent<RectTransform>().sizeDelta.x, 70*order);
+            content.GetComponent<RectTransform>().sizeDelta = new Vector2(content.GetComponent<RectTransform>().sizeDelta.x, 167*order);
         }
     }
 

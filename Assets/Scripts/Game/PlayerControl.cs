@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 using EndlessRunner;
+using Unity.VisualScripting;
 
 public class PlayerControl : MonoBehaviour
 {
@@ -26,6 +27,7 @@ public class PlayerControl : MonoBehaviour
     [Header("Player Options")]
     public int lifes = 3;
     public float velocity = 4.0f;
+    public float maxVelocity = 10.0f;
     public float leftOffset = -1.0f;
     public float rigthOffset = 1.0f;
 
@@ -43,6 +45,14 @@ public class PlayerControl : MonoBehaviour
 
     private float next_x_position = 0f;
     private float timer = 0f;
+
+    private RuntimeAnimatorController m_defult_animator_controler;
+    private RuntimeAnimatorController m_special_animator_controler;
+
+    private bool isSpecial = false;
+
+    private GameObject item;
+    private GameObject m_item;
 
     /*
     * Game
@@ -63,22 +73,48 @@ public class PlayerControl : MonoBehaviour
         
         GameObject myCharacter = Instantiate (characters[(int) DataBase.SelectData("playerCharacter")], transform.position , Quaternion.identity, transform);
         m_animator.avatar = myCharacter.GetComponent<Animator>().avatar;
-        m_animator.runtimeAnimatorController = myCharacter.GetComponent<Animator>().runtimeAnimatorController;
-     
+        //m_animator.runtimeAnimatorController = myCharacter.GetComponent<Animator>().runtimeAnimatorController;
+
+        m_defult_animator_controler = myCharacter.GetComponent<Variables>().declarations.Get<RuntimeAnimatorController>("DefaultAnimatorControler");
+        m_special_animator_controler = myCharacter.GetComponent<Variables>().declarations.Get<RuntimeAnimatorController>("SpecialAinmatorControler");
+
+        item = myCharacter.GetComponent<Variables>().declarations.Get<GameObject>("Item");
+
+        m_animator.runtimeAnimatorController = m_defult_animator_controler;
+
         disableMagnetic();
     }
 
 
     private void Update()
     {
+        if (lifes == 0)
+        {
+            OnToggleOff("isRunning");
+            OnToggleOff("isJumping");
+            OnToggleOff("isSliding");
+            OnToggleOff("isLeft");
+            OnToggleOff("isRigth");
+            OnToggleOn("isLose");
+
+            disableMagnetic();
+            disableSpecial();
+        }
+            
         GameManager.Instance.distance = (int) m_transform.position.z;
 
         timer += Time.deltaTime;
 
-        if (timer >= GameManager.Instance.tickInterval && m_animator.GetBool("isRunning") && velocity < 10.0f)
+
+        if (timer >= GameManager.Instance.tickInterval && m_animator.GetBool("isRunning") && velocity < maxVelocity)
         {
             velocity += 1.0f;
             timer = 0f;
+        }
+
+        if ( (GameManager.Instance.points > 0 && GameManager.Instance.points % GameManager.Instance.pointsForSpecial == 0) && !isSpecial && lifes > 0)
+        {
+            enableSpecial(10);
         }
 
         /*
@@ -184,6 +220,67 @@ public class PlayerControl : MonoBehaviour
 
         PulseShaderControl psc = transform.GetComponentInChildren<PulseShaderControl>();
         psc.disableShader();
+    }
+
+    public void enableSpecial(float time)
+    {
+        isSpecial = true;
+
+        GameCanvasManager gmc = GameManager.Instance.playerCanvas.GetComponent<GameCanvasManager>();
+        gmc.ShowEspecial();
+
+        m_animator.runtimeAnimatorController = m_special_animator_controler;
+
+        m_item = Instantiate(item, transform.position, Quaternion.identity, transform);
+
+        StartCoroutine(updateSpecial(time));
+        OnToggleOn("isRunning");
+    }
+
+    private IEnumerator updateSpecial(float time)
+    {
+        GameCanvasManager gmc = GameManager.Instance.playerCanvas.GetComponent<GameCanvasManager>();
+        int index = 0;
+
+        for (float i = 0; i < time; i++)
+        {
+            if (i == 0)
+            {
+                gmc.ShowSpecialPopUp();
+            }
+
+            if (i == 2)
+            {
+                gmc.HideSpecialPopUp();
+            }
+
+            if(i >= (time / gmc.specialUpSprites.Length))
+            {
+                index = (index + 1) % gmc.specialUpSprites.Length;
+                gmc.AnimateEspecial(index);
+            }
+
+            yield return new WaitForSeconds(1);
+        }
+
+        disableSpecial(); 
+    }
+
+    public void disableSpecial()
+    {
+        isSpecial = false;
+
+        Destroy(m_item);
+
+        GameCanvasManager gmc = GameManager.Instance.playerCanvas.GetComponent<GameCanvasManager>();
+        gmc.HideEspecial();
+
+        if (!m_animator.GetBool("isLose") || lifes > 0)
+        {
+            m_animator.runtimeAnimatorController = m_defult_animator_controler;
+            OnToggleOn("isRunning");
+        }
+            
     }
 
     public void takeHit()
@@ -356,14 +453,14 @@ public class PlayerControl : MonoBehaviour
     {
         if ( m_animator.GetBool("isJumping") )
         {
-            m_rigidbody.MovePosition(m_rigidbody.position + new Vector3(0,1.5f,velocity + 0.5f) * m_animator.deltaPosition.magnitude);
+            m_rigidbody.MovePosition(m_rigidbody.position + new Vector3(0,2.0f,velocity) * m_animator.deltaPosition.magnitude);
         }
 
         else if ( m_animator.GetBool("isRigth") )
         {
             if (m_rigidbody.position.x <= next_x_position)
             {
-                m_rigidbody.MovePosition(m_rigidbody.position + new Vector3(velocity + 1.0f, 0 ,velocity + 1.0f) * m_animator.deltaPosition.magnitude);
+                m_rigidbody.MovePosition(m_rigidbody.position + new Vector3(velocity + 1.0f, 0 ,velocity) * m_animator.deltaPosition.magnitude);
             }
             else
             {
@@ -375,7 +472,7 @@ public class PlayerControl : MonoBehaviour
         {
             if (m_rigidbody.position.x >= next_x_position)
             {
-                m_rigidbody.MovePosition(m_rigidbody.position + new Vector3(-velocity - 1.0f, 0 , velocity - 1.0f) * m_animator.deltaPosition.magnitude);
+                m_rigidbody.MovePosition(m_rigidbody.position + new Vector3(-velocity - 1.0f, 0 , velocity) * m_animator.deltaPosition.magnitude);
             }
             else
             {
@@ -385,7 +482,8 @@ public class PlayerControl : MonoBehaviour
 
         else if ( m_animator.GetBool("isRunning") )
         {
-            m_rigidbody.MovePosition(m_rigidbody.position + new Vector3(0,0,velocity) * m_animator.deltaPosition.magnitude);
+            m_rigidbody.MovePosition(m_rigidbody.position + new Vector3(0, 0, velocity) * m_animator.deltaPosition.magnitude);
+            //GameManager.Instance.levelManager.transform.Translate(new Vector3(0, 0, -velocity) * m_animator.deltaPosition.magnitude, Space.World);
         }
     }
 

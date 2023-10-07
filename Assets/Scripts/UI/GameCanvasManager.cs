@@ -23,6 +23,7 @@ public class GameCanvasManager : MonoBehaviour
     public Sprite[] powerUpSprites;
     public GameObject specialImage;
     public Sprite[] specialUpSprites;
+    public GameObject specialPopUp;
 
     [Header("Game UIS")]
     public GameObject pauseUI;
@@ -144,6 +145,16 @@ public class GameCanvasManager : MonoBehaviour
 
             Image image = specialImage.GetComponent<Image>();
             image.sprite = specialUpSprites[index];
+        }
+
+        public void ShowSpecialPopUp()
+        {
+            specialPopUp.SetActive(true);
+        }
+
+        public void HideSpecialPopUp()
+        {
+            specialPopUp.SetActive(false);
         }
 
         //lifes

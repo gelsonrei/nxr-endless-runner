@@ -14,8 +14,12 @@ public class GameManager : MonoBehaviour
 
     [HideInInspector]
     public int points = 0;
-    public int pointsAvarage = 50; //how points need to do something
-    public float tickInterval = 10f; //how long time the velocity is increase
+    [Tooltip("how points need to go next level")]
+    public int pointsAvarage = 50;
+    [Tooltip("how points need to active special")]
+    public int pointsForSpecial = 100;
+    [Tooltip("how long time the velocity is increase")]
+    public float tickInterval = 10f;
 
     [HideInInspector]
     public int distance = 0;
