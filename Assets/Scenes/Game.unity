@@ -3853,6 +3853,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 00aa71af770bafb418e221038adef7d4, type: 3}
   idleAudioClips:
   - {fileID: 8300000, guid: cabeb565f5043b04fa20da57efcb2a9f, type: 3}
+  isSpecial: 0
 --- !u!114 &1758781611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4088,7 +4089,7 @@ Transform:
   m_GameObject: {fileID: 1758781609}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.6, z: 0}
+  m_LocalPosition: {x: 0, y: 0.6, z: 1}
   m_LocalScale: {x: 25, y: 25, z: 25}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4850,9 +4851,9 @@ MonoBehaviour:
   playerCamera: {fileID: 1600888576}
   playerCanvas: {fileID: 576710293}
   points: 0
-  pointsAvarage: 35
+  pointsAvarage: 45
   pointsForSpecial: 100
-  tickInterval: 10
+  tickInterval: 15
   distance: 0
   currentLevel: 0
 --- !u!4 &2082465526

@@ -13,8 +13,9 @@ public class LevelManager : MonoBehaviour
     public AudioClip[] soundTrackClips;
 
     private List<GameObject> myInstantieteLevels = new List<GameObject>();
-    private float playerInitialZPosition = 0;
     private int levelCount = 1;
+
+    private float previousZPosition;
 
     private void Awake()
     {
@@ -31,20 +32,20 @@ public class LevelManager : MonoBehaviour
             InstanceLevel(0);
             InstanceLevel(0);
             InstanceLevel(0);
+            InstanceLevel(0);
         }
 
-        playerInitialZPosition = GameManager.Instance.player.transform.position.z;
+        previousZPosition = transform.position.z * -1;
     }
 
     private void Update()
     {
-        if (GameManager.Instance.player.transform.position.z >= playerInitialZPosition + scaleOffset)
-        //int m_p = (int) transform.position.z * -1;
-        //if (m_p % 20 == 0 && m_p > 0) 
+        //if (GameManager.Instance.player.transform.position.z >= playerInitialZPosition + scaleOffset)
+        float zDelta = (transform.position.z * -1) - previousZPosition;
+        if (Mathf.Abs(zDelta) > scaleOffset)
         {
-            //Debug.Log(m_p);
-
-            playerInitialZPosition = GameManager.Instance.player.transform.position.z;
+            Debug.Log(zDelta);
+            previousZPosition = transform.position.z * -1;
 
             if(levels.Length > 1)
             {

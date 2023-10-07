@@ -49,7 +49,8 @@ public class PlayerControl : MonoBehaviour
     private RuntimeAnimatorController m_defult_animator_controler;
     private RuntimeAnimatorController m_special_animator_controler;
 
-    private bool isSpecial = false;
+    [HideInInspector]
+    public bool isSpecial = false;
 
     private GameObject item;
     private GameObject m_item;
@@ -170,6 +171,12 @@ public class PlayerControl : MonoBehaviour
                 }
             }
         }
+
+        if ( m_animator.GetBool("isRunning") )
+        {
+            //m_rigidbody.MovePosition(m_rigidbody.position + new Vector3(0, 0, velocity) * m_animator.deltaPosition.magnitude);
+            GameManager.Instance.levelManager.transform.Translate(new Vector3(0, 0, -velocity) * Time.deltaTime * 3.0f);
+        }
     }
   
   
@@ -225,6 +232,7 @@ public class PlayerControl : MonoBehaviour
     public void enableSpecial(float time)
     {
         isSpecial = true;
+        velocity += 1.0f;
 
         GameCanvasManager gmc = GameManager.Instance.playerCanvas.GetComponent<GameCanvasManager>();
         gmc.ShowEspecial();
@@ -269,6 +277,7 @@ public class PlayerControl : MonoBehaviour
     public void disableSpecial()
     {
         isSpecial = false;
+        velocity -= 1.0f;
 
         Destroy(m_item);
 
@@ -453,14 +462,14 @@ public class PlayerControl : MonoBehaviour
     {
         if ( m_animator.GetBool("isJumping") )
         {
-            m_rigidbody.MovePosition(m_rigidbody.position + new Vector3(0,2.0f,velocity) * m_animator.deltaPosition.magnitude);
+            m_rigidbody.MovePosition(m_rigidbody.position + new Vector3(0,2.0f,0) * m_animator.deltaPosition.magnitude);
         }
 
         else if ( m_animator.GetBool("isRigth") )
         {
             if (m_rigidbody.position.x <= next_x_position)
             {
-                m_rigidbody.MovePosition(m_rigidbody.position + new Vector3(velocity + 1.0f, 0 ,velocity) * m_animator.deltaPosition.magnitude);
+                m_rigidbody.MovePosition(m_rigidbody.position + new Vector3(velocity + 1.0f, 0 , 0) * m_animator.deltaPosition.magnitude);
             }
             else
             {
@@ -472,18 +481,12 @@ public class PlayerControl : MonoBehaviour
         {
             if (m_rigidbody.position.x >= next_x_position)
             {
-                m_rigidbody.MovePosition(m_rigidbody.position + new Vector3(-velocity - 1.0f, 0 , velocity) * m_animator.deltaPosition.magnitude);
+                m_rigidbody.MovePosition(m_rigidbody.position + new Vector3(-velocity - 1.0f, 0 , 0) * m_animator.deltaPosition.magnitude);
             }
             else
             {
                 OnToggleOff("isLeft");
             }
-        }
-
-        else if ( m_animator.GetBool("isRunning") )
-        {
-            m_rigidbody.MovePosition(m_rigidbody.position + new Vector3(0, 0, velocity) * m_animator.deltaPosition.magnitude);
-            //GameManager.Instance.levelManager.transform.Translate(new Vector3(0, 0, -velocity) * m_animator.deltaPosition.magnitude, Space.World);
         }
     }
 

@@ -32,7 +32,7 @@ public class Coin : MonoBehaviour
         {
             if( Vector3.Distance(targetPosition.position, transform.position) >= 1.0 )
             {
-                transform.position = Vector3.Lerp(transform.position, targetPosition.position, Time.deltaTime * 5.0f);
+                transform.position = Vector3.Lerp(transform.position, targetPosition.position, Time.deltaTime * GameManager.Instance.player.GetComponent<PlayerControl>().velocity );
             }
             else
             {
@@ -68,7 +68,14 @@ public class Coin : MonoBehaviour
 
     private void SumPoints()
     {
-        GameManager.Instance.points += value;
+        if (GameManager.Instance.player.GetComponent<PlayerControl>().isSpecial)
+        {
+            GameManager.Instance.points += (value * 2);
+        }
+        else
+        {
+            GameManager.Instance.points += value;
+        }
     }
 
     private void RenderMesh(bool status)
