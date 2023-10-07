@@ -101,8 +101,8 @@ public class PlayerControl : MonoBehaviour
             disableMagnetic();
             disableSpecial();
         }
-            
-        GameManager.Instance.distance = (int) m_transform.position.z;
+
+        GameManager.Instance.distance = (int) (GameManager.Instance.levelManager.transform.position.z * -1);
 
         timer += Time.deltaTime;
 
