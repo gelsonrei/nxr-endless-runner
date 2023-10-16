@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4514f971b2de9a54a9e218bdf9c4c467
+guid: c488480100151f14da51843c5e3f9dbd
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,28 +7,38 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: polySurface1_portal_praiaMat
-    second: {fileID: 2100000, guid: 5ab3567554886cd40b14e2c1b85c1abf, type: 2}
+      name: placa1_placa_polySurface11Mat
+    second: {fileID: 2100000, guid: cfe4836817a78574e81132206216d465, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: portal_praiaMat
-    second: {fileID: 2100000, guid: 5ab3567554886cd40b14e2c1b85c1abf, type: 2}
+      name: placa1_placa_polySurface12Mat
+    second: {fileID: 2100000, guid: cfe4836817a78574e81132206216d465, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: portal_praia_polySurface2Mat
-    second: {fileID: 2100000, guid: 5ab3567554886cd40b14e2c1b85c1abf, type: 2}
+      name: placa1_placa_polySurface7Mat
+    second: {fileID: 2100000, guid: cfe4836817a78574e81132206216d465, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: portal_praia_polySurface3Mat
-    second: {fileID: 2100000, guid: 5ab3567554886cd40b14e2c1b85c1abf, type: 2}
+      name: placa1_placa_polySurface8Mat
+    second: {fileID: 2100000, guid: cfe4836817a78574e81132206216d465, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: portal_praia_polySurface4Mat
-    second: {fileID: 2100000, guid: 5ab3567554886cd40b14e2c1b85c1abf, type: 2}
+      name: placa1_polySurface6_placaMat
+    second: {fileID: 2100000, guid: cfe4836817a78574e81132206216d465, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: placa1_telaMat
+    second: {fileID: 2100000, guid: cfe4836817a78574e81132206216d465, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: polySurface15_placa1Mat
+    second: {fileID: 2100000, guid: cfe4836817a78574e81132206216d465, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

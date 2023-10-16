@@ -30,8 +30,8 @@ Transform:
   m_GameObject: {fileID: 5907526187552223942}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.000000059147, y: -0, z: 0}
+  m_LocalScale: {x: 0.5038359, y: 0.9076406, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 566125857989390846}
@@ -152,8 +152,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.853454, y: 0.65055394, z: 2.621838}
-  m_Center: {x: -0.00017166138, y: 1.8480965, z: -0.09365296}
+  m_Size: {x: 2.853454, y: 0.16637695, z: 2.621838}
+  m_Center: {x: -0.00017166138, y: 2.0901859, z: -0.09365296}
 --- !u!65 &8451543556278235492
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -218,7 +218,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 61f1842cbda32b941bfdc522a2dead5e, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.31491297
+      value: 0.14900738
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 61f1842cbda32b941bfdc522a2dead5e, type: 3}
       propertyPath: m_LocalScale.y
@@ -230,7 +230,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 61f1842cbda32b941bfdc522a2dead5e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.0086606
+      value: 0.0082789
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 61f1842cbda32b941bfdc522a2dead5e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -238,7 +238,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 61f1842cbda32b941bfdc522a2dead5e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.58146
+      value: 0.27514
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 61f1842cbda32b941bfdc522a2dead5e, type: 3}
       propertyPath: m_LocalRotation.w

@@ -14,6 +14,141 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Lojadeskinsdecor1Mat
     second: {fileID: 2100000, guid: 34ab7a6cbe9ec9d4191f9c9424b879ce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lojadeskinsdecor1_bon_s_polySurface19Mat
+    second: {fileID: 2100000, guid: 34ab7a6cbe9ec9d4191f9c9424b879ce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lojadeskinsdecor1_bon_s_polySurface21Mat
+    second: {fileID: 2100000, guid: 34ab7a6cbe9ec9d4191f9c9424b879ce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lojadeskinsdecor1_bon_s_polySurface27Mat
+    second: {fileID: 2100000, guid: 34ab7a6cbe9ec9d4191f9c9424b879ce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lojadeskinsdecor1_bon_s_polySurface32Mat
+    second: {fileID: 2100000, guid: 34ab7a6cbe9ec9d4191f9c9424b879ce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lojadeskinsdecor1_bon_s_polySurface35Mat
+    second: {fileID: 2100000, guid: 34ab7a6cbe9ec9d4191f9c9424b879ce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lojadeskinsdecor1_polySurface11Mat
+    second: {fileID: 2100000, guid: 34ab7a6cbe9ec9d4191f9c9424b879ce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lojadeskinsdecor1_polySurface12Mat
+    second: {fileID: 2100000, guid: 34ab7a6cbe9ec9d4191f9c9424b879ce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lojadeskinsdecor1_polySurface13Mat
+    second: {fileID: 2100000, guid: 34ab7a6cbe9ec9d4191f9c9424b879ce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lojadeskinsdecor1_polySurface20Mat
+    second: {fileID: 2100000, guid: 34ab7a6cbe9ec9d4191f9c9424b879ce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lojadeskinsdecor1_polySurface22Mat
+    second: {fileID: 2100000, guid: 34ab7a6cbe9ec9d4191f9c9424b879ce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lojadeskinsdecor1_polySurface23Mat
+    second: {fileID: 2100000, guid: 34ab7a6cbe9ec9d4191f9c9424b879ce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lojadeskinsdecor1_polySurface24Mat
+    second: {fileID: 2100000, guid: 34ab7a6cbe9ec9d4191f9c9424b879ce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lojadeskinsdecor1_polySurface25Mat
+    second: {fileID: 2100000, guid: 34ab7a6cbe9ec9d4191f9c9424b879ce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lojadeskinsdecor1_polySurface26Mat
+    second: {fileID: 2100000, guid: 34ab7a6cbe9ec9d4191f9c9424b879ce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lojadeskinsdecor1_polySurface28Mat
+    second: {fileID: 2100000, guid: 34ab7a6cbe9ec9d4191f9c9424b879ce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lojadeskinsdecor1_polySurface29Mat
+    second: {fileID: 2100000, guid: 34ab7a6cbe9ec9d4191f9c9424b879ce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lojadeskinsdecor1_polySurface31Mat
+    second: {fileID: 2100000, guid: 34ab7a6cbe9ec9d4191f9c9424b879ce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lojadeskinsdecor1_polySurface33Mat
+    second: {fileID: 2100000, guid: 34ab7a6cbe9ec9d4191f9c9424b879ce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lojadeskinsdecor1_polySurface33_polySurface16_polySurface40Mat
+    second: {fileID: 2100000, guid: 34ab7a6cbe9ec9d4191f9c9424b879ce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lojadeskinsdecor1_polySurface33_polySurface39_polySurface16Mat
+    second: {fileID: 2100000, guid: 34ab7a6cbe9ec9d4191f9c9424b879ce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lojadeskinsdecor1_polySurface33_polySurface3Mat
+    second: {fileID: 2100000, guid: 34ab7a6cbe9ec9d4191f9c9424b879ce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lojadeskinsdecor1_polySurface34_bon_sMat
+    second: {fileID: 2100000, guid: 34ab7a6cbe9ec9d4191f9c9424b879ce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lojadeskinsdecor1_polySurface36Mat
+    second: {fileID: 2100000, guid: 34ab7a6cbe9ec9d4191f9c9424b879ce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lojadeskinsdecor1_polySurface41Mat
+    second: {fileID: 2100000, guid: 34ab7a6cbe9ec9d4191f9c9424b879ce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lojadeskinsdecor1_polySurface4Mat
+    second: {fileID: 2100000, guid: 34ab7a6cbe9ec9d4191f9c9424b879ce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lojadeskinsdecor1_polySurface7Mat
+    second: {fileID: 2100000, guid: 34ab7a6cbe9ec9d4191f9c9424b879ce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: polySurface1_Lojadeskinsdecor1Mat
+    second: {fileID: 2100000, guid: 34ab7a6cbe9ec9d4191f9c9424b879ce, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

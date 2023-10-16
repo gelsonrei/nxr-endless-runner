@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 7617041059575105152}
   - component: {fileID: 8841049042568106918}
   - component: {fileID: 3423730409620133790}
-  - component: {fileID: 8451543556278235492}
   - component: {fileID: 1057656791201766219}
+  - component: {fileID: 8451543556278235492}
   - component: {fileID: -4184702620729083625}
   m_Layer: 0
   m_Name: PortalPraia
@@ -152,8 +152,29 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.613958, y: 0.8962207, z: 0.31627047}
-  m_Center: {x: 0.007866621, y: 2.1075654, z: -0.007080257}
+  m_Size: {x: 1.8800553, y: 0.7298695, z: 0.31627047}
+  m_Center: {x: -0.045952976, y: 1.7699702, z: -0.007080257}
+--- !u!65 &1057656791201766219
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5907526187552223942}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.23540539, y: 2.1060753, z: 0.36052388}
+  m_Center: {x: 0.82, y: 1.0318668, z: -0.012165993}
 --- !u!65 &8451543556278235492
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -174,28 +195,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.23540539, y: 2.1060753, z: 0.36052388}
-  m_Center: {x: -1.0055777, y: 1.0318668, z: -0.012165993}
---- !u!65 &1057656791201766219
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5907526187552223942}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.20431626, y: 2.1300173, z: 0.37002587}
-  m_Center: {x: 1.0174162, y: 1.0438378, z: -0.016917229}
+  m_Center: {x: -0.82, y: 1.0318668, z: -0.012165993}
 --- !u!114 &-4184702620729083625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -218,15 +218,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 4514f971b2de9a54a9e218bdf9c4c467, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.2746985
+      value: 0.2261373
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4514f971b2de9a54a9e218bdf9c4c467, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.2746985
+      value: 0.2261373
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4514f971b2de9a54a9e218bdf9c4c467, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.2746985
+      value: 0.2261373
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4514f971b2de9a54a9e218bdf9c4c467, type: 3}
       propertyPath: m_LocalPosition.x
@@ -234,11 +234,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4514f971b2de9a54a9e218bdf9c4c467, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.028
+      value: -0.001
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4514f971b2de9a54a9e218bdf9c4c467, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.00067393
+      value: -0.00055476
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4514f971b2de9a54a9e218bdf9c4c467, type: 3}
       propertyPath: m_LocalRotation.w
