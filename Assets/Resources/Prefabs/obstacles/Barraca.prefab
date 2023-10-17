@@ -10,9 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7617041059575105152}
   - component: {fileID: 8841049042568106918}
-  - component: {fileID: 3423730409620133790}
-  - component: {fileID: 8451543556278235492}
-  - component: {fileID: 1057656791201766219}
+  - component: {fileID: 5137215273582648716}
   - component: {fileID: -4184702620729083625}
   m_Layer: 0
   m_Name: Barraca
@@ -31,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.000000059147, y: -0, z: 0}
-  m_LocalScale: {x: 0.5038359, y: 0.9076406, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 566125857989390846}
@@ -133,7 +131,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!65 &3423730409620133790
+--- !u!65 &5137215273582648716
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -152,50 +150,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.853454, y: 0.16637695, z: 2.621838}
-  m_Center: {x: -0.00017166138, y: 2.0901859, z: -0.09365296}
---- !u!65 &8451543556278235492
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5907526187552223942}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.686039, y: 2.1711135, z: 3.0852857}
-  m_Center: {x: -1.376936, y: 1.0643859, z: -0.007609606}
---- !u!65 &1057656791201766219
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5907526187552223942}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.686039, y: 2.18584, z: 3.0852857}
-  m_Center: {x: 1.3769362, y: 1.0717491, z: -0.007609844}
+  m_Size: {x: 1.370137, y: 1.1514457, z: 1.2087414}
+  m_Center: {x: 0.026438236, y: 0.595473, z: -0.0690949}
 --- !u!114 &-4184702620729083625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -218,15 +174,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 61f1842cbda32b941bfdc522a2dead5e, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.14900738
+      value: 0.18
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 61f1842cbda32b941bfdc522a2dead5e, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.31491297
+      value: 0.18
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 61f1842cbda32b941bfdc522a2dead5e, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.31491297
+      value: 0.18
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 61f1842cbda32b941bfdc522a2dead5e, type: 3}
       propertyPath: m_LocalPosition.x
