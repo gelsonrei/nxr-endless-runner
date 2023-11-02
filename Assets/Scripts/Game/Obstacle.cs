@@ -15,7 +15,7 @@ public class Obstacle : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         boxCollider = GetComponent<BoxCollider>();
 
-    pm = GameManager.Instance.player.GetComponent<PlayerControl>();
+        pm = GameManager.Instance.player.GetComponent<PlayerControl>();
     }
 
     void Start()
@@ -51,7 +51,7 @@ public class Obstacle : MonoBehaviour
         } 
         else
         {
-            boxCollider.isTrigger = true;
+            boxCollider.isTrigger = false;
         }
     }
 

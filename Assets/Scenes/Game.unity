@@ -1047,12 +1047,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1080, y: 1920}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -3313,6 +3313,8 @@ GameObject:
   - component: {fileID: 1600888582}
   - component: {fileID: 1600888580}
   - component: {fileID: 1600888581}
+  - component: {fileID: 1600888584}
+  - component: {fileID: 1600888583}
   m_Layer: 3
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3320,21 +3322,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1600888577
-Transform:
+--- !u!224 &1600888577
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1600888576}
-  serializedVersion: 2
   m_LocalRotation: {x: 0.13052616, y: 0, z: 0, w: 0.9914449}
-  m_LocalPosition: {x: 0, y: 3.2, z: -3.8}
+  m_LocalPosition: {x: 0, y: 0, z: -3.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 15, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 3.2}
+  m_SizeDelta: {x: 0, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!81 &1600888578
 AudioListener:
   m_ObjectHideFlags: 0
@@ -3432,6 +3438,34 @@ Skybox:
   m_GameObject: {fileID: 1600888576}
   m_Enabled: 1
   m_CustomSkybox: {fileID: 2100000, guid: e11f5b66aad75483b8cd16ee18a0c917, type: 2}
+--- !u!114 &1600888583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600888576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86710e43de46f6f4bac7c8e50813a599, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AspectMode: 2
+  m_AspectRatio: 0.5625
+--- !u!114 &1600888584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600888576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2d649e4a8980574692b7499e98bea1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fullScreen: 1
+  lastScreenWidth: 0
 --- !u!1 &1602239674
 GameObject:
   m_ObjectHideFlags: 0
@@ -3868,7 +3902,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Actions: {fileID: -944628639613478452, guid: 1726912110ccbb744b01688e95bcbca3, type: 3}
   m_NotificationBehavior: 0
-  m_UIInputModule: {fileID: 0}
+  m_UIInputModule: {fileID: 576710296}
   m_DeviceLostEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -5809,8 +5843,8 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 705507995}
-  - {fileID: 1600888577}
   - {fileID: 374975640}
   - {fileID: 2082465526}
   - {fileID: 576710294}
   - {fileID: 1758781616}
+  - {fileID: 1600888577}

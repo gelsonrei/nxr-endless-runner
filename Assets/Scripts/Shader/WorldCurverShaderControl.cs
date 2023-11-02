@@ -17,6 +17,7 @@ public class WorldCurverShaderControl : MonoBehaviour
 	void Start()
 	{
 		Shader.SetGlobalFloat(m_PropertyID, curveStrength);
+		RenderSettings.skybox.SetFloat("_Rotation", 0);
 	}
 
 	void Update()
@@ -30,4 +31,9 @@ public class WorldCurverShaderControl : MonoBehaviour
 		// Set the rotation of the skybox
 		RenderSettings.skybox.SetFloat("_Rotation", rotation);
 	}
+
+	private void OnApplicationQuit() 
+    {
+        RenderSettings.skybox.SetFloat("_Rotation", 0);
+    }
 }

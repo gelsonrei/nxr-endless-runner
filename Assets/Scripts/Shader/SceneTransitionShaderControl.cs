@@ -59,4 +59,9 @@ public class SceneTransitionShaderControl : MonoBehaviour
 
         OnTransitionDone?.Invoke();
     }
+
+    private void OnApplicationQuit() 
+    {
+        screenTransitionMaterial.SetFloat(propertyName, 1.5f);
+    }
 }

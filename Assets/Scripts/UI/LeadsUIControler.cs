@@ -23,7 +23,6 @@ public class LeadsUIControler : MonoBehaviour
     void Start()
     {
         lgpdPanel.SetActive(false);
-
         lgpd.GetComponentInChildren<Button>().onClick.AddListener(delegate
         {
             lgpdPanel.SetActive(true);
@@ -40,11 +39,17 @@ public class LeadsUIControler : MonoBehaviour
         if (forms.Length > 0)
         {
             forms[0].SetActive(true);
-            slider.value = 0.5f;
+            
+            slider.value = 1;
+            slider.minValue = 1;
+            slider.maxValue = forms.Length;
+
+            idx = 0;
+            int c = idx + 1;
+            slider.GetComponentInChildren<Text>().text = "PASSO " + c + " DE " + forms.Length;
         }
 
         nextButton.interactable = false;
-        idx = 0;
 
         UpdateListners();
     }
@@ -63,6 +68,7 @@ public class LeadsUIControler : MonoBehaviour
                 field.onValueChange.AddListener(delegate
                 {
                     CheckValidateForm();
+                    UpdateListners();
                 });
             }
         }
@@ -79,7 +85,7 @@ public class LeadsUIControler : MonoBehaviour
         {
             foreach (InputField field in forms[i].GetComponentsInChildren<InputField>() )
             {
-                field.onEndEdit.RemoveAllListeners();
+                field.onValueChange.RemoveAllListeners();
             }
         }
 
@@ -112,7 +118,7 @@ public class LeadsUIControler : MonoBehaviour
             prevButton.onClick.RemoveAllListeners();
             prevButton.onClick.AddListener(delegate
             {
-                Debug.Log("goto Menu");
+                Debug.Log("goto menu");
 
                 MenuCanvasManager.Instance.ChangeScreen(MenuCanvasManager.Instance.screens[1]);
             });
@@ -122,6 +128,8 @@ public class LeadsUIControler : MonoBehaviour
             prevButton.onClick.RemoveAllListeners();
             prevButton.onClick.AddListener(delegate
             {
+                Debug.Log("prev screen");
+
                 PrevScreen();
             });
         }
@@ -142,6 +150,7 @@ public class LeadsUIControler : MonoBehaviour
                     nextButton.onClick.AddListener(delegate
                     {
                         Debug.Log("Submit Data");
+
                         List<String> formData = new List<String>();
                         for (int f = 0; f < forms.Length; f++)
                         {
@@ -178,6 +187,8 @@ public class LeadsUIControler : MonoBehaviour
                 nextButton.onClick.RemoveAllListeners();
                 nextButton.onClick.AddListener(delegate
                 {
+                    Debug.Log("next screen");
+
                     NextScreen();
                 });
             }            
@@ -194,7 +205,7 @@ public class LeadsUIControler : MonoBehaviour
     {
         forms[idx].SetActive(false);
         idx += 1;
-        slider.value += 0.5f;
+        slider.value = idx + 1;
         int c = idx + 1;
         slider.GetComponentInChildren<Text>().text = "PASSO " + c + " DE " + forms.Length;
         forms[idx].SetActive(true);
@@ -206,7 +217,7 @@ public class LeadsUIControler : MonoBehaviour
     {
         forms[idx].SetActive(false);
         idx -= 1;
-        slider.value -= 0.5f;
+        slider.value = idx + 1;
         int c = idx + 1;
         slider.GetComponentInChildren<Text>().text = "PASSO " + c + " DE " + forms.Length;
         forms[idx].SetActive(true);

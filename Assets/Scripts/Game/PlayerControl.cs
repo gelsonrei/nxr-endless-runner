@@ -5,7 +5,6 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 using EndlessRunner;
-using Unity.VisualScripting;
 
 public class PlayerControl : MonoBehaviour
 {
@@ -76,10 +75,13 @@ public class PlayerControl : MonoBehaviour
         m_animator.avatar = myCharacter.GetComponent<Animator>().avatar;
         //m_animator.runtimeAnimatorController = myCharacter.GetComponent<Animator>().runtimeAnimatorController;
 
-        m_defult_animator_controler = myCharacter.GetComponent<Variables>().declarations.Get<RuntimeAnimatorController>("DefaultAnimatorControler");
-        m_special_animator_controler = myCharacter.GetComponent<Variables>().declarations.Get<RuntimeAnimatorController>("SpecialAinmatorControler");
+        //m_defult_animator_controler = myCharacter.GetComponent<Variables>().declarations.Get<RuntimeAnimatorController>("DefaultAnimatorControler");
+        //m_special_animator_controler = myCharacter.GetComponent<Variables>().declarations.Get<RuntimeAnimatorController>("SpecialAinmatorControler");
+        //item = myCharacter.GetComponent<Variables>().declarations.Get<GameObject>("Item");
 
-        item = myCharacter.GetComponent<Variables>().declarations.Get<GameObject>("Item");
+        m_defult_animator_controler = myCharacter.GetComponent<SlotPlayerVariablesables>().DefaultAnimatorControler;
+        m_special_animator_controler = myCharacter.GetComponent<SlotPlayerVariablesables>().SpecialAinmatorControler;
+        item = myCharacter.GetComponent<SlotPlayerVariablesables>().Item;
 
         m_animator.runtimeAnimatorController = m_defult_animator_controler;
 
@@ -121,6 +123,57 @@ public class PlayerControl : MonoBehaviour
         /*
         * Swipe Control
         */
+        if (Mouse.current != null)
+        {
+            if (Mouse.current.leftButton.isPressed)
+            {
+                Vector2 currentTouchPosition = Mouse.current.position.ReadValue();
+
+                if (!isSwiping)
+                {
+                    touchStartPosition = currentTouchPosition;
+                    isSwiping = true;
+                }
+            }
+
+            if (Mouse.current.leftButton.wasReleasedThisFrame)
+            {
+                Vector2 currentTouchPosition = Mouse.current.position.ReadValue();
+                isSwiping = false;
+
+                float swipeDistance = Vector2.Distance(touchStartPosition, currentTouchPosition);
+
+                if (swipeDistance >= minSwipeDistance)
+                {
+                    Vector2 swipeDirection = currentTouchPosition - touchStartPosition;
+                    swipeDirection.Normalize();
+
+                    if (Mathf.Abs(swipeDirection.x) > Mathf.Abs(swipeDirection.y))
+                    {
+                        if (swipeDirection.x > 0)
+                        {
+                            OnRigth();
+                        }
+                        else
+                        {
+                            OnLeft();
+                        }
+                    }
+                    else
+                    {
+                        if (swipeDirection.y > 0)
+                        {
+                            OnJump();
+                        }
+                        else
+                        {
+                            OnSlide();
+                        }
+                    }
+                }
+            }
+        }
+
         if (Touchscreen.current != null)
         {
             if (Touchscreen.current.primaryTouch.press.isPressed)
@@ -407,7 +460,8 @@ public class PlayerControl : MonoBehaviour
         {
             if (isSpecial)
             {
-                PlaySound(item.GetComponent<Variables>().declarations.Get<AudioClip>("jumpSound"));
+                //PlaySound(item.GetComponent<Variables>().declarations.Get<AudioClip>("jumpSound"));
+                PlaySound(item.GetComponent<SlotItemVariables>().itemSounds[0]);
             }
             else
             {
@@ -427,7 +481,8 @@ public class PlayerControl : MonoBehaviour
         {
             if (isSpecial)
             {
-                PlaySound(item.GetComponent<Variables>().declarations.Get<AudioClip>("slideSound"));
+                //PlaySound(item.GetComponent<Variables>().declarations.Get<AudioClip>("slideSound"));
+                PlaySound(item.GetComponent<SlotItemVariables>().itemSounds[1]);
             }
             else
             {

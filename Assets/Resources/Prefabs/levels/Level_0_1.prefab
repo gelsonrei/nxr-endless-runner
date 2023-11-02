@@ -230,9 +230,9 @@ MonoBehaviour:
   spawnCount: 2
   minCoins: 1
   maxCoins: 5
-  minPointsForCard: 100
+  minPointsForCard: 50
   minDistance: 10
-  cardSpawnProbability: 0.1
+  cardSpawnProbability: 0.4
   obstacleSpawnProbability: 0.3
 --- !u!1 &4159585167216911081
 GameObject:
