@@ -27,7 +27,7 @@ public class FieldsValidatorData : FieldsValidator
         {
             if (value.Length > 0)
             {
-                textStatus.text = "Digite no mínimo 2 characteres";
+                textStatus.text = "Digite no mínimo 2 caracteres";
                 inputField.GetComponent<Image>().color = new Color(1, 0, 0, 0.2f);
                 textStatus.gameObject.SetActive(true);
 
