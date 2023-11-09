@@ -63,7 +63,7 @@ public class LeadsUIControler : MonoBehaviour
     {
         for (int i = 0; i < forms.Length; i++)
         {
-            foreach (InputField field in forms[i].GetComponentsInChildren<InputField>() )
+            foreach (InputField field in forms[i].GetComponentsInChildren<InputField>(true) )
             {
                 field.onValueChange.AddListener(delegate
                 {
@@ -83,7 +83,7 @@ public class LeadsUIControler : MonoBehaviour
     {
         for (int i = 0; i < forms.Length; i++)
         {
-            foreach (InputField field in forms[i].GetComponentsInChildren<InputField>() )
+            foreach (InputField field in forms[i].GetComponentsInChildren<InputField>(true) )
             {
                 field.onValueChange.RemoveAllListeners();
             }
@@ -94,7 +94,7 @@ public class LeadsUIControler : MonoBehaviour
 
     private void CheckValidateForm()
     {
-        foreach (InputField field in forms[idx].GetComponentsInChildren<InputField>())
+        foreach (InputField field in forms[idx].GetComponentsInChildren<InputField>(true))
         {
             if (field.GetComponent<FieldsValidator>().GetIsFieldValid() == false)
             {
@@ -154,7 +154,7 @@ public class LeadsUIControler : MonoBehaviour
                         List<String> formData = new List<String>();
                         for (int f = 0; f < forms.Length; f++)
                         {
-                            foreach (InputField field in forms[f].GetComponentsInChildren<InputField>())
+                            foreach (InputField field in forms[f].GetComponentsInChildren<InputField>(true))
                             {
                                 formData.Add(field.text);
                             }

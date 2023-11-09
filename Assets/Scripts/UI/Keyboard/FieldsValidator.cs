@@ -49,7 +49,7 @@ public abstract class FieldsValidator : MonoBehaviour
 
     private void OnDisable() 
     {
-        inputField.onValueChanged.RemoveAllListeners();
+        inputField.onValueChanged.RemoveListener(ValidateField);
     }
 
 }

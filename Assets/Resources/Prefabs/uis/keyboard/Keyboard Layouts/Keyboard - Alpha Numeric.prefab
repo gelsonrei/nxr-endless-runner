@@ -73,6 +73,7 @@ MonoBehaviour:
   actionNumbers: {fileID: 0}
   actionCapitalLetters: {fileID: 0}
   actionSmallLetters: {fileID: 0}
+  emailChars: {fileID: 0}
 --- !u!114 &488303635003174870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2707,6 +2708,18 @@ PrefabInstance:
     - target: {fileID: 414963080134212053, guid: 808ac0b004a6a4296996bb89660c98cc, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4960970639662927058, guid: 808ac0b004a6a4296996bb89660c98cc, type: 3}
+      propertyPath: m_Color.b
+      value: 0.19607843
+      objectReference: {fileID: 0}
+    - target: {fileID: 4960970639662927058, guid: 808ac0b004a6a4296996bb89660c98cc, type: 3}
+      propertyPath: m_Color.g
+      value: 0.19607843
+      objectReference: {fileID: 0}
+    - target: {fileID: 4960970639662927058, guid: 808ac0b004a6a4296996bb89660c98cc, type: 3}
+      propertyPath: m_Color.r
+      value: 0.19607843
       objectReference: {fileID: 0}
     - target: {fileID: 8953898216803452879, guid: 808ac0b004a6a4296996bb89660c98cc, type: 3}
       propertyPath: m_AnchorMax.y
