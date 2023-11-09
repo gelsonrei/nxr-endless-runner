@@ -389,6 +389,8 @@ public class GameCanvasManager : MonoBehaviour
         //Load Scene
         public void LoadScene(string sceneName)
         {
+            GameManager.Instance.ResumeGame();
+            
             loaderScreen.SetActive(true);
             loaderScreen.GetComponent<SceneManagement>().LoadScene(sceneName);
         }
