@@ -59,6 +59,19 @@ public class LeadManager : TableManager
         Print(lead);
     }
 
+    public static List<Lead> Select(int limit = 0)
+    {
+        string sql = "SELECT * FROM Lead ";
+        if (limit > 0)
+        {
+            sql += "  LIMIT " + limit;
+        }
+
+        List<Lead> m_lead = QueryList<Lead>(sql);
+
+        return m_lead;
+    }
+
     public static Lead GetOne(string cpf)
     {
         string sql = "SELECT * FROM Lead where cpf='" + cpf + "'";

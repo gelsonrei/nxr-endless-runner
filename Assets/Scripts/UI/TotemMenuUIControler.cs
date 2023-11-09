@@ -9,10 +9,14 @@ public class TotemMenuUIControler : MonoBehaviour
     private AudioSource m_audioSource;
     private Button[] buttons;
 
+    [Header("Ranking Settings")]
     public GameObject logo;
     public GameObject title;
     public GameObject content;
     public GameObject template;
+
+    [Header("App Settings")]
+    public GameObject appMenu;
 
     private void Awake()
     {
@@ -32,8 +36,14 @@ public class TotemMenuUIControler : MonoBehaviour
 
     void OnEnable()
     {
-        //leads
+        //app config
         buttons[0].onClick.AddListener(
+        () => {
+            appMenu.SetActive(true);
+        });
+
+        //leads
+        buttons[1].onClick.AddListener(
         () => {
             m_audioSource.Play();
 
@@ -42,7 +52,7 @@ public class TotemMenuUIControler : MonoBehaviour
         });
 
         //ranking
-        buttons[1].onClick.AddListener(
+        buttons[2].onClick.AddListener(
         () => {
             m_audioSource.Play();
 
@@ -50,7 +60,7 @@ public class TotemMenuUIControler : MonoBehaviour
         });
 
         //credits
-        buttons[2].onClick.AddListener(
+        buttons[3].onClick.AddListener(
         () => {
             m_audioSource.Play();
 
@@ -97,6 +107,7 @@ public class TotemMenuUIControler : MonoBehaviour
         buttons[0].onClick.RemoveAllListeners();
         buttons[1].onClick.RemoveAllListeners();
         buttons[2].onClick.RemoveAllListeners();
+        buttons[3].onClick.RemoveAllListeners();
     }
 
     private IEnumerator HideAndShowGameObjectCoroutine()

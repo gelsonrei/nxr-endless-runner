@@ -161,10 +161,22 @@ public class LeadsUIControler : MonoBehaviour
                         }
 
                         TableManager.Init();
-                        LeadManager.CreateOrUpdate(formData[0],formData[1],formData[2],formData[4],formData[3], ActivationManager.GetLength());
+
+                        string mcpf;
+                        if (formData[4] == "000.000.000-00")
+                        {
+                            int mv = LeadManager.Select().Count + 1;
+                            mcpf = "no-cpf-" + mv;
+                        }
+                        else
+                        {
+                            mcpf = formData[4];
+                        }
+
+                        LeadManager.CreateOrUpdate(formData[0],formData[1],formData[2],mcpf,formData[3], ActivationManager.GetLength());
 
                         DataBase.InsertData("playerCharacter", 0);
-                        DataBase.InsertData("playerSession", formData[4]);
+                        DataBase.InsertData("playerSession", mcpf);
 
                         MenuCanvasManager.Instance.LoadScene("Game");
                     });
