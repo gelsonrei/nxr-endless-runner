@@ -1,14 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
-
 using UnityEngine;
 
 public class Obstacle : MonoBehaviour
 {
+    public enum ObstacleType
+    {
+        Slide,
+        Jump,
+        Dodge
+    }
+
     private AudioSource audioSource;
     private BoxCollider boxCollider;
 
     private PlayerControl pm;
+
+    [SerializeField] private Vector2Int obstacleSize;
+    [SerializeField] private ObstacleType obstacleType;
+
+    public Vector2Int Size => obstacleSize;
+    public ObstacleType Type => obstacleType;
 
     private void Awake()
     {
@@ -20,12 +32,10 @@ public class Obstacle : MonoBehaviour
 
     void Start()
     {
-        
     }
 
     void Update()
     {
-        
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -48,14 +58,14 @@ public class Obstacle : MonoBehaviour
 
                 boxCollider.isTrigger = true;
             }
-        } 
+        }
         else
         {
             boxCollider.isTrigger = false;
         }
     }
 
-    private void PlaySound ()
+    private void PlaySound()
     {
         audioSource.Play();
     }
