@@ -3979,8 +3979,8 @@ MonoBehaviour:
   lifes: 3
   velocity: 4
   maxVelocity: 10
-  leftOffset: -1.5
-  rigthOffset: 1.5
+  leftOffset: -2
+  rigthOffset: 2
   minSwipeDistance: 100
   jumpAudioClips:
   - {fileID: 8300000, guid: 59d5133d815a68c4586643f4dddc6bd4, type: 3}
