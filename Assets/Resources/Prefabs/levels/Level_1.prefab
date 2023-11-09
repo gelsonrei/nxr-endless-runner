@@ -54,7 +54,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4362001921618911889}
-  - component: {fileID: 2174287373128762005}
   m_Layer: 0
   m_Name: Level_1
   m_TagString: Level
@@ -85,34 +84,6 @@ Transform:
   - {fileID: 138116640617301695}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2174287373128762005
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4362001921618911890}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16cb5fa76e8be2d46a829f255a46ffac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnPoints:
-  - {fileID: 4539122607329921177}
-  - {fileID: 7488081746314949232}
-  - {fileID: 8259124328010273065}
-  coin: {fileID: 1795534545452757617, guid: dd22038e9d5e2ea478951967780bfac4, type: 3}
-  wallet: {fileID: 3261739196106123112, guid: 7a29439fe0e1fff4a9b18c35211cebbe, type: 3}
-  obstacles:
-  - {fileID: 3066246521644870065, guid: 8714b424d2cf1f141b51c7035f121f44, type: 3}
-  - {fileID: 5907526187552223942, guid: 125d4c6fa25970b43a80add8bfbe8162, type: 3}
-  spawnCount: 2
-  minCoins: 1
-  maxCoins: 5
-  minPointsForCard: 50
-  minDistance: 10
-  cardSpawnProbability: 0.2
-  obstacleSpawnProbability: 0.4
 --- !u!1 &4362001922475447374
 GameObject:
   m_ObjectHideFlags: 0
@@ -530,6 +501,42 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4362001921618911889}
     m_Modifications:
+    - target: {fileID: 262904813797191453, guid: a7c58d15425fd7343939f28570b77586, type: 3}
+      propertyPath: cardRatio
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 262904813797191453, guid: a7c58d15425fd7343939f28570b77586, type: 3}
+      propertyPath: coinRatio
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 262904813797191453, guid: a7c58d15425fd7343939f28570b77586, type: 3}
+      propertyPath: emptyRatio
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 262904813797191453, guid: a7c58d15425fd7343939f28570b77586, type: 3}
+      propertyPath: obstacleRatio
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 262904813797191453, guid: a7c58d15425fd7343939f28570b77586, type: 3}
+      propertyPath: obstaclesPrefab.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 262904813797191453, guid: a7c58d15425fd7343939f28570b77586, type: 3}
+      propertyPath: obstaclesPrefab.Array.data[0]
+      value: 
+      objectReference: {fileID: 5139767871723368184, guid: 7bfbcc132d36de44ebc6b3d00d569010, type: 3}
+    - target: {fileID: 262904813797191453, guid: a7c58d15425fd7343939f28570b77586, type: 3}
+      propertyPath: obstaclesPrefab.Array.data[1]
+      value: 
+      objectReference: {fileID: 2322599779215005903, guid: d954d176583abcb46afbd5a3043472df, type: 3}
+    - target: {fileID: 262904813797191453, guid: a7c58d15425fd7343939f28570b77586, type: 3}
+      propertyPath: obstaclesPrefab.Array.data[2]
+      value: 
+      objectReference: {fileID: 5907526187552223942, guid: 125d4c6fa25970b43a80add8bfbe8162, type: 3}
+    - target: {fileID: 262904813797191453, guid: a7c58d15425fd7343939f28570b77586, type: 3}
+      propertyPath: obstaclesPrefab.Array.data[3]
+      value: 
+      objectReference: {fileID: 3066246521644870065, guid: 8714b424d2cf1f141b51c7035f121f44, type: 3}
     - target: {fileID: 2011736156430727008, guid: a7c58d15425fd7343939f28570b77586, type: 3}
       propertyPath: m_Name
       value: Grid

@@ -28,8 +28,8 @@ public class LevelManager : MonoBehaviour
 
         if ( levels.Length > 0)
         {
-            InstanceLevel(0);
-            InstanceLevel(0);
+            InstanceLevel(0, false);
+            InstanceLevel(0, false);
             InstanceLevel(0);
             InstanceLevel(0);
             InstanceLevel(0);
@@ -80,7 +80,7 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    public void InstanceLevel(int index)
+    public void InstanceLevel(int index, bool autoSpawn = true)
     {
         Vector3 newLocation;
 
@@ -96,6 +96,8 @@ public class LevelManager : MonoBehaviour
 
         GameObject m_level = Instantiate(levels[index], newLocation, Quaternion.identity, transform);
         myInstantieteLevels.Add(m_level);
+
+        m_level.GetComponentInChildren<Grid>().autoStart = autoSpawn;
         
         //transform.position = new Vector3(0, 0, transform.position.z - scaleOffset);
     }

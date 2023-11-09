@@ -356,7 +356,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2547594385165548945}
-  - component: {fileID: 143746730931641749}
   m_Layer: 0
   m_Name: Level_2
   m_TagString: Level
@@ -377,7 +376,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2925403893243576985}
   - {fileID: 2547594384409398093}
   - {fileID: 2547594384133845829}
   - {fileID: 2547594383693696422}
@@ -385,37 +383,9 @@ Transform:
   - {fileID: 8574393220153262391}
   - {fileID: 387688368030521083}
   - {fileID: 4462034125920844002}
+  - {fileID: 2925403893243576985}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &143746730931641749
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2547594385165548946}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16cb5fa76e8be2d46a829f255a46ffac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnPoints:
-  - {fileID: 2390318269503412121}
-  - {fileID: 8663004388665109872}
-  - {fileID: 7875779706093440553}
-  coin: {fileID: 1795534545452757617, guid: dd22038e9d5e2ea478951967780bfac4, type: 3}
-  wallet: {fileID: 3261739196106123112, guid: 7a29439fe0e1fff4a9b18c35211cebbe, type: 3}
-  obstacles:
-  - {fileID: 5139767871723368184, guid: 7bfbcc132d36de44ebc6b3d00d569010, type: 3}
-  - {fileID: 5139767871723368184, guid: 05f3b7fc6ff2fd04db9938644c22be2f, type: 3}
-  - {fileID: 5139767871723368184, guid: baaa2378fa09b694b9386192cc31ffa0, type: 3}
-  spawnCount: 2
-  minCoins: 1
-  maxCoins: 5
-  minPointsForCard: 50
-  minDistance: 10
-  cardSpawnProbability: 0.6
-  obstacleSpawnProbability: 0.2
 --- !u!1 &2728081214297724741
 GameObject:
   m_ObjectHideFlags: 0
@@ -638,6 +608,42 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2547594385165548945}
     m_Modifications:
+    - target: {fileID: 262904813797191453, guid: a7c58d15425fd7343939f28570b77586, type: 3}
+      propertyPath: cardRatio
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 262904813797191453, guid: a7c58d15425fd7343939f28570b77586, type: 3}
+      propertyPath: coinRatio
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 262904813797191453, guid: a7c58d15425fd7343939f28570b77586, type: 3}
+      propertyPath: emptyRatio
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 262904813797191453, guid: a7c58d15425fd7343939f28570b77586, type: 3}
+      propertyPath: obstacleRatio
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 262904813797191453, guid: a7c58d15425fd7343939f28570b77586, type: 3}
+      propertyPath: obstaclesPrefab.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 262904813797191453, guid: a7c58d15425fd7343939f28570b77586, type: 3}
+      propertyPath: obstaclesPrefab.Array.data[0]
+      value: 
+      objectReference: {fileID: 5139767871723368184, guid: 7bfbcc132d36de44ebc6b3d00d569010, type: 3}
+    - target: {fileID: 262904813797191453, guid: a7c58d15425fd7343939f28570b77586, type: 3}
+      propertyPath: obstaclesPrefab.Array.data[1]
+      value: 
+      objectReference: {fileID: 5139767871723368184, guid: baaa2378fa09b694b9386192cc31ffa0, type: 3}
+    - target: {fileID: 262904813797191453, guid: a7c58d15425fd7343939f28570b77586, type: 3}
+      propertyPath: obstaclesPrefab.Array.data[2]
+      value: 
+      objectReference: {fileID: 5907526187552223942, guid: 125d4c6fa25970b43a80add8bfbe8162, type: 3}
+    - target: {fileID: 262904813797191453, guid: a7c58d15425fd7343939f28570b77586, type: 3}
+      propertyPath: obstaclesPrefab.Array.data[3]
+      value: 
+      objectReference: {fileID: 3066246521644870065, guid: 8714b424d2cf1f141b51c7035f121f44, type: 3}
     - target: {fileID: 2011736156430727008, guid: a7c58d15425fd7343939f28570b77586, type: 3}
       propertyPath: m_Name
       value: Grid
