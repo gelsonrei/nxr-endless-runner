@@ -18,31 +18,26 @@ public class Grid : MonoBehaviour
         public ObjectType Type;
     }
 
-    [Header("Objects to Spawn")] [SerializeField]
-    private GameObject coinPrefab;
-
+    [Header("Objects to Spawn")]
+    [SerializeField] private GameObject coinPrefab;
     [SerializeField] private GameObject walletPrefab;
     [SerializeField] private GameObject[] obstaclesPrefab;
 
-    [Header("Grid Settings")] [SerializeField]
-    private int width = 3;
-
+    [Header("Grid Settings")]
+    [SerializeField] private int width = 3;
     [SerializeField] private int height = 10;
-
     [SerializeField] private float size = 2.0f;
 
-    [Header("Spawn Settings")] [SerializeField] [Range(0f, 1f)]
-    private float obstacleRatio = 0.5f;
-
+    [Header("Spawn Settings")]
+    [SerializeField] [Range(0f, 1f)] private float obstacleRatio = 0.5f;
     [SerializeField] [Range(0f, 1f)] private float emptyRatio = 0.5f;
-
     [SerializeField] [Range(0f, 1f)] private float coinRatio = 0.5f;
-
     [SerializeField] [Range(0f, 1f)] private float cardRatio = 0.05f;
-
     [SerializeField] private int cardLimit = 1;
 
-    private int _cardCount = 0;
+    private int obstacleCount = 0;
+    private int coinCount = 0;
+    private int cardCount = 0;
 
     private Slot[] _slots;
 
@@ -137,31 +132,25 @@ public class Grid : MonoBehaviour
 
             var rand = UnityEngine.Random.value;
 
-            if (rand < obstacleRatio)
+            if (rand < obstacleRatio && obstacleCount < Mathf.FloorToInt(obstacleRatio * width * height))
             {
+                obstacleCount++;
                 return ObjectType.Obstacle;
             }
-            else if (rand < obstacleRatio + cardRatio)
+            else if (rand < obstacleRatio + cardRatio && cardCount < Mathf.FloorToInt(cardRatio * width * height) && cardCount < cardLimit)
             {
-                if (_cardCount >= cardLimit)
-                {
-                    continue;
-                }
-
-                _cardCount++;
-
+                cardCount++;
                 return ObjectType.Card;
             }
-            else if (rand < obstacleRatio + cardRatio + coinRatio)
+            else if (rand < obstacleRatio + cardRatio + coinRatio && coinCount < Mathf.FloorToInt(coinRatio * width * height))
             {
+                coinCount++;
                 return ObjectType.Coin;
             }
             else
             {
                 return ObjectType.Empty;
             }
-
-            break;
         }
     }
 
@@ -170,59 +159,30 @@ public class Grid : MonoBehaviour
         for (var y = 0; y < height; y++)
         {
             var isEdgeRow = y == 0 || y == height - 1;
-            // Flag to check if there's at least one passable obstacle in the row.
-            var mustHavePassableSpace = !isEdgeRow;
-            var hasPassableSpace = isEdgeRow;
 
             for (var x = 0; x < width; x++)
             {
                 if (IsOccupied(x, y)) continue;
 
-                var objectType = GetRandomObjectType();
+                ObjectType objectType = GetRandomObjectType();
 
-                // Rule 01 - Cannot be a obstacle if it's the first ou the last line of the grid.
-                while (isEdgeRow && objectType == ObjectType.Obstacle)
+                // Regra 01 - Não pode ser um obstáculo se for a primeira ou a última linha da grade.
+                if (isEdgeRow && objectType == ObjectType.Obstacle)
                 {
-                    objectType = GetRandomObjectType();
+                    continue; // Pula a geração de obstáculo nas linhas de borda.
                 }
 
-                // Continue to the next iteration if it's an edge row after setting the objectType.
-                if (isEdgeRow)
+                // Regra 02 - Se não for uma linha de borda, verifique se o slot anterior na coluna é transitável
+                if (!isEdgeRow && y > 0)
                 {
-                    SetSlot(x, y, GetPrefabFromObjectType(objectType), objectType);
-                    continue;
+                    var previousSlot = GetSlot(x, y - 1);
+                    if (previousSlot.Type == ObjectType.Obstacle && objectType == ObjectType.Obstacle)
+                    {
+                        continue; // Evita obstáculos consecutivos para manter a transitabilidade.
+                    }
                 }
 
-                // Rule 02 - If not an edge row, check if the previous slot in the column is passable
-                var previousSlot = GetSlot(x, y - 1);
-                // var previousObstacle = previousSlot.Occupant.GetComponent<Obstacle>();
-                Obstacle previousObstacle = null;
-                if (previousSlot.Occupant != null)
-                {
-                    previousObstacle = previousSlot.Occupant.GetComponent<Obstacle>();
-                }
-
-                while (previousSlot.Type == ObjectType.Obstacle && objectType == ObjectType.Obstacle)
-                {
-                    objectType = GetRandomObjectType();
-                }
-
-                // TODO:
                 SetSlot(x, y, GetPrefabFromObjectType(objectType), objectType);
-
-                // If the slot type determined is not an obstacle, or it's a passable obstacle, set the flag to true
-                // if (objectType != ObjectType.Obstacle || IsObstaclePassable(previousObstacle))
-                // {
-                //     hasPassableSpace = true;
-                // }
-
-                //
-                // // //SetSlot(x, y, objectType);
-                // //
-                // // if (!hasPassableSpace)
-                // // {
-                // //
-                // // }
             }
         }
     }
@@ -234,7 +194,6 @@ public class Grid : MonoBehaviour
             if (_slots[i].Type == ObjectType.Empty || _slots[i].Occupant == null) continue;
 
             var spawnPosition = CalculatePositionFromIndex(i);
-
             _slots[i].Occupant = Instantiate(_slots[i].Occupant, spawnPosition, Quaternion.identity, transform);
         }
     }
@@ -243,7 +202,6 @@ public class Grid : MonoBehaviour
     {
         var x = index % width;
         var y = index / width;
-
         var basePosition = new Vector3(
             -width * size * 0.5f + size * 0.5f,
             0,
@@ -262,10 +220,5 @@ public class Grid : MonoBehaviour
             ObjectType.Obstacle => obstaclesPrefab[UnityEngine.Random.Range(0, obstaclesPrefab.Length)],
             _ => null
         };
-    }
-
-    private static bool IsObstaclePassable(Obstacle obstacle)
-    {
-        return obstacle == null || obstacle.Type != Obstacle.ObstacleType.Dodge;
     }
 }
