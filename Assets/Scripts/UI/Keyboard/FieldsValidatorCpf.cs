@@ -69,6 +69,15 @@ public class FieldsValidatorCpf : FieldsValidator
         value = new string(value.Where(char.IsDigit).ToArray());
         value = value.Substring(0, Mathf.Min(value.Length, 11));
 
+        if (value.Length > 0 && !noCPFToggle.isOn)
+        {
+            noCPFToggle.gameObject.SetActive(false);
+        }
+        else
+        {
+            noCPFToggle.gameObject.SetActive(true);
+        }
+
         string formattedCPF = "";
         for (int i = 0; i < value.Length; i++)
         {
