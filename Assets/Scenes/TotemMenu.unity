@@ -2149,8 +2149,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -80}
-  m_SizeDelta: {x: -120, y: -240}
+  m_AnchoredPosition: {x: 0, y: -10}
+  m_SizeDelta: {x: -120, y: -380}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &478531246
 MonoBehaviour:
@@ -2176,7 +2176,7 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: 95068c96a8550c647be61f095288f54c, type: 3}
     m_FontSize: 54
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 4
     m_MaxSize: 54
     m_Alignment: 0
@@ -2186,12 +2186,12 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Antes de avan\xE7ar, \xE9 importante voc\xEA ter ci\xEAncia que os seguintes
-    dados pessoais:\r\nCPF, telefone e e-mail ser\xE3o coletados para garantir o
-    registro de sua participa\xE7\xE3o no Game e para eventual oferta de produtos
-    e servi\xE7os do Banco do Brasil S.A (BB).\r\n\n\xC9 importante tamb\xE9m que
-    voc\xEA saiba que o BB, como controlador, trata seus dados pessoais na medida
-    necess\xE1ria e com seguran\xE7a, de acordo com as leis aplic\xE1veis e com nossa
-    Pol\xEDtica de Privacidade, dispon\xEDvel em bb.com.br/privacidade."
+    dados pessoais:\r\nNome, telefone, e-mail, data de nascimento e CPF, ser\xE3o
+    coletados para garantir o registro de sua participa\xE7\xE3o no Game e para eventual
+    oferta de produtos e servi\xE7os do Banco do Brasil S.A (BB).\r\n\n\xC9 importante
+    tamb\xE9m que voc\xEA saiba que o BB, como controlador, trata seus dados pessoais
+    na medida necess\xE1ria e com seguran\xE7a, de acordo com as leis aplic\xE1veis
+    e com nossa Pol\xEDtica de Privacidade, dispon\xEDvel em bb.com.br/privacidade."
 --- !u!222 &478531247
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8235,7 +8235,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1539305609}
   m_HandleRect: {fileID: 1539305608}
   m_Direction: 0
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -17002,7 +17002,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 477062309882652333, guid: 6b53f4d13ccd3ea45ae441c1d765fee7, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 477062309882652333, guid: 6b53f4d13ccd3ea45ae441c1d765fee7, type: 3}
       propertyPath: m_AnchorMin.x
@@ -17010,7 +17010,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 477062309882652333, guid: 6b53f4d13ccd3ea45ae441c1d765fee7, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 477062309882652333, guid: 6b53f4d13ccd3ea45ae441c1d765fee7, type: 3}
       propertyPath: m_SizeDelta.x
@@ -17070,15 +17070,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6641827991917479665, guid: 6b53f4d13ccd3ea45ae441c1d765fee7, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6641827991917479665, guid: 6b53f4d13ccd3ea45ae441c1d765fee7, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6641827991917479665, guid: 6b53f4d13ccd3ea45ae441c1d765fee7, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 410
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6641827991917479665, guid: 6b53f4d13ccd3ea45ae441c1d765fee7, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -17086,15 +17086,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6887171773419836621, guid: 6b53f4d13ccd3ea45ae441c1d765fee7, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6887171773419836621, guid: 6b53f4d13ccd3ea45ae441c1d765fee7, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6887171773419836621, guid: 6b53f4d13ccd3ea45ae441c1d765fee7, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 100
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6887171773419836621, guid: 6b53f4d13ccd3ea45ae441c1d765fee7, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -17102,15 +17102,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6986868975678095627, guid: 6b53f4d13ccd3ea45ae441c1d765fee7, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6986868975678095627, guid: 6b53f4d13ccd3ea45ae441c1d765fee7, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6986868975678095627, guid: 6b53f4d13ccd3ea45ae441c1d765fee7, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 812.8334
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6986868975678095627, guid: 6b53f4d13ccd3ea45ae441c1d765fee7, type: 3}
       propertyPath: m_AnchoredPosition.y
