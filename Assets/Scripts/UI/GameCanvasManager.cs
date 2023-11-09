@@ -24,6 +24,8 @@ public class GameCanvasManager : MonoBehaviour
     public GameObject specialImage;
     public Sprite[] specialUpSprites;
     public GameObject specialPopUp;
+    public Text recordLabel;
+    public Text newRecordLabel;
 
     [Header("Game UIS")]
     public GameObject pauseUI;
@@ -31,9 +33,12 @@ public class GameCanvasManager : MonoBehaviour
     public GameObject loseUI;
     public GameObject countDownUI;
     public GameObject loaderScreen;
+    public GameObject recordUI;
 
     private float currentDistance;
     private float currentPoints;
+    
+    public bool newRecord = false;
 
     private void Awake()
     {
@@ -49,7 +54,9 @@ public class GameCanvasManager : MonoBehaviour
 
         HideEspecial();
         HidePowerUp();
-
+        
+        PopulateRecord();
+        
         UpdateLifes(GameManager.Instance.player.GetComponent<PlayerControl>().lifes);
     }
 
@@ -72,15 +79,28 @@ public class GameCanvasManager : MonoBehaviour
     * HUD
     */
 
-        //Poinst
-        public void PopulatePoints(int points)
+    //Poinst
+    public void PopulatePoints(int points)
+    {
+        if (pointsLabel)
         {
-            if(pointsLabel)
+            currentPoints = points;
+            pointsLabel.text = points.ToString();
+        }
+    }
+
+    public void PopulateRecord()
+    {
+        if (recordLabel)
+        {
+            if (newRecord)
             {
-                currentPoints = points; 
-                pointsLabel.text = points.ToString();
+                recordLabel.text = currentDistance.ToString() + "M";
+            } else {
+                recordLabel.text = DataBase.SelectData("maxDistance").ToString() + "M";
             }
         }
+    }
 
         //Distance
         public void PopulateDistance(int distance)
@@ -89,6 +109,13 @@ public class GameCanvasManager : MonoBehaviour
             {
                 currentDistance = distance;
                 distanceLabel.text = distance.ToString() + " M";
+            }
+            
+            float x = DataBase.SelectData("maxDistance");
+            if (currentDistance > x)
+            {
+                newRecord = true;
+                PopulateRecord();
             }
         }
 
@@ -249,6 +276,20 @@ public class GameCanvasManager : MonoBehaviour
             {
                 b.onClick.RemoveAllListeners();
             }
+        }
+        
+        public void ShowRecordUI(int time)
+        {
+            newRecordLabel.text = currentDistance.ToString() + " metros";
+            recordUI.SetActive(true);
+            
+            Invoke(nameof(HideRecordUI), time);
+        }
+        
+        public void HideRecordUI()
+        {
+            recordUI.SetActive(false);
+            ShowLoseUI();
         }
 
         //Lose UI

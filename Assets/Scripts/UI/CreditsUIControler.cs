@@ -27,16 +27,7 @@ public class CreditsUIControler : MonoBehaviour
 
     void OnEnable()
     {
-        //home
         buttons[0].onClick.AddListener(
-        () => {
-            m_audioSource.Play();
-
-            MenuCanvasManager.Instance.ChangeScreen(MenuCanvasManager.Instance.screens[1]);
-        });
-
-        //back
-        buttons[1].onClick.AddListener(
         () => {
             m_audioSource.Play();
 
@@ -46,11 +37,7 @@ public class CreditsUIControler : MonoBehaviour
 
     void OnDisable()
     {
-        //home
         buttons[0].onClick.RemoveAllListeners();
-
-        //back
-        buttons[1].onClick.RemoveAllListeners();
     }
 
 }
