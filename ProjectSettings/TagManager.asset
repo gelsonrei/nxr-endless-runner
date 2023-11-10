@@ -3,12 +3,42 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - UI
+  - Ligth
+  - Level
+  - v
+  - n
+  - x
+  - b
+  - m
+  - c
+  - z
+  - a
+  - k
+  - j
+  - f
+  - s
+  - g
+  - l
+  - d
+  - h
+  - e
+  - w
+  - t
+  - y
+  - p
+  - i
+  - o
+  - q
+  - u
+  - r
+  - Obstacles
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Obstacles
   - Water
   - UI
   - 

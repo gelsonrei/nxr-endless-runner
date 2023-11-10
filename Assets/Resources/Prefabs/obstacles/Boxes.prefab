@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: -4990331226441963936}
   - component: {fileID: 6499828700057427155}
   - component: {fileID: -6638278344564630515}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Boxes
-  m_TagString: Untagged
+  m_TagString: Obstacles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -146,7 +146,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -229,6 +229,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 1e136aaa43b17234b8b26abacb2c7f4d, type: 3}
       propertyPath: m_Name
       value: boxes
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1e136aaa43b17234b8b26abacb2c7f4d, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8144394004440419581, guid: 1e136aaa43b17234b8b26abacb2c7f4d, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
