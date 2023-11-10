@@ -3993,6 +3993,8 @@ MonoBehaviour:
   leftOffset: -2
   rigthOffset: 2
   minSwipeDistance: 100
+  runAudioClips:
+  - {fileID: 8300000, guid: bb11c0ab97c0a8340adce52e3ff3d7c0, type: 3}
   jumpAudioClips:
   - {fileID: 8300000, guid: 59d5133d815a68c4586643f4dddc6bd4, type: 3}
   slideAudioClips:
@@ -4813,8 +4815,8 @@ MonoBehaviour:
   playerCamera: {fileID: 1600888576}
   playerCanvas: {fileID: 576710293}
   points: 0
-  pointsAvarage: 45
-  pointsForSpecial: 100
+  pointsAvarage: 55
+  pointsForSpecial: 180
   tickInterval: 15
   distance: 0
   currentLevel: 0
