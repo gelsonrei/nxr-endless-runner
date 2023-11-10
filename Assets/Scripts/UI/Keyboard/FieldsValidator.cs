@@ -45,11 +45,18 @@ public abstract class FieldsValidator : MonoBehaviour
     private void OnEnable() 
     {
         inputField.onValueChanged.AddListener(ValidateField);
+        inputField.onValueChanged.AddListener(FormatTextPosition);
     }
 
     private void OnDisable() 
     {
         inputField.onValueChanged.RemoveListener(ValidateField);
+        inputField.onValueChanged.RemoveListener(FormatTextPosition);
+    }
+
+    private void FormatTextPosition(string value)
+    {
+        inputField.caretPosition = inputField.text.Length;
     }
 
 }

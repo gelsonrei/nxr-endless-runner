@@ -325,24 +325,19 @@ public class GameCanvasManager : MonoBehaviour
                 TableManager.Init();
                 RankingManager.Create( DataBase.SelectSData("playerSession"), (int) currentDistance, (int) currentPoints );
 
-
                 // ---- //
 
-                Button[] buttons = loseUI.GetComponentsInChildren<Button>();
                 Text[] texts = loseUI.GetComponentsInChildren<Text>();
-
-                //Você alcançou  14500M!
                 texts[0].text = "Você alcançou " + currentDistance + "M";
 
-                /*
+                Button[] buttons = loseUI.GetComponentsInChildren<Button>();
                 buttons[0].onClick.AddListener(
                 () => {
                     Scene scene = SceneManager.GetActiveScene();
                     LoadScene(scene.name);
                 });
-*/
-                //buttons[1].onClick.AddListener(
-                buttons[0].onClick.AddListener(
+
+                buttons[1].onClick.AddListener(
                 () => {
                     //LoadScene("MobileMenu");
                     LoadScene("TotemMenu");
