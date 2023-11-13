@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Grid : MonoBehaviour
@@ -14,27 +15,31 @@ public class Grid : MonoBehaviour
     private struct Slot
     {
         public GameObject Occupant;
-        public GameObject Prefab;
         public ObjectType Type;
     }
 
-    [Header("Objects to Spawn")]
-    [SerializeField] private GameObject coinPrefab;
+    [Header("Objects to Spawn")] [SerializeField]
+    private GameObject coinPrefab;
+
     [SerializeField] private GameObject walletPrefab;
     [SerializeField] private GameObject[] obstaclesPrefab;
 
-    [Header("Grid Settings")]
-    [SerializeField] private int width = 3;
+    [Header("Grid Settings")] [SerializeField]
+    private int width = 3;
+
     [SerializeField] private int height = 10;
     [SerializeField] private float size = 2.0f;
 
-    [Header("Spawn Settings")]
-    [SerializeField] [Range(0f, 1f)] private float obstacleRatio = 0.5f;
-    [SerializeField] [Range(0f, 1f)] private float emptyRatio = 0.5f;
-    [SerializeField] [Range(0f, 1f)] private float coinRatio = 0.5f;
-    [SerializeField] [Range(0f, 1f)] private float cardRatio = 0.05f;
+    [Header("Spawn Settings")] [SerializeField] [Range(0f, 1f)]
+    private float obstacleRatio = 0.7f;
+
+    [SerializeField] [Range(0f, 1f)] private float coinRatio = 0.3f;
+    [SerializeField] [Range(0f, 1f)] private float cardRatio = 0f; // Definido como 0 para exemplo
     [SerializeField] private int cardLimit = 1;
 
+    private int maxObstacleCount;
+    private int maxCoinCount;
+    private int maxCardCount;
     private int obstacleCount = 0;
     private int coinCount = 0;
     private int cardCount = 0;
@@ -56,8 +61,18 @@ public class Grid : MonoBehaviour
     private void Start()
     {
         if (!autoStart) return;
+
+        CalculateMaxCounts();
         GenerateSpawnOrder();
         ExecuteSpawn();
+    }
+
+    private void CalculateMaxCounts()
+    {
+        int totalSlots = width * height;
+        maxObstacleCount = Mathf.FloorToInt(obstacleRatio * totalSlots);
+        maxCoinCount = Mathf.FloorToInt(coinRatio * totalSlots);
+        maxCardCount = Mathf.FloorToInt(cardRatio * totalSlots);
     }
 
     private void OnDrawGizmos()
@@ -114,78 +129,103 @@ public class Grid : MonoBehaviour
         _slots[slotIndex].Occupant = prefab;
     }
 
-    private void NormalizeRatios()
-    {
-        var total = obstacleRatio + cardRatio + coinRatio + emptyRatio;
-
-        obstacleRatio /= total;
-        cardRatio /= total;
-        coinRatio /= total;
-        emptyRatio /= total;
-    }
-
     private ObjectType GetRandomObjectType()
     {
-        while (true)
+        if (obstacleCount < maxObstacleCount)
         {
-            NormalizeRatios();
-
-            var rand = UnityEngine.Random.value;
-
-            if (rand < obstacleRatio && obstacleCount < Mathf.FloorToInt(obstacleRatio * width * height))
-            {
-                obstacleCount++;
-                return ObjectType.Obstacle;
-            }
-            else if (rand < obstacleRatio + cardRatio && cardCount < Mathf.FloorToInt(cardRatio * width * height) && cardCount < cardLimit)
-            {
-                cardCount++;
-                return ObjectType.Card;
-            }
-            else if (rand < obstacleRatio + cardRatio + coinRatio && coinCount < Mathf.FloorToInt(coinRatio * width * height))
-            {
-                coinCount++;
-                return ObjectType.Coin;
-            }
-            else
-            {
-                return ObjectType.Empty;
-            }
+            obstacleCount++;
+            return ObjectType.Obstacle;
         }
+        else if (coinCount < maxCoinCount)
+        {
+            coinCount++;
+            return ObjectType.Coin;
+        }
+        else if (cardCount < maxCardCount)
+        {
+            cardCount++;
+            return ObjectType.Card;
+        }
+        else
+        {
+            return ObjectType.Empty;
+        }
+    }
+
+    private List<ObjectType> CreateShuffledObjectList()
+    {
+        var objectList = new List<ObjectType>();
+
+        // Adiciona os objetos de acordo com suas contagens máximas
+        for (var i = 0; i < maxObstacleCount; i++)
+            objectList.Add(ObjectType.Obstacle);
+        for (var i = 0; i < maxCoinCount; i++)
+            objectList.Add(ObjectType.Coin);
+        for (var i = 0; i < maxCardCount; i++)
+            objectList.Add(ObjectType.Card);
+
+        // Preencher o restante com espaços vazios
+        while (objectList.Count < width * height)
+            objectList.Add(ObjectType.Empty);
+
+        // Embaralhar a lista
+        var rng = new System.Random();
+        var n = objectList.Count;
+        while (n > 1)
+        {
+            n--;
+            var k = rng.Next(n + 1);
+            (objectList[k], objectList[n]) = (objectList[n], objectList[k]);
+        }
+
+        return objectList;
     }
 
     private void GenerateSpawnOrder()
     {
+        List<ObjectType> objectList = CreateShuffledObjectList();
+        int listIndex = 0;
+
         for (var y = 0; y < height; y++)
         {
             var isEdgeRow = y == 0 || y == height - 1;
 
             for (var x = 0; x < width; x++)
             {
-                if (IsOccupied(x, y)) continue;
-
-                ObjectType objectType = GetRandomObjectType();
-
-                // Regra 01 - Não pode ser um obstáculo se for a primeira ou a última linha da grade.
-                if (isEdgeRow && objectType == ObjectType.Obstacle)
+                if (listIndex >= objectList.Count)
                 {
-                    continue; // Pula a geração de obstáculo nas linhas de borda.
+                    break; // Todos os objetos foram alocados
                 }
 
-                // Regra 02 - Se não for uma linha de borda, verifique se o slot anterior na coluna é transitável
+                ObjectType objectType = objectList[listIndex];
+
+                // Verifica a Regra 01 - Não colocar obstáculo nas linhas de borda
+                if (isEdgeRow && objectType == ObjectType.Obstacle)
+                {
+                    listIndex++; // Pula este objeto e tenta o próximo
+                    x--; // Reconsidera este slot
+                    continue;
+                }
+
+                // Verifica a Regra 02 - Evitar obstáculos consecutivos para manter a transitabilidade
                 if (!isEdgeRow && y > 0)
                 {
                     var previousSlot = GetSlot(x, y - 1);
                     if (previousSlot.Type == ObjectType.Obstacle && objectType == ObjectType.Obstacle)
                     {
-                        continue; // Evita obstáculos consecutivos para manter a transitabilidade.
+                        listIndex++; // Pula este objeto e tenta o próximo
+                        x--; // Reconsidera este slot
+                        continue;
                     }
                 }
 
+                // Se passar pelas verificações, define o objeto e avança para o próximo na lista
                 SetSlot(x, y, GetPrefabFromObjectType(objectType), objectType);
+                listIndex++;
             }
         }
     }
+
 
     private void ExecuteSpawn()
     {
