@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+
 using UnityEngine;
 
 public class Grid : MonoBehaviour
@@ -70,9 +71,11 @@ public class Grid : MonoBehaviour
     private void CalculateMaxCounts()
     {
         int totalSlots = width * height;
-        maxObstacleCount = Mathf.FloorToInt(obstacleRatio * totalSlots);
+        float cu = obstacleRatio - GameManager.Instance.player.GetComponent<PlayerControl>().velocity / 100;
+        maxObstacleCount = Mathf.FloorToInt((obstacleRatio - cu) * totalSlots);
         maxCoinCount = Mathf.FloorToInt(coinRatio * totalSlots);
         maxCardCount = Mathf.FloorToInt(cardRatio * totalSlots);
+        maxCardCount = (maxCardCount > cardLimit && !GameManager.Instance.player.GetComponent<PlayerControl>().isMagnetic) ? cardLimit : maxCardCount;
     }
 
     private void OnDrawGizmos()

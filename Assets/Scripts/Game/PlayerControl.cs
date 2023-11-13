@@ -236,8 +236,34 @@ public class PlayerControl : MonoBehaviour
                 PlaySound(runAudioClips[Random.Range(0, runAudioClips.Length - 1)], velocity / 4, true);
             }
         }
-    }
 
+        /* this block is a pig code, refact in a future */
+        if (m_animator.GetBool("isColide"))
+        {
+            if (velocity > 0)
+            {
+                velocity -= 0.05f;
+            }
+        }
+        else
+        {
+            if (!isSpecial)
+            {
+                if (velocity < 4)
+                {
+                    velocity += 0.05f;
+                }
+            }
+            else
+            {
+                if (velocity < 5)
+                {
+                    velocity += 0.05f;
+                }
+            }
+        }
+        /* this block is a pig code */
+    }
 
     /*
     * Game Logic

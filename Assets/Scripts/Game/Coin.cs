@@ -68,14 +68,16 @@ public class Coin : MonoBehaviour
 
     private void SumPoints()
     {
+        /*
         if (GameManager.Instance.player.GetComponent<PlayerControl>().isSpecial)
         {
             GameManager.Instance.points += (value * 2);
         }
         else
         {
+        */
             GameManager.Instance.points += value;
-        }
+       // }
     }
 
     private void RenderMesh(bool status)

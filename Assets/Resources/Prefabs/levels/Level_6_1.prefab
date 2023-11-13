@@ -6454,15 +6454,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 262904813797191453, guid: a7c58d15425fd7343939f28570b77586, type: 3}
       propertyPath: cardLimit
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 262904813797191453, guid: a7c58d15425fd7343939f28570b77586, type: 3}
       propertyPath: cardRatio
-      value: 0.1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 262904813797191453, guid: a7c58d15425fd7343939f28570b77586, type: 3}
       propertyPath: coinRatio
-      value: 0.4
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 262904813797191453, guid: a7c58d15425fd7343939f28570b77586, type: 3}
       propertyPath: emptyRatio
@@ -6470,7 +6470,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 262904813797191453, guid: a7c58d15425fd7343939f28570b77586, type: 3}
       propertyPath: obstacleRatio
-      value: 0.1
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 262904813797191453, guid: a7c58d15425fd7343939f28570b77586, type: 3}
       propertyPath: obstaclesPrefab.Array.size

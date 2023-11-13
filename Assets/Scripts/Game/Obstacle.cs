@@ -32,7 +32,7 @@ public class Obstacle : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("EU, - " + gameObject.name + ", BATI EM - " + other.name);
+        //Debug.Log("EU, - " + gameObject.name + ", BATI EM - " + other.name);
         
         if (other.CompareTag("Player") && !pm.GetComponent<Animator>().GetBool("isColide"))
         {
