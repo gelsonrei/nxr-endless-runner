@@ -29,39 +29,17 @@ public class Obstacle : MonoBehaviour
 
         pm = GameManager.Instance.player.GetComponent<PlayerControl>();
     }
-
-    void Start()
+    
+    private void OnTriggerEnter(Collider other)
     {
-    }
-
-    void Update()
-    {
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (!pm.GetComponent<Animator>().GetBool("isColide"))
+        Debug.Log("EU, - " + gameObject.name + ", BATI EM - " + other.name);
+        
+        if (other.CompareTag("Player") && !pm.GetComponent<Animator>().GetBool("isColide"))
         {
-            foreach (ContactPoint contact in collision.contacts)
-            {
-                if (boxCollider.isTrigger == false)
-                {
-                    PlaySound();
-
-                    //pm.OnToggleOff("isRunning");
-                    //pm.OnToggleOn("isColide");
-                    pm.takeHit();
-
-                    //GameCanvasManager gmc = GameManager.Instance.playerCanvas.GetComponent<GameCanvasManager>();
-                    //gmc.ShowLoseUI();
-                }
-
-                boxCollider.isTrigger = true;
-            }
-        }
-        else
-        {
-            boxCollider.isTrigger = false;
+            boxCollider.enabled = false;
+            
+            PlaySound();
+            pm.takeHit();
         }
     }
 

@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 6499828700057427155}
   - component: {fileID: 7189133613654912989}
   - component: {fileID: -6638278344564630515}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: LojaSkinsV2
-  m_TagString: Untagged
+  m_TagString: Obstacles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -148,7 +148,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -218,6 +218,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5781362051900935934}
     m_Modifications:
+    - target: {fileID: -9124658746501043382, guid: 11ef750abf3755b4294e8b1c78e9f9c9, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -8875983428447930742, guid: 11ef750abf3755b4294e8b1c78e9f9c9, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 11ef750abf3755b4294e8b1c78e9f9c9, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.3
@@ -270,9 +278,113 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7603139079413973726, guid: 11ef750abf3755b4294e8b1c78e9f9c9, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -7021344688114685097, guid: 11ef750abf3755b4294e8b1c78e9f9c9, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -6311140069581302077, guid: 11ef750abf3755b4294e8b1c78e9f9c9, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -4828148761453071067, guid: 11ef750abf3755b4294e8b1c78e9f9c9, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -4139120941435970309, guid: 11ef750abf3755b4294e8b1c78e9f9c9, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -3668514059018164587, guid: 11ef750abf3755b4294e8b1c78e9f9c9, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -3447030648999822390, guid: 11ef750abf3755b4294e8b1c78e9f9c9, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -1612507066585580309, guid: 11ef750abf3755b4294e8b1c78e9f9c9, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -821745509365635861, guid: 11ef750abf3755b4294e8b1c78e9f9c9, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 11ef750abf3755b4294e8b1c78e9f9c9, type: 3}
       propertyPath: m_Name
       value: LojaSkinsV2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 11ef750abf3755b4294e8b1c78e9f9c9, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1958021642453559788, guid: 11ef750abf3755b4294e8b1c78e9f9c9, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2569045602133359902, guid: 11ef750abf3755b4294e8b1c78e9f9c9, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3211103161866018264, guid: 11ef750abf3755b4294e8b1c78e9f9c9, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3972235698738941646, guid: 11ef750abf3755b4294e8b1c78e9f9c9, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5031206268745289518, guid: 11ef750abf3755b4294e8b1c78e9f9c9, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5384879420506460488, guid: 11ef750abf3755b4294e8b1c78e9f9c9, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5542752446074357655, guid: 11ef750abf3755b4294e8b1c78e9f9c9, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841431573681397807, guid: 11ef750abf3755b4294e8b1c78e9f9c9, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5909164972512311872, guid: 11ef750abf3755b4294e8b1c78e9f9c9, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6001046195602437303, guid: 11ef750abf3755b4294e8b1c78e9f9c9, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6279245823857970427, guid: 11ef750abf3755b4294e8b1c78e9f9c9, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6506012445798182883, guid: 11ef750abf3755b4294e8b1c78e9f9c9, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6969828248991449562, guid: 11ef750abf3755b4294e8b1c78e9f9c9, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8136792596993650240, guid: 11ef750abf3755b4294e8b1c78e9f9c9, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8523118101082138785, guid: 11ef750abf3755b4294e8b1c78e9f9c9, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8712591319171228187, guid: 11ef750abf3755b4294e8b1c78e9f9c9, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

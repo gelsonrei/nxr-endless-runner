@@ -33,7 +33,7 @@ public class Wallet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if ( !playerControl.isMagnetic )
+        if (other.CompareTag("Player") && !playerControl.isMagnetic )
         {
             EnablePowerUp();
         }

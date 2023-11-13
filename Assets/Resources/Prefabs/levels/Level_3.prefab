@@ -3238,19 +3238,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 262904813797191453, guid: a7c58d15425fd7343939f28570b77586, type: 3}
       propertyPath: coinRatio
-      value: 0.4
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 262904813797191453, guid: a7c58d15425fd7343939f28570b77586, type: 3}
       propertyPath: emptyRatio
-      value: 0.8
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 262904813797191453, guid: a7c58d15425fd7343939f28570b77586, type: 3}
       propertyPath: obstacleRatio
-      value: 0.1
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 262904813797191453, guid: a7c58d15425fd7343939f28570b77586, type: 3}
       propertyPath: obstaclesPrefab.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 262904813797191453, guid: a7c58d15425fd7343939f28570b77586, type: 3}
       propertyPath: obstaclesPrefab.Array.data[0]
@@ -3259,7 +3259,7 @@ PrefabInstance:
     - target: {fileID: 262904813797191453, guid: a7c58d15425fd7343939f28570b77586, type: 3}
       propertyPath: obstaclesPrefab.Array.data[1]
       value: 
-      objectReference: {fileID: 5139767871723368184, guid: 05f3b7fc6ff2fd04db9938644c22be2f, type: 3}
+      objectReference: {fileID: 5907526187552223942, guid: 7401546251426af449ae486df30ff8cc, type: 3}
     - target: {fileID: 262904813797191453, guid: a7c58d15425fd7343939f28570b77586, type: 3}
       propertyPath: obstaclesPrefab.Array.data[2]
       value: 

@@ -36,6 +36,7 @@ public class PlayerControl : MonoBehaviour
     private bool isSwiping = false;
 
     [Header("Audio")]
+    public AudioClip[] runAudioClips;
     public AudioClip[] jumpAudioClips;
     public AudioClip[] slideAudioClips;
     public AudioClip[] moveAudioClips;
@@ -229,6 +230,11 @@ public class PlayerControl : MonoBehaviour
         {
             //m_rigidbody.MovePosition(m_rigidbody.position + new Vector3(0, 0, velocity) * m_animator.deltaPosition.magnitude);
             GameManager.Instance.levelManager.transform.Translate(new Vector3(0, 0, -velocity) * Time.deltaTime * 3.0f);
+
+            if (!isSpecial && !m_animator.GetBool("isJumping") && !m_animator.GetBool("isJumping") && !m_animator.GetBool("isSliding") && !m_animator.GetBool("isLeft") && !m_animator.GetBool("isRigth"))
+            {
+                PlaySound(runAudioClips[Random.Range(0, runAudioClips.Length - 1)], velocity / 4, true);
+            }
         }
     }
 
@@ -379,14 +385,16 @@ public class PlayerControl : MonoBehaviour
     * Audio
     */
 
-    private void PlaySound(AudioClip audioClip, float pitch = 1)
+    private void PlaySound(AudioClip audioClip, float pitch = 1, bool loop = false)
     {
         m_audioSource.clip = audioClip;
         m_audioSource.pitch = pitch;
+        m_audioSource.loop = loop;
 
         if (m_audioSource.clip)
         {
-            m_audioSource.Play();
+            if (!m_audioSource.isPlaying)
+                m_audioSource.Play();
         }
     }
 
@@ -515,7 +523,6 @@ public class PlayerControl : MonoBehaviour
 
             OnToggleOn("isRunning");
         }
-
     }
 
     /*

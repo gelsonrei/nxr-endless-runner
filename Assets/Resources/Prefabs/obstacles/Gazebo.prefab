@@ -16,9 +16,9 @@ GameObject:
   - component: {fileID: 8734580915509446152}
   - component: {fileID: 2907789880905644164}
   - component: {fileID: -4184702620729083625}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Gazebo
-  m_TagString: Untagged
+  m_TagString: Obstacles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -150,7 +150,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -318,9 +318,17 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 5.74
       objectReference: {fileID: 0}
+    - target: {fileID: -2703678253484753787, guid: d3a4cd3816f4158429eedd65f3d0d4f9, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d3a4cd3816f4158429eedd65f3d0d4f9, type: 3}
       propertyPath: m_Name
       value: Gazebo
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d3a4cd3816f4158429eedd65f3d0d4f9, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

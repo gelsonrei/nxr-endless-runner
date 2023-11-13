@@ -44,7 +44,7 @@ public class LevelManager : MonoBehaviour
         float zDelta = (transform.position.z * -1) - previousZPosition;
         if (Mathf.Abs(zDelta) > scaleOffset)
         {
-            Debug.Log(zDelta);
+            // Debug.Log(zDelta);
             previousZPosition = transform.position.z * -1;
 
             if(levels.Length > 1)
