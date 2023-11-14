@@ -1038,11 +1038,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 262904813797191453, guid: a7c58d15425fd7343939f28570b77586, type: 3}
       propertyPath: cardLimit
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 262904813797191453, guid: a7c58d15425fd7343939f28570b77586, type: 3}
       propertyPath: cardRatio
-      value: 0
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 262904813797191453, guid: a7c58d15425fd7343939f28570b77586, type: 3}
       propertyPath: coinRatio
