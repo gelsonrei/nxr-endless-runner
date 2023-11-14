@@ -4847,8 +4847,8 @@ MonoBehaviour:
   playerCamera: {fileID: 1600888576}
   playerCanvas: {fileID: 576710293}
   points: 0
-  pointsAvarage: 55
-  pointsForSpecial: 180
+  pointsAvarage: 60
+  pointsForSpecial: 200
   tickInterval: 15
   distance: 0
   currentLevel: 0
