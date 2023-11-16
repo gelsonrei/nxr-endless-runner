@@ -164,7 +164,7 @@ public class LeadsUIControler : MonoBehaviour
 
                         string mcpf;
                         //if (formData[4] == "000.000.000-00")
-                        if (formData[1] == "000.000.000-00")
+                        if (formData[2] == "000.000.000-00")
                         {
                             int mv = LeadManager.Select().Count + 1;
                             mcpf = "no-cpf-" + mv;
@@ -172,11 +172,11 @@ public class LeadsUIControler : MonoBehaviour
                         else
                         {
                             //mcpf = formData[4];
-                            mcpf = formData[1];
+                            mcpf = formData[2];
                         }
 
                         //LeadManager.CreateOrUpdate(formData[0],formData[1],formData[2],mcpf,formData[3], ActivationManager.GetLength());
-                        LeadManager.CreateOrUpdate(formData[0],"","",mcpf,"", ActivationManager.GetLength());
+                        LeadManager.CreateOrUpdate(formData[0], formData[1], "",mcpf,"", ActivationManager.GetLength());
 
                         DataBase.InsertData("playerCharacter", 0);
                         DataBase.InsertData("playerSession", mcpf);
