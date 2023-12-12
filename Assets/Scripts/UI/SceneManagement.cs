@@ -9,10 +9,6 @@ public class SceneManagement : MonoBehaviour
 {
     private AsyncOperation operation;
 
-    void Awake()
-    {
-    }
-
     void Start()
     {
         operation = null;

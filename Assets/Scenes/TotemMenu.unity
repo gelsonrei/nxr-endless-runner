@@ -330,11 +330,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 68514323}
   m_CullTransparentMesh: 1
---- !u!1 &72848074 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6275315161778723152, guid: c05ff9432700e4f379c19941ed39cd21, type: 3}
-  m_PrefabInstance: {fileID: 1140583714}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &76379266
 GameObject:
   m_ObjectHideFlags: 0
@@ -3387,9 +3382,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e80f595980db49f4a581e35a181ae65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FullKeyboard: {fileID: 72848074}
-  AlphaNumericKeyboard: {fileID: 985859890}
-  NumericKeyboard: {fileID: 1382624740}
 --- !u!95 &602366638
 Animator:
   serializedVersion: 5
@@ -9343,11 +9335,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 802772835733527355, guid: c5c3f07364c99474e89c2be03cf3a387, type: 3}
   m_PrefabInstance: {fileID: 985859888}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &985859890 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 802772835733527354, guid: c5c3f07364c99474e89c2be03cf3a387, type: 3}
-  m_PrefabInstance: {fileID: 985859888}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1008511019
 GameObject:
   m_ObjectHideFlags: 0
@@ -13843,6 +13830,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1190165148}
   m_CullTransparentMesh: 1
+--- !u!1 &1193535306
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1193535308}
+  - component: {fileID: 1193535307}
+  m_Layer: 0
+  m_Name: RankingManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1193535307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1193535306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be0cabd8a1a60e644b7df0b09a7d8b69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resourcesDataPath: /Resources/Data/
+  databaseName: FortuneWheel2.db
+--- !u!4 &1193535308
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1193535306}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1209733448
 GameObject:
   m_ObjectHideFlags: 0
@@ -15350,11 +15383,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1376698886}
   m_CullTransparentMesh: 1
---- !u!1 &1382624740 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6275315161778723152, guid: a19fa2644d29ec14497505ad99c1a70a, type: 3}
-  m_PrefabInstance: {fileID: 666820863}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1382624741 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6275315161778723153, guid: a19fa2644d29ec14497505ad99c1a70a, type: 3}
@@ -21333,6 +21361,7 @@ MonoBehaviour:
   content: {fileID: 908934322}
   template: {fileID: 363368680395713670, guid: 6b53f4d13ccd3ea45ae441c1d765fee7, type: 3}
   appMenu: {fileID: 1460109451282558194}
+  LeadsScene: 
 --- !u!222 &3372782590638492753
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -22071,6 +22100,7 @@ MonoBehaviour:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 1193535308}
   - {fileID: 1851417607}
   - {fileID: 147038776}
   - {fileID: 253709266}

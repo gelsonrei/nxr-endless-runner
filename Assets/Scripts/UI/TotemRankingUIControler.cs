@@ -3,6 +3,7 @@ using UnityEngine.UI;
 
 using EndlessRunner;
 using System.Collections.Generic;
+using Nxr.FormLeads;
 
 public class TotemRankingUIControler : MonoBehaviour
 {
@@ -15,15 +16,6 @@ public class TotemRankingUIControler : MonoBehaviour
     {
         m_audioSource = GetComponent<AudioSource>();
         buttons = GetComponentsInChildren<Button>();
-    }
-
-    void Start()
-    {
-    }
-
-    void Update()
-    {
-
     }
 
     void OnEnable()
@@ -46,14 +38,13 @@ public class TotemRankingUIControler : MonoBehaviour
         }
 
         //db
-        TableManager.Init();
         List<Ranking> rancking = RankingManager.Select();
         int order = 0;
         foreach (Ranking r in rancking)
         {
             order++;
 
-            Lead l = LeadManager.GetOne(r.Cpf);
+            Lead l = LeadManager.GetOne(r.leadId);
 
             GameObject go = GameObject.Instantiate(template, transform.position, Quaternion.identity, content.transform);
 

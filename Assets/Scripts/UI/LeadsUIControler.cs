@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Nxr.FormLeads;
 using System.Collections.Generic;
 
 using UnityEngine;
@@ -160,13 +161,11 @@ public class LeadsUIControler : MonoBehaviour
                             }
                         }
 
-                        TableManager.Init();
-
                         string mcpf;
                         //if (formData[4] == "000.000.000-00")
                         if (formData[2] == "000.000.000-00")
                         {
-                            int mv = LeadManager.Select().Count + 1;
+                            int mv = LeadManager.GetAll().Count + 1;
                             mcpf = "no-cpf-" + mv;
                         }
                         else
@@ -176,7 +175,9 @@ public class LeadsUIControler : MonoBehaviour
                         }
 
                         //LeadManager.CreateOrUpdate(formData[0],formData[1],formData[2],mcpf,formData[3], ActivationManager.GetLength());
-                        LeadManager.CreateOrUpdate(formData[0], formData[1], "",mcpf,"", ActivationManager.GetLength());
+                   //   LeadManager.CreateOrUpdate(formData[0], formData[1], "",mcpf,"", ActivationManager.GetLength());
+                        LeadManager.CreateOrUpdate(mcpf, formData[0], formData[1], "", "");
+
 
                         DataBase.InsertData("playerCharacter", 0);
                         DataBase.InsertData("playerSession", mcpf);

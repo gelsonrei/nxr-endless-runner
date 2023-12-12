@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 using UnityEngine;
 using UnityEngine.UI;
+using Nxr.FormLeads;
 
 public class TotemMenuUIControler : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class TotemMenuUIControler : MonoBehaviour
 
     [Header("App Settings")]
     public GameObject appMenu;
+    public string LeadsScene;
 
     private void Awake()
     {
@@ -24,18 +26,11 @@ public class TotemMenuUIControler : MonoBehaviour
         buttons = GetComponentsInChildren<Button>();
     }
 
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
-
     void OnEnable()
     {
+        if (DatabaseHandler.instance == null)
+            return;
+        
         //app config
         buttons[0].onClick.AddListener(
         () => {
@@ -77,20 +72,19 @@ public class TotemMenuUIControler : MonoBehaviour
         }
 
         //db
-        TableManager.Init();
-        List<Ranking> rancking = RankingManager.Select(10);
+        List<Ranking> ranking = RankingManager.Select(10);
 
         content.SetActive(false);
-        if (rancking.Count > 0)
+        if (ranking.Count > 0)
         {
             StartCoroutine(HideAndShowGameObjectCoroutine());
 
             int order = 0;
-            foreach (Ranking r in rancking)
+            foreach (Ranking r in ranking)
             {
                 order++;
 
-                Lead l = LeadManager.GetOne(r.Cpf);
+                Lead l = LeadManager.GetOne(r.leadId);
 
                 GameObject go = GameObject.Instantiate(template, transform.position, Quaternion.identity, content.transform);
 

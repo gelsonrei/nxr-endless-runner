@@ -46,11 +46,6 @@ public class MenuCanvasManager : MonoBehaviour
         ChangeScreen(screens[1], 4);
     }
 
-    void Update()
-    {
-        
-    }
-
     public void ChangeScreen(GameObject screen, int delay = 0, Action callback = null)
     {
         //graphicRaycaster.enabled = false;

@@ -8,6 +8,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 using EndlessRunner;
+using Nxr.FormLeads;
 
 public class GameCanvasManager : MonoBehaviour
 {
@@ -61,7 +62,6 @@ public class GameCanvasManager : MonoBehaviour
 
         // --- //
 
-        TableManager.Init();
         List<Ranking> rancking = RankingManager.Select(1);
         mr = rancking.Count > 0 ? rancking[0].MaxDistance : 0;
         
@@ -322,8 +322,7 @@ public class GameCanvasManager : MonoBehaviour
                 float maxPoints = DataBase.SelectData("maxPoints");
                 DataBase.InsertData("maxPoints", maxPoints + currentPoints);
 
-                TableManager.Init();
-                RankingManager.Create( DataBase.SelectSData("playerSession"), (int) currentDistance, (int) currentPoints );
+                RankingManager.Create(int.Parse(DataBase.SelectSData("playerSession")), (int) currentDistance, (int) currentPoints);
 
                 // ---- //
 
